@@ -33,7 +33,7 @@ export default function LandingPagePhone() {
         {/* Login button */}
         <button
           onClick={() => router.push("/login")}
-          className="bg-[url('/stone.svg')] bg-cover text-black px-4 py-2 rounded-lg font-bold"
+          className="bg-[url('/wood-texture.svg')] bg-cover text-black px-4 py-2 rounded-lg font-bold"
         >
           LOGIN
         </button>
@@ -53,64 +53,110 @@ export default function LandingPagePhone() {
           menuOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-     
-        <div className="h-full w-full bg-[url('/menu-bg.svg')] bg-cover flex flex-col p-4">
+        {/* Borders - always visible */}
+        <div className="absolute inset-0 z-50 pointer-events-none">
+          {/* Top border */}
+          <div className="absolute top-0 left-0 w-full h-8 bg-[url('/border-top.svg')] bg-repeat-x"></div>
+          {/* Bottom border */}
+          <div className="absolute bottom-0 left-0 w-full h-8 bg-[url('/border-top.svg')] bg-repeat-x rotate-180"></div>
+          {/* Left border */}
+          <div className="absolute top-0 left-0 h-full w-8 bg-[url('/border.svg')] bg-repeat-y"></div>
+          {/* Right border */}
+          <div className="absolute top-0 right-0 h-full w-8 bg-[url('/border.svg')] bg-repeat-y"></div>
+        </div>
 
-          <div className="flex-1 w-full   p-6 flex flex-col gap-6 relative">
-           
-            <button
-              onClick={() => setMenuOpen(false)}
-              className="text-2xl text-white absolute top-2 right-2"
-            >
-              ✕
-            </button>
+        {/* Menu background + content */}
+        <div className="h-full w-full bg-[url('/menu-bg.svg')] bg-cover flex flex-col p-6 relative z-40">
+          {/* Close button */}
+          <button
+            onClick={() => setMenuOpen(false)}
+            className="text-2xl text-white absolute top-6 right-6 z-50"
+          >
+            ✕
+          </button>
 
-            {/* Menu Items */}
-            <div className="flex items-center gap-2">
-              <Image src="/icon1.svg" alt="Home" width={64} height={64} />
+          {/* Menu Items */}
+          <div className="flex flex-col gap-6 mt-16">
+            {/* Item 1 */}
+            <div className="flex items-center gap-0">
+              <Image
+                src="/icon1.svg"
+                alt="Home"
+                width={68}
+                height={68}
+                className="flex-shrink-0 -ml-0"
+              />
               <button
                 onClick={() => router.push("/")}
-                className="bg-[url('/wood-texture.svg')] bg-cover px-8 py-3 rounded text-black text-sm hover:brightness-110"
+                className="bg-[url('/stone.svg')] bg-cover min-w-[160px] px-6 py-3 rounded text-black text-lg hover:brightness-110"
               >
                 HOME
               </button>
             </div>
 
-            <div className="flex items-center gap-2">
-              <Image src="/icon2.svg" alt="About" width={64} height={64} />
+            {/* Item 2 */}
+            <div className="flex items-center gap-0">
+              <Image
+                src="/icon2.svg"
+                alt="About"
+                width={68}
+                height={68}
+                className="flex-shrink-0 -ml-0"
+              />
               <button
                 onClick={() => router.push("/about")}
-                className="bg-[url('/wood-texture.svg')] bg-cover px-8 py-3 rounded text-black text-sm hover:brightness-110"
+                className="bg-[url('/stone.svg')] bg-cover min-w-[160px] px-6 py-3 rounded text-black text-lg hover:brightness-110"
               >
                 ABOUT
               </button>
             </div>
 
-            <div className="flex items-center gap-2">
-              <Image src="/icon3.svg" alt="FAQs" width={64} height={64} />
+            {/* Item 3 */}
+            <div className="flex items-center gap-0">
+              <Image
+                src="/icon3.svg"
+                alt="FAQs"
+                width={68}
+                height={68}
+                className="flex-shrink-0 -ml-0"
+              />
               <button
                 onClick={() => router.push("/faqs")}
-                className="bg-[url('/wood-texture.svg')] bg-cover px-8 py-3 rounded text-black text-sm hover:brightness-110"
+                className="bg-[url('/stone.svg')] bg-cover min-w-[160px] px-6 py-3 rounded text-black text-lg hover:brightness-110"
               >
                 FAQs
               </button>
             </div>
 
-            <div className="flex items-center gap-2">
-              <Image src="/icon4.svg" alt="Tracks" width={64} height={64} />
+            {/* Item 4 */}
+            <div className="flex items-center gap-0">
+              <Image
+                src="/icon4.svg"
+                alt="Tracks"
+                width={68}
+                height={68}
+                className="flex-shrink-0 -ml-0"
+              />
               <button
                 onClick={() => router.push("/tracks")}
-                className="bg-[url('/wood-texture.svg')] bg-cover px-8 py-3 rounded text-black text-sm hover:brightness-110"
+                className="bg-[url('/stone.svg')] bg-cover min-w-[160px] px-6 py-3 rounded text-black text-lg hover:brightness-110"
               >
                 TRACKS
               </button>
             </div>
 
-            <div className="flex items-center gap-2">
-              <Image src="/icon5.svg" alt="Timeline" width={64} height={64} />
+            {/* Item 5 */}
+            <div className="flex items-center gap-1">
+              <Image
+                src="/icon5.svg"
+                alt="Timeline"
+                width={68}
+                height={68}
+                className="flex-shrink-0 -ml-1"
+              />
               <button
                 onClick={() => router.push("/timeline")}
-                className="bg-[url('/wood-texture.svg')] bg-cover px-6 py-3 rounded text-black text-sm hover:brightness-110"
+                className="bg-[url('/stone.svg')] bg-cover min-w-[160px] px-6 py-3 rounded text-black text-lg hover:brightness-110"
               >
                 TIMELINE
               </button>
