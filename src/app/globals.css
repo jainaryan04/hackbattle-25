@@ -24,3 +24,77 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+/* Animation for the fireflies */
+@keyframes float {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0.8;
+  }
+  25% {
+    transform: translate(15px, -20px);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translate(30px, 0);
+    opacity: 0.9;
+  }
+  75% {
+    transform: translate(15px, 20px);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 0.8;
+  }
+}
+
+/* Base style for each firefly */
+.firefly {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 0 8px 3px rgba(255, 255, 255, 0.7);
+  animation: float linear infinite;
+}
+/* Animation for the diamond pickaxe glow */
+@keyframes pickaxe-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 8px rgba(0, 220, 255, 0.7));
+  }
+  50% {
+    filter: drop-shadow(0 0 16px rgba(0, 220, 255, 1));
+  }
+}
+
+.animate-pickaxe-glow {
+  animation: pickaxe-glow 2.5s infinite ease-in-out;
+}
+
+/* Animation for the pulsating white glow on FAQ text */
+@keyframes glow-pulse {
+  0%, 100% {
+    text-shadow: 3px 3px #3a1d0c, 0 0 5px rgba(255, 255, 255, 0.6), 0 0 10px rgba(255, 255, 255, 0.3);
+  }
+  50% {
+    text-shadow: 3px 3px #3a1d0c, 0 0 10px rgba(255, 255, 255, 0.9), 0 0 20px rgba(255, 255, 255, 0.5);
+  }
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 3s infinite alternate ease-in-out;
+}
+
+/* New: Animation for FAQ title glow */
+@keyframes faq-title-glow {
+  0%, 100% {
+    text-shadow: 2px 2px #3a1d0c, 0 0 4px rgba(255, 255, 255, 0.4);
+  }
+  50% {
+    text-shadow: 2px 2px #3a1d0c, 0 0 8px rgba(255, 255, 255, 0.7);
+  }
+}
+
+.animate-faq-title-glow {
+  animation: faq-title-glow 2.5s infinite alternate ease-in-out;
+}
+
