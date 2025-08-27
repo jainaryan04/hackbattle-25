@@ -14,11 +14,7 @@ export default function Home() {
     return () => window.removeEventListener("resize", checkSize);
   }, []);
 
-  const storyTexts = [
-    "Hey Hacker, I \n am Steve !",
-    "There's a Battle Ahead",
-    "Are You Ready?",
-  ];
+
 
   if (isMobile) {
     return (
@@ -30,7 +26,7 @@ export default function Home() {
           className="object-cover"
           priority
         />
-        <SpeechBubble texts={storyTexts} />
+        <SpeechBubble />
       </div>
     );
   }
@@ -54,7 +50,7 @@ export default function Home() {
           <a
             key={item}
             href={`#${item.toLowerCase()}`}
-            className="px-4 py-2 rounded bg-[url('/wood-texture.svg')] bg-cover text-lg font-bold text-black shadow-md hover:scale-105 transition"
+            className="px-4 py-2 rounded bg-[url('/wood.svg')]  bg-cover text-4xl font-bold text-black font-pixeboy shadow-md hover:scale-105 transition"
           >
             {item}
           </a>
@@ -69,32 +65,22 @@ export default function Home() {
         <div className="relative z-10 flex flex-col items-start text-left mb-8 ml-5 space-y-8">
           <Image src="/BATTLE.svg" width={720} height={720} alt="Battle" />
         </div>
-        <div className="relative z-10 flex flex-col items-start text-left mb-5 ml-15 space-y-6">
-          <Image
-            src="/JOIN THE ULTIMATE.svg"
-            width={580}
-            height={580}
-            alt="Join"
-          />
+        <div className="relative z-10 flex font-pixeboy text-7xl flex-col items-start left-4 mb-5 ml-15 space-y-6">
+          JOIN THE ULTIMATE
         </div>
-        <div className="relative z-10 flex flex-col items-start text-left mb-3 ml-35 space-y-6">
-          <Image
-            src="/HACKATHON.svg"
-            width={400}
-            height={400}
-            alt="Hackathon"
-          />
+        <div className="relative z-10 flex font-pixeboy text-7xl flex-col items-start bottom-10 left-12 mb-3 ml-35 space-y-6">
+          Hackathon
         </div>
 
         {/* Register Button */}
-        <button className="px-40 py-4 rounded hover:scale-110 transition ">
+        <button className="absolute px-35 py-115 rounded hover:scale-110 transition ">
           <Image src="/register.svg" width={400} height={400} alt="Register" />
         </button>
       </section>
 
       {/* Characters */}
-      <div className="absolute bottom-40 right-1/7 -translate-x-1/2 flex items-end gap-9 z-10">
-        <Image src="/man.svg" alt="Hero" width={300} height={700} />
+      <div className="absolute bottom-39 right-1/12 -translate-x-1/2 flex items-end gap-9 z-10">
+        <Image src="/man.svg" alt="Hero" width={350} height={700} />
       </div>
       <div className="absolute bottom-55 right-1 -translate-x-1/2 flex items-end gap-9 z-10">
         <Image src="/dog.svg" alt="Creature2" width={100} height={100} />

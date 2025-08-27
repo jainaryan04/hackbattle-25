@@ -1,14 +1,19 @@
 @import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-
-.font-press-start {
-  font-family: 'Press Start 2P', cursive;
+:root {
+  --pixeboy: 'Press Start 2P', cursive;
 }
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@font-face {
+  font-family: "Pixeboy";
+  src: url("/fonts/Pixeboy.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-pixeboy {
+  font-family: "Pixeboy", monospace;
 }
 
 @theme inline {
