@@ -81,13 +81,15 @@ export default function FaqSection() {
       
 
 
-      <main className="w-full mx-auto flex flex-col items-center z-10 p-4 md:flex-row md:items-start md:justify-between md:px-12">
-        <div className="w-full flex justify-center items-center mb-8 md:flex-none md:w-1/3 md:justify-start md:items-center md:ml-8 md:mt-10">
+      <main className="w-full mx-auto flex flex-col items-center z-10 p-4 md:flex-row md:items-center md:justify-between md:px-12"> {/* Changed md:items-start to md:items-center */}
+
+
+        <div className="w-full flex justify-center items-center mb-8 md:flex-none md:w-1/3 md:justify-start md:items-center md:ml-8 md:mt-0"> {/* Removed md:mt-10 */}
           <h1 className="text-6xl md:text-8xl font-bold text-[#f2e5a6] [text-shadow:3px_3px_#3a1d0c] animate-glow-pulse">FAQs</h1>
         </div>
 
 
-        <div className="space-y-2 w-full md:flex-1 md:space-y-4 md:pl-8 md:mt-10"> 
+        <div className="space-y-4 w-full md:flex-1 md:space-y-4 md:pl-8 md:mt-0"> 
           {faqData.map((item, index) => (
             <FaqItem 
               key={index} 
@@ -101,18 +103,6 @@ export default function FaqSection() {
         </div>
 
       </main>
-
-      <div className="hidden md:block"> {/* Hide on mobile, show on medium screens and up */}
-
-
-        <div className="fixed bottom-[170px] left-[45px] z-10">
-          <img 
-            src="/minecraft-question-character.svg" 
-            alt="Minecraft Character with Question Mark" 
-            className="w-200 h-100 transform rotate-180" 
-          />
-        </div>
-      </div>
 
     </div>
   );
