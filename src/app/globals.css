@@ -33,6 +33,58 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* --- Fireflies animation --- */
+@keyframes float {
+  0% { transform: translate(0, 0); opacity: 0.8; }
+  25% { transform: translate(15px, -20px); opacity: 0.4; }
+  50% { transform: translate(30px, 0); opacity: 0.9; }
+  75% { transform: translate(15px, 20px); opacity: 0.4; }
+  100% { transform: translate(0, 0); opacity: 0.8; }
+}
+
+.firefly {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 0 8px 3px rgba(255, 255, 255, 0.7);
+  animation: float linear infinite;
+}
+
+/* --- Pickaxe glow --- */
+@keyframes pickaxe-glow {
+  0%, 100% { filter: drop-shadow(0 0 8px rgba(0, 220, 255, 0.7)); }
+  50% { filter: drop-shadow(0 0 16px rgba(0, 220, 255, 1)); }
+}
+
+.animate-pickaxe-glow {
+  animation: pickaxe-glow 2.5s infinite ease-in-out;
+}
+
+/* --- FAQ glow --- */
+@keyframes glow-pulse {
+  0%, 100% {
+    text-shadow: 3px 3px #3a1d0c, 0 0 5px rgba(255, 255, 255, 0.6), 0 0 10px rgba(255, 255, 255, 0.3);
+  }
+  50% {
+    text-shadow: 3px 3px #3a1d0c, 0 0 10px rgba(255, 255, 255, 0.9), 0 0 20px rgba(255, 255, 255, 0.5);
+  }
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 3s infinite alternate ease-in-out;
+}
+
+@keyframes faq-title-glow {
+  0%, 100% { text-shadow: 2px 2px #3a1d0c, 0 0 4px rgba(255, 255, 255, 0.4); }
+  50% { text-shadow: 2px 2px #3a1d0c, 0 0 8px rgba(255, 255, 255, 0.7); }
+}
+
+.animate-faq-title-glow {
+  animation: faq-title-glow 2.5s infinite alternate ease-in-out;
+}
+
+/* --- Flicker effect --- */
 @keyframes flicker {
   0%, 100% { opacity: 1; transform: scale(1) rotate(0deg); }
   25% { opacity: 0.85; transform: scale(1.05) rotate(-1deg); }
@@ -43,8 +95,10 @@ body {
 .flicker {
   animation: flicker 0.2s infinite;
   filter: drop-shadow(0 0 6px rgba(255, 150, 50, 0.8))
-  drop-shadow(0 0 12px rgba(255, 100, 0, 0.6));
+          drop-shadow(0 0 12px rgba(255, 100, 0, 0.6));
 }
+
+/* --- Smoke rising --- */
 @keyframes smokeRise {
   0%   { transform: translateY(0) scale(0.6); opacity: 0.4; }
   50%  { opacity: 0.6; }
@@ -60,6 +114,6 @@ body {
   border-radius: 50%;
   animation: smokeRise 3s linear infinite;
 }
+
 .smoke:nth-child(2) { left: 10px; animation-delay: 1s; }
 .smoke:nth-child(3) { left: -10px; animation-delay: 2s; }
-}
