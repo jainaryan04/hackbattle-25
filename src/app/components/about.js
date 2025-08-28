@@ -1,5 +1,7 @@
 'use client';
-
+import '../globals.css';
+import GlowingSpores from "./GlowingSpores";
+import Smoke from "./Smoke";
 const About = () => {
     return (
         <>
@@ -18,7 +20,12 @@ const About = () => {
 
 const DesktopAbout = () => (
     <div className="w-screen h-screen min-h-[100svh] bg-[url('/bg-about.svg')] bg-no-repeat bg-center bg-cover flex items-center justify-center relative">
+        {/* ✨ Glowing Spores */}
+        <div className="absolute inset-0 z-[1]">
+            <GlowingSpores />
+        </div>
         <div className="relative w-[660px] h-[470px] rounded-[22px] overflow-hidden [clip-path:inset(0_round_22px)] bg-[url('/about-box-bg.svg')] bg-no-repeat bg-center bg-[length:100%_auto]">
+
             {/* Background box with text */}
             <div className="absolute inset-0 p-8 text-[#faf6da] text-center font-['Press_Start_2P',Arial,sans-serif] text-[1.1rem] leading-[1.6] z-[1] rounded-[22px] box-border">
                 {/* empty background container */}
@@ -52,18 +59,24 @@ const DesktopAbout = () => (
         />
 
         {/* Torch */}
-        <img
-            src="/torch.svg"
-            alt="Torch"
-            className="fixed left-[30px] bottom-[80px] w-[min(9vw,40px)] h-auto pointer-events-none z-[3]"
-        />
+        <div className="fixed left-[30px] bottom-[80px] z-[4]">
+            <img
+                src="/torch.svg"
+                alt="Torch"
+                className="w-[min(9vw,40px)] h-auto pointer-events-none"
+            />
+            <Smoke /> {/* 🌫️ Smoke rising */}
+        </div>
 
         {/* Campfire */}
-        <img
-            src="/campfire.svg"
-            alt="Campfire"
-            className="fixed right-[50px] bottom-[28px] w-[min(10vw,140px)] h-auto pointer-events-none z-[3]"
-        />
+        <div className="fixed right-[50px] bottom-[28px] z-[4]">
+            <img
+                src="/campfire.svg"
+                alt="Campfire"
+                className="w-[min(10vw,140px)] h-auto pointer-events-none"
+            />
+            <Smoke /> {/* 🌫️ Smoke rising */}
+        </div>
     </div>
 );
 
@@ -117,16 +130,19 @@ const MobileAbout = () => (
         </div>
         {/* Axolotl */}
         <img
-            src="/axolotl.svg"
-            alt="Axolotl"
-            className="fixed left-[3px] bottom-[420px] w-[min(14vw,170px)] h-auto pointer-events-none z-[3]"
-        />
-        {/* Torch */}
-        <img
-            src="/torch2.svg"
+            src="/axolotl-mobile.svg"
             alt="Torch"
-            className="fixed left-[370px] bottom-[260px] w-[min(9vw,30px)] h-auto pointer-events-none z-[3]"
+            className="fixed left-[330px] bottom-[200px] w-[min(20vw)] h-auto pointer-events-none z-[3]"
         />
+        {/* Campfire */}
+        <div className="fixed left-[min(20vw)] bottom-[28px] z-[4]">
+            <img
+                src="/campfire.svg"
+                alt="Campfire"
+                className="w-[min(34vw)] h-auto pointer-events-none"
+            />
+            <Smoke /> {/* 🌫️ Smoke rising */}
+        </div>
     </div>
 );
 
