@@ -59,22 +59,20 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="relative z-10 flex flex-col items-start text-left mt-10 ml-5 space-y-6">
-        <div className="relative z-10 flex flex-col items-start text-left mb-5 ml-35 space-y-6">
-          <Image src="/HACK.svg" width={500} height={500} alt="Hack" />
-        </div>
+        
         <div className="relative z-10 flex flex-col items-start text-left mb-8 ml-5 space-y-8">
-          <Image src="/BATTLE.svg" width={720} height={720} alt="Battle" />
+          <Image src="/Group 104.svg" width={720} height={720} alt="Battle" />
         </div>
-        <div className="relative z-10 flex font-pixeboy text-7xl flex-col items-start left-4 mb-5 ml-15 space-y-6">
+        <div className="relative z-10 flex font-pixeboy text-6xl flex-col items-start bottom-12 left-20 mb-5 ml-15 space-y-6">
           JOIN THE ULTIMATE
         </div>
-        <div className="relative z-10 flex font-pixeboy text-7xl flex-col items-start bottom-10 left-12 mb-3 ml-35 space-y-6">
+        <div className="relative z-10 flex font-pixeboy text-6xl flex-col items-start bottom-20 left-25 mb-3 ml-35 space-y-6">
           Hackathon
         </div>
 
         {/* Register Button */}
-        <button className="absolute px-35 py-115 rounded hover:scale-110 transition ">
-          <Image src="/register.svg" width={400} height={400} alt="Register" />
+        <button className="absolute px-50 py-115 rounded hover:scale-110 transition ">
+          <Image src="/register.svg" width={350} height={400} alt="Register" />
         </button>
       </section>
 
