@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import SpeechBubble from "./SpeechBubble";
+import MobileLanding from "./MobileLanding";
 
 export default function Home() {
   const [isMobile, setIsMobile] = useState(false);
@@ -26,7 +26,7 @@ export default function Home() {
           className="object-cover"
           priority
         />
-        <SpeechBubble />
+        <MobileLanding />
       </div>
     );
   }

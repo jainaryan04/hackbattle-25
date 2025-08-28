@@ -1,22 +1,19 @@
 "use client";
-import { useState ,useEffect} from "react";
-import { useRouter } from "next/navigation";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 
-export default function SpeechBubble() {
+export default function SpeechBubbleIntro({ onFinish }) {
   const texts = [
     "Hey Hacker, I \n am Steve!",
     "There's a Battle Ahead",
     "Are You Ready?",
   ];
   const [currentIndex, setCurrentIndex] = useState(0);
-  const router = useRouter();
 
   useEffect(() => {
     if (currentIndex === texts.length - 1) {
-      // after showing the last text, wait 2s then redirect
       const timeout = setTimeout(() => {
-        router.push("/LandingPagePhone");
+        onFinish();
       }, 2000);
       return () => clearTimeout(timeout);
     }
@@ -26,7 +23,7 @@ export default function SpeechBubble() {
     }, 2000);
 
     return () => clearInterval(interval);
-  }, [currentIndex, texts.length, router]);
+  }, [currentIndex, texts.length, onFinish]);
 
   return (
     <div className="relative w-full h-screen">

@@ -5,6 +5,10 @@
   --pixeboy: 'Press Start 2P', cursive;
 }
 
+body {
+  cursor: url('/bee.svg') 16 16, auto;
+}
+
 @font-face {
   font-family: "Pixeboy";
   src: url("/fonts/Pixeboy.ttf") format("truetype");
