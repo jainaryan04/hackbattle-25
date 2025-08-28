@@ -1,5 +1,6 @@
 import './globals.css';
 import { Press_Start_2P } from 'next/font/google';
+import { Geist, Geist_Mono } from "next/font/google";
 
 export const metadata = { title: 'About', description: 'About page' };
 
