@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import LandingPage from "./components/LandingPage";
 import About from "./components/about";
-import FaqSection from "src/app/faq/page";
+import FaqSection from "src/components/FaqSection";
 import SpeechBubble from "src/app/components/SpeechBubble";
 
 export default function Page() {
