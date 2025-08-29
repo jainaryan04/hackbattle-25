@@ -121,3 +121,25 @@ body {
 
 .smoke:nth-child(2) { left: 10px; animation-delay: 1s; }
 .smoke:nth-child(3) { left: -10px; animation-delay: 2s; }
+html {
+  scroll-behavior: smooth;
+}
+@keyframes vine-sway {
+  0%, 100% { transform: rotate(-2deg) translateX(0); }
+  50% { transform: rotate(2deg) translateX(3px); }
+}
+
+@keyframes leaf-sway {
+  0%, 100% { transform: rotate(-6deg) translateX(0); }
+  50% { transform: rotate(6deg) translateX(6px); }
+}
+
+.vine-sway {
+  animation: vine-sway 8s ease-in-out infinite;
+  transform-origin: top center;
+}
+
+.leaf-sway {
+  animation: leaf-sway 4s ease-in-out infinite;
+  transform-origin: top center;
+}

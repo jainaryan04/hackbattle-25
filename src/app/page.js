@@ -4,6 +4,8 @@ import LandingPage from "./components/LandingPage";
 import About from "./components/about";
 import FaqSection from "src/components/FaqSection";
 import SpeechBubble from "src/app/components/SpeechBubble";
+import { Speaker } from "lucide-react";
+import SpeakerSection from "./components/speaker";
 
 export default function Page() {
   const [showContent, setShowContent] = useState(false);
@@ -29,6 +31,7 @@ export default function Page() {
       <LandingPage />
       <About />
       <FaqSection />
+      <SpeakerSection/>
     </div>
   );
 }
