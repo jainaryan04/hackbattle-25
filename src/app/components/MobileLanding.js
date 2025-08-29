@@ -25,7 +25,7 @@ export default function LandingPagePhone() {
         {/* Menu button */}
         <button
           onClick={() => setMenuOpen(true)}
-          className="text-white text-3xl"
+          className=" text-3xl"
         >
           ☰
         </button>
@@ -55,8 +55,7 @@ export default function LandingPagePhone() {
       >
         {/* Borders */}
         <div className="absolute inset-0 z-50 pointer-events-none">
-          <div className="absolute top-0 left-0 w-full h-8 bg-[url('/border-top.svg')] bg-repeat-x"></div>
-          <div className="absolute bottom-0 left-0 w-full h-8 bg-[url('/border-top.svg')] bg-repeat-x rotate-180"></div>
+         
           <div className="absolute top-0 left-0 h-full w-8 bg-[url('/border.svg')] bg-repeat-y"></div>
           <div className="absolute top-0 left-100 h-full w-8 bg-[url('/border.svg')] bg-repeat-y"></div>
         </div>
@@ -97,7 +96,7 @@ export default function LandingPagePhone() {
                 </div>
 
                 {/* Text Button */}
-                <div className="flex-1 h-[68px] bg-[url('/wood-button.svg')] bg-cover flex items-center justify-center text-amber-100 font-pixeboy text-5xl  hover:brightness-110">
+                <div className="flex-1 h-[68px] bg-[url('/wood-button.svg')] bg-cover flex items-center justify-center text-amber-100 font-pixeboy text-5xl">
                   {item.label}
                 </div>
               </button>
