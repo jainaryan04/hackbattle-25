@@ -5,7 +5,7 @@ import Smoke from "./Smoke";
 
 const About = () => {
     return (
-        <>
+           <>
             {/* Desktop */}
             <div className="hidden md:block">
                 <DesktopAbout />
@@ -20,6 +20,7 @@ const About = () => {
 };
 
 const DesktopAbout = () => (
+    < section id="about">
     <div className="w-screen h-screen min-h-[100svh] bg-[url('/bg-about.svg')] bg-no-repeat bg-center bg-cover flex items-center justify-center relative">
         {/* ✨ Glowing Spores */}
         <div className="absolute inset-0 z-[1]">
@@ -79,6 +80,7 @@ const DesktopAbout = () => (
             <Smoke /> {/* 🌫️ Smoke rising */}
         </div>
     </div>
+     </section>
 );
 
 const MobileAbout = () => (
@@ -145,6 +147,7 @@ const MobileAbout = () => (
             <Smoke /> {/* 🌫️ Smoke rising */}
         </div>
     </div>
+   
 );
 
 export default About;
