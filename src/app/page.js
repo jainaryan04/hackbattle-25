@@ -5,6 +5,7 @@ import About from "./components/about";
 import FaqSection from "src/components/FaqSection";
 import SpeechBubble from "src/app/components/SpeechBubble";
 import SpeakerSection from "./components/speaker";
+import VineDivider from "./components/VineDivider";
 
 export default function Page() {
   const [showContent, setShowContent] = useState(false);
@@ -28,6 +29,7 @@ export default function Page() {
   return (
     <div>
       <LandingPage />
+      <VineDivider />
       <About />
       <SpeakerSection/>
       <FaqSection />

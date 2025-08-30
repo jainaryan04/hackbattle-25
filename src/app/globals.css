@@ -143,3 +143,16 @@ html {
   animation: leaf-sway 4s ease-in-out infinite;
   transform-origin: top center;
 }
+
+@keyframes vine-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-vine {
+  animation: vine-scroll 30s linear infinite;
+}
