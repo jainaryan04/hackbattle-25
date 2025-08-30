@@ -23,10 +23,7 @@ export default function LandingPagePhone() {
       {/* Top Navbar */}
       <div className="absolute top-0 left-0 right-0 flex justify-between items-center px-6 py-4 z-30">
         {/* Menu button */}
-        <button
-          onClick={() => setMenuOpen(true)}
-          className=" text-3xl"
-        >
+        <button onClick={() => setMenuOpen(true)} className=" text-3xl">
           ☰
         </button>
 
@@ -54,10 +51,14 @@ export default function LandingPagePhone() {
         }`}
       >
         {/* Borders */}
-        <div className="absolute inset-0 z-50 pointer-events-none">
+
+       
+        <div className="absolute inset-0 z-50 pointer-events-none flex justify-between">
+          
+          <div className="h-full w-8 bg-[url('/border.svg')] bg-repeat-y bg-left bg-contain"></div>
+
          
-          <div className="absolute top-0 left-0 h-full w-8 bg-[url('/border.svg')] bg-repeat-y"></div>
-          <div className="absolute top-0 left-100 h-full w-8 bg-[url('/border.svg')] bg-repeat-y"></div>
+          <div className="h-full w-8 bg-[url('/border.svg')] bg-repeat-y bg-right bg-contain"></div>
         </div>
 
         {/* Sidebar content */}
