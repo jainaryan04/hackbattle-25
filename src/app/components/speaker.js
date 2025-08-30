@@ -5,7 +5,7 @@ export default function SpeakerSection() {
   return (
     <section
       id="speakers"
-      className="relative w-screen min-h-screen flex items-center justify-center bg-[url('/bg-speaker.svg')] bg-cover bg-center"
+      className="relative w-full min-h-screen flex items-center justify-center bg-[url('/bg-speaker.svg')] bg-cover bg-center"
     >
       {/* Title */}
       <h2 className="absolute top-10 text-5xl text-[#EFE7A1] font-pixeboy text-shadow-lg text-shadow-black/80">

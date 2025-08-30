@@ -4,7 +4,6 @@ import LandingPage from "./components/LandingPage";
 import About from "./components/about";
 import FaqSection from "src/components/FaqSection";
 import SpeechBubble from "src/app/components/SpeechBubble";
-import { Speaker } from "lucide-react";
 import SpeakerSection from "./components/speaker";
 
 export default function Page() {
@@ -30,8 +29,8 @@ export default function Page() {
     <div>
       <LandingPage />
       <About />
-      <FaqSection />
       <SpeakerSection/>
+      <FaqSection />
     </div>
   );
 }
