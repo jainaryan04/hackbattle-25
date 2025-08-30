@@ -25,16 +25,16 @@ export default function FaqItem({ question, answer, headImageSrc, isOpen, toggle
               className="w-12 h-12 md:w-16 md:h-16 object-contain"
             />
           )}
-          <h2 className="text-5xl text-[#f2e5a6] [text-shadow:2px_2px_#3a1d0c] animate-faq-title-glow cursor-pointer">
+          <h2 className="text-3xl text-[#f2e5a6] [text-shadow:2px_2px_#3a1d0c] animate-faq-title-glow cursor-pointer">
             {question}
           </h2>
         </div>
-        <span className="text-5xl text-[#f2e5a6] [text-shadow:2px_2px_#3a1d0c]">
+        <span className="text-3xl text-[#f2e5a6] [text-shadow:2px_2px_#3a1d0c]">
           {isOpen ? '-' : '+'}
         </span>
       </div>
       {isOpen && (
-        <p className="text-3xl leading-relaxed text-[#c8d4a6] mt-4 transition-all duration-300 ease-in-out">
+        <p className="text-2xl leading-relaxed text-[#c8d4a6] mt-4 transition-all duration-300 ease-in-out">
           {answer}
         </p>
       )}
