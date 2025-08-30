@@ -57,11 +57,11 @@ const DesktopAbout = () => (
         <img
             src="/axolotl.svg"
             alt="Axolotl"
-            className="fixed left-[min(100px,8vw)] bottom-[min(50px,5vw)] w-[min(14vw,180px)] h-auto pointer-events-none z-[3]"
+            className="absolute left-[min(100px,8vw)] bottom-[min(50px,5vw)] w-[min(14vw,180px)] h-auto pointer-events-none z-[3]"
         />
 
         {/* Torch */}
-        <div className="fixed left-[min(30px,3vw)] bottom-[min(80px,6vw)] z-[4]">
+        <div className="absolute left-[min(30px,3vw)] bottom-[min(80px,6vw)] z-[4]">
             <img
                 src="/torch.svg"
                 alt="Torch"
@@ -71,7 +71,7 @@ const DesktopAbout = () => (
         </div>
 
         {/* Campfire */}
-        <div className="fixed right-[min(50px,5vw)] bottom-[min(28px,3vw)] z-[4]">
+        <div className="absolute right-[min(50px,5vw)] bottom-[min(28px,3vw)] z-[4]">
             <img
                 src="/campfire.svg"
                 alt="Campfire"
@@ -135,10 +135,10 @@ const MobileAbout = () => (
         <img
             src="/axolotl-mobile.svg"
             alt="Torch"
-            className="fixed left-[min(76vw)] bottom-[min(50vw)] w-[min(20vw)] h-auto pointer-events-none z-[3]"
+            className="absolute left-[min(76vw)] bottom-[min(50vw)] w-[min(20vw)] h-auto pointer-events-none z-[3]"
         />
         {/* Campfire */}
-        <div className="fixed left-[min(32vw)] bottom-[min(28px,3vw)] z-[4]">
+        <div className="absolute left-[min(32vw)] bottom-[min(28px,3vw)] z-[4]">
             <img
                 src="/campfire.svg"
                 alt="Campfire"
