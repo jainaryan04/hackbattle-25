@@ -156,3 +156,17 @@ html {
 .animate-vine {
   animation: vine-scroll 30s linear infinite;
 }
+@keyframes waterfall {
+  0% {
+    background-position: 0 100%;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.animate-waterfall {
+  animation: waterfall 4s linear infinite;
+  background-repeat: repeat-y;
+}
+

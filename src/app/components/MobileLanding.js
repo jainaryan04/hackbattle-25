@@ -9,7 +9,7 @@ export default function LandingPagePhone() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="relative min-h-screen w-full overflow-hidden  text-white font-pixeboy">
+    <div className="relative min-h-screen w-full overflow-hidden text-white font-pixeboy">
       {/* Background */}
       <Image
         src="/landing-bg.svg"
@@ -51,13 +51,8 @@ export default function LandingPagePhone() {
         }`}
       >
         {/* Borders */}
-
-       
         <div className="absolute inset-0 z-50 pointer-events-none flex justify-between">
-          
           <div className="h-full w-8 bg-[url('/border.svg')] bg-repeat-y bg-left bg-contain"></div>
-
-         
           <div className="h-full w-8 bg-[url('/border.svg')] bg-repeat-y bg-right bg-contain"></div>
         </div>
 
@@ -72,7 +67,7 @@ export default function LandingPagePhone() {
           </button>
 
           {/* Menu Items */}
-          <div className="flex items-center flex-col gap-6  mt-16">
+          <div className="flex items-center flex-col gap-6 mt-16">
             {[
               { icon: "/icon1.svg", label: "HOME", path: "/" },
               { icon: "/icon2.svg", label: "ABOUT", path: "/about" },
@@ -83,7 +78,7 @@ export default function LandingPagePhone() {
               <button
                 key={idx}
                 onClick={() => router.push(item.path)}
-                className=" flex items-center  w-full"
+                className=" flex items-center w-full"
               >
                 {/* Icon Frame */}
                 <div className="w-[88px] h-[128px] bg-[url('/wood-frame.svg')] bg-cover top-20 flex items-center justify-center">
@@ -109,55 +104,50 @@ export default function LandingPagePhone() {
       {/* Page Content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">
         <section className="relative z-10 flex flex-col items-center justify-center text-center font-pixeboy mt-32">
-          <div className="text-8xl  bg-clip-text -mt-9 text-amber-100 leading-tight">
+          <div className="text-8xl bg-clip-text -mt-9 text-amber-100 leading-tight">
             Hack
           </div>
-          <div className="text-8xl  bg-clip-text -mt-15 text-amber-100 leading-tight">
+          <div className="text-8xl bg-clip-text -mt-15 text-amber-100 leading-tight">
             BATTLE
           </div>
           <div className="text-4xl mt-4">JOIN THE ULTIMATE</div>
           <div className="text-4xl -mt-2">HACKATHON</div>
         </section>
 
-        {/* Character */}
-        <div className="absolute top-140 left-0">
+        {/* Character and Bubble container */}
+        
+        <div className="absolute top-95 left-1/3 -translate-x-1/2 flex flex-col items-center">
+          {/* Bubble above Steve */}
+          <div className="relative mb-4">
+            <div className="relative inline-block translate-x-15">
+              <Image
+                src="/dialogbox-phone.svg"
+                alt="bubble"
+                width={300}
+                height={300}
+                className="relative z-10"
+              />
+
+             
+
+              <div className="absolute inset-0 flex items-center bottom-10 justify-center z-30">
+                <button className="hover:scale-110 transition-transform">
+                  <span className="text-5xl tracking-wide text-amber-100 font-pixeboy">
+                    REGISTER
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Character at the bottom */}
           <Image
             src="/phone-man.svg"
             alt="character"
             width={300}
             height={300}
+           
           />
-        </div>
-
-        {/* Dialog Bubble */}
-        <div className="absolute top-[450px] right-8">
-          <div className="relative inline-block">
-            <Image
-              src="/dialogbox-phone.svg"
-              alt="bubble"
-              width={300}
-              height={300}
-              className="relative z-10"
-            />
-
-            <div className="absolute inset-0 flex items-center bottom-10 right-1 justify-center z-20">
-              <Image
-                src="/brown.png"
-                alt="brown fill"
-                width={280}
-                height={280}
-                className="object-cover"
-              />
-            </div>
-
-            <div className="absolute inset-0 flex items-center bottom-8 justify-center z-30">
-              <button className="hover:scale-110 transition-transform">
-                <span className="text-5xl tracking-wide text-amber-100 font-pixeboy">
-                  REGISTER
-                </span>
-              </button>
-            </div>
-          </div>
         </div>
       </div>
     </div>

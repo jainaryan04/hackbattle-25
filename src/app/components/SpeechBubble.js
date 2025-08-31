@@ -35,38 +35,28 @@ export default function SpeechBubbleIntro({ onFinish }) {
         className="object-cover"
       />
 
-      {/* Character */}
-      <div className="absolute top-140 left-0">
-        <Image src="/phone-man.svg" alt="character" width={300} height={300} />
-      </div>
-
-      {/* Speech bubble */}
-      <div className="absolute top-[450px] right-8">
-        <div className="relative inline-block">
-          <Image
-            src="/dialogbox-phone.svg"
-            alt="bubble"
-            width={300}
-            height={300}
-            className="relative z-10"
-          />
-
-          <div className="absolute inset-0 flex bottom-11 right-1 items-center justify-center z-20">
+      {/* Character + Bubble container */}
+      <div className="absolute top-95 left-1/3 -translate-x-1/2 flex flex-col items-center">
+        {/* Bubble above Steve */}
+        <div className="relative mb-4">
+          <div className="relative inline-block translate-x-15">
             <Image
-              src="/brown.png"
-              alt="brown fill"
-              width={280}
-              height={280}
-              className="object-cover"
+              src="/dialogbox-phone.svg"
+              alt="bubble"
+              width={300}
+              height={300}
+              className="relative z-10"
             />
-          </div>
-
-          <div className="absolute inset-0 flex bottom-11 items-center justify-center z-30">
-            <p className="text-white text-3xl  tracking-wide font-pixeboy text-center px-4">
-              {texts[currentIndex]}
-            </p>
+            <div className="absolute inset-0 flex bottom-10 items-center justify-center z-30">
+              <p className="text-white text-2xl tracking-wide font-pixeboy text-center px-4">
+                {texts[currentIndex]}
+              </p>
+            </div>
           </div>
         </div>
+
+        {/* Character */}
+        <Image src="/phone-man.svg" alt="character" width={300} height={300} />
       </div>
     </div>
   );
