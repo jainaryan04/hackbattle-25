@@ -25,10 +25,12 @@ export default function Home() {
 
       <div className="absolute top-0 left-150 w-64 h-168 hidden md:block overflow-hidden z-0">
         {/* Static Waterfall Background */}
-        <div className="absolute inset-0 bg-[url('/waterfall.png')] w-80 h-170 bg-cover  bg-no-repeat"></div>
+        <img
+  src="/video/waterfall.gif"
+  alt="Waterfall"
+  className="w-full h-full object-cover"
+/>
 
-        {/* Animated Flow Layer */}
-        <div className="absolute inset-0 bg-[url('/waterfall-bg.png')] w-30  h-127 left-20 bg-repeat-y opacity-70 animate-waterfall"></div>
       </div>
 
       {/* Mobile Landing Component */}
@@ -121,9 +123,10 @@ export default function Home() {
         </div>
 
         {/* Hero section */}
+        {/* Hero section */}
         <section className="relative w-[50vw] z-10 flex flex-col items-center text-center mt-10">
-          <div className="z-10 font-pixeboy text-[20vh] leading-none">HACK</div>
-          <div className="z-10 font-pixeboy text-[20vh] leading-none">
+          <div className="z-10 font-pixeboy text-[20vh] leading-none [text-shadow:4px_4px_4px_var(--tw-shadow-color)] shadow-[#FFF58C] text-[#F3EDCB]">HACK</div>
+          <div className="z-10 font-pixeboy text-[20vh] leading-none [text-shadow:4px_4px_4px_var(--tw-shadow-color)] shadow-[#FFF58C] text-[#F3EDCB]">
             BATTLE
           </div>
           <div className="z-10 font-pixeboy text-6xl mt-4">
