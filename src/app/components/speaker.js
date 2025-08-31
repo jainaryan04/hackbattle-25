@@ -25,6 +25,7 @@ export default function SpeakerSection() {
           width={200}
           height={200}
           className="object-contain"
+          draggable="false"
         />
       </div>
 
@@ -36,6 +37,7 @@ export default function SpeakerSection() {
           width={200}
           height={200}
           className="object-contain"
+          draggable="false"
         />
       </div>
     </section>

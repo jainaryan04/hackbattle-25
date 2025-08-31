@@ -21,7 +21,7 @@ const About = () => {
 
 const DesktopAbout = () => (
     < section id="about">
-    <div className="w-full h-screen overflow-hidden bg-[url('/bg-about.svg')] bg-no-repeat bg-center bg-cover flex items-center justify-center relative">
+    <div className="w-full h-screen overflow-hidden select-none bg-[url('/bg-about.svg')] bg-no-repeat bg-center bg-cover flex items-center justify-center relative">
         {/* ✨ Glowing Spores */}
         <div className="absolute inset-0 z-[1]">
             <GlowingSpores />
