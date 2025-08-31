@@ -149,13 +149,13 @@ export default function Home() {
         </section>
 
         {/* Characters */}
-        <div className="absolute bottom-48 right-[8%] -translate-x-1/2 z-10">
+        <div className="absolute bottom-36 right-[8%] -translate-x-1/2 z-10">
           <Image
             src="/man.svg"
             alt="Hero"
             width={350}
-            height={700}
-            className="w-40 sm:w-56 lg:w-72"
+            height={900}
+            className="w-40 sm:w-56 lg:w-80"
           />
         </div>
         <div className="absolute bottom-59 right-1 -translate-x-1/2 z-10">
