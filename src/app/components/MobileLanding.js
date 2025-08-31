@@ -9,7 +9,7 @@ export default function LandingPagePhone() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="relative min-h-screen w-full overflow-hidden text-white font-pixeboy">
+    <div className="relative min-h-screen w-full overflow-hidden text-white font-pixeboy select-none">
       {/* Background */}
       <Image
         src="/landing-bg.svg"

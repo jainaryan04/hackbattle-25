@@ -4,7 +4,7 @@ import MobileLanding from "./MobileLanding";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen overflow-hidden">
+    <div className="relative min-h-screen overflow-hidden select-none">
       {/* Background image for desktop */}
       <Image
         src="/background.svg"
@@ -26,11 +26,10 @@ export default function Home() {
       <div className="absolute top-0 left-150 w-64 h-168 hidden md:block overflow-hidden z-0">
         {/* Static Waterfall Background */}
         <img
-  src="/video/waterfall.gif"
-  alt="Waterfall"
-  className="w-full h-full object-cover"
-/>
-
+          src="/video/waterfall.gif"
+          alt="Waterfall"
+          className="w-full h-full object-cover"
+        />
       </div>
 
       {/* Mobile Landing Component */}
@@ -53,79 +52,73 @@ export default function Home() {
         </div>
 
         {/* Navbar */}
-        <nav className="relative flex justify-center gap-8 py-6 z-10">
-          {["Home", "About", "FAQs", "Tracks", "Timeline"].map((item) => (
+        <nav className="relative flex items-center justify-between px-8 py-4 bg-[#02554ACC] rounded-full shadow-lg z-20 w-fit mx-auto">
+          {/* Left links */}
+          <div className="flex gap-8">
+            {["Home", "Track", "About", "FAQ", "Timeline"].map((item) => (
+              <a
+                key={item}
+                href={`#${item.toLowerCase()}`}
+                className="text-xl lg:text-3xl font-bold font-pixeboy text-[#f8f5c0] hover:text-white transition"
+              >
+                {item}
+              </a>
+            ))}
+          </div>
+
+          <div className="flex items-center gap-4 ml-8">
+            {/* Discord Icon */}
             <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
-              className="px-4 py-2 rounded-lg bg-[url('/wood.svg')] bg-cover text-2xl lg:text-4xl font-bold text-black font-pixeboy hover:scale-105 transition"
+              href="https://discord.gg/your-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#1e2e24] p-2 rounded-full hover:scale-110 transition"
             >
-              {item}
+              <img src="/discord.svg" alt="Discord" className="w-6 h-6" />
             </a>
-          ))}
+
+            {/* Login Button */}
+            <button className="px-5 py-2 bg-yellow-500 text-black font-pixeboy text-xl rounded-full hover:bg-yellow-400 transition">
+              LOGIN
+            </button>
+          </div>
         </nav>
 
         {/* Right vines + leaves */}
         <div className="absolute top-0 right-0 flex space-x-2 z-10">
-          {/* Vine 1 */}
-          <Image
-            src="/vine2.svg"
-            alt="Vine 1"
-            width={70}
-            height={160}
-            className="object-contain vine-sway"
-          />{" "}
-          <Image
-            src="/vine2.svg"
-            alt="Vine 2"
-            width={70}
-            height={120}
-            className="object-contain vine-sway"
-          />{" "}
-          <Image
-            src="/vine2.svg"
-            alt="Vine 3"
-            width={70}
-            height={160}
-            className="object-contain vine-sway"
-          />{" "}
-          <Image
-            src="/vine2.svg"
-            alt="Vine 4"
-            width={70}
-            height={160}
-            className="object-contain vine-sway"
-          />{" "}
-          <div className="absolute -top-12 flex space-x-[-20px]">
-            {" "}
+          {/* Vines */}
+          {[160, 120, 160, 140].map((h, i) => (
             <Image
-              src="/leaf3.svg"
-              alt="Leaf 1"
-              width={110}
-              height={110}
-              className="leaf-sway"
-            />{" "}
-            <Image
-              src="/leaf3.svg"
-              alt="Leaf 2"
-              width={110}
-              height={110}
-              className="leaf-sway"
-            />{" "}
-            <Image
-              src="/leaf3.svg"
-              alt="Leaf 3"
-              width={110}
-              height={110}
-              className="leaf-sway"
+              key={i}
+              src="/vine2.svg"
+              alt={`Vine ${i + 1}`}
+              width={70}
+              height={h}
+              className="object-contain vine-sway"
             />
+          ))}
+
+          {/* Leaves overlay */}
+          <div className="absolute -top-3 right-50 flex space-x-[-20px]">
+            {[...Array(3)].map((_, i) => (
+              <Image
+                key={i}
+                src="/leaf-right.svg"
+                alt={`Leaf ${i + 1}`}
+                width={150}
+                height={150}
+                className="leaf-sway"
+              />
+            ))}
           </div>
         </div>
 
         {/* Hero section */}
-        {/* Hero section */}
+
         <section className="relative w-[50vw] z-10 flex flex-col items-center text-center mt-10">
-          <div className="z-10 font-pixeboy text-[20vh] leading-none [text-shadow:4px_4px_4px_var(--tw-shadow-color)] shadow-[#FFF58C] text-[#F3EDCB]">HACK</div>
+          <div className="z-10 font-pixeboy text-[20vh] leading-none [text-shadow:4px_4px_4px_var(--tw-shadow-color)] shadow-[#FFF58C] text-[#F3EDCB]">
+            HACK
+          </div>
           <div className="z-10 font-pixeboy text-[20vh] leading-none [text-shadow:4px_4px_4px_var(--tw-shadow-color)] shadow-[#FFF58C] text-[#F3EDCB]">
             BATTLE
           </div>
@@ -144,12 +137,15 @@ export default function Home() {
                 height={400}
                 className="w-48 sm:w-64 lg:w-72"
               />
+              <p className="relative font-pixeboy text-4xl bottom-15 text-amber-100 ">
+                Register
+              </p>
             </button>
           </div>
         </section>
 
         {/* Characters */}
-        <div className="absolute bottom-36 right-[8%] -translate-x-1/2 z-10">
+        <div className="absolute bottom-45 right-[8%] -translate-x-1/2 z-10">
           <Image
             src="/man.svg"
             alt="Hero"
@@ -158,12 +154,21 @@ export default function Home() {
             className="w-40 sm:w-56 lg:w-80"
           />
         </div>
-        <div className="absolute bottom-59 right-1 -translate-x-1/2 z-10">
+        <div className="absolute bottom-58 right-16 -translate-x-1/2 z-10">
           <Image
-            src="/dog.svg"
+            src="/frog.svg"
             alt="Creature2"
-            height={54}
-            width={54}
+            height={104}
+            width={104}
+            className="w-16 sm:w-20 lg:w-24"
+          />
+        </div>
+        <div className="absolute bottom-10 right-29 -translate-x-1/2 z-10">
+          <Image
+            src="/axo.svg"
+            alt="Creature2"
+            height={104}
+            width={104}
             className="w-16 sm:w-20 lg:w-24"
           />
         </div>

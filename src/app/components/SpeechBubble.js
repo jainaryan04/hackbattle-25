@@ -26,7 +26,7 @@ export default function SpeechBubbleIntro({ onFinish }) {
   }, [currentIndex, texts.length, onFinish]);
 
   return (
-    <div className="relative w-full h-screen">
+    <div className="relative w-full h-screen overflow-hidden select-none">
       {/* Background */}
       <Image
         src="/phone-bg.svg"
@@ -35,6 +35,44 @@ export default function SpeechBubbleIntro({ onFinish }) {
         className="object-cover"
       />
 
+      {/* Left leaves */}
+      <div className="absolute top-0 left-0 z-40">
+        <Image
+          src="/leaf1.svg"
+          alt="leaves"
+          width={160}
+          height={200}
+          className="leaf-sway"
+        />
+      </div>
+
+      {/* Right hanging vines */}
+      <div className="absolute top-0 right-14 flex flex-row gap-4 z-20">
+        {[...Array(5)].map((_, i) => (
+          <Image
+            key={i}
+            src="/vine2.svg"
+            alt="vine"
+            width={55}
+            height={80}
+            className="object-contain vine-sway"
+          />
+        ))}
+      </div>
+
+      {/* Top-right leaves */}
+      <div className="absolute top-0 right-0 z-40">
+        <Image
+          src="/leaf3.svg"
+          alt="leaf-right"
+          width={100}
+          height={100}
+          className="leaf-sway"
+        />
+      </div>
+
+
+ 
       {/* Character + Bubble container */}
       <div className="absolute top-95 left-1/3 -translate-x-1/2 flex flex-col items-center">
         {/* Bubble above Steve */}
@@ -61,3 +99,5 @@ export default function SpeechBubbleIntro({ onFinish }) {
     </div>
   );
 }
+
+      
