@@ -32,8 +32,23 @@ export default function SpeechBubbleIntro({ onFinish }) {
         src="/phone-bg.svg"
         alt="background"
         fill
-        className="object-cover"
+        className="object-cover brightness-110 contrast-110"
       />
+
+      {/* Subtle glowing overlays */}
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
+        
+        <div className="absolute inset-0 bg-gradient-to-b from-blue-200/15 via-teal-200/10 to-transparent backdrop-blur-[1px] animate-shine"></div>
+
+    
+        <div className="absolute bottom-0 inset-x-0 h-52 bg-gradient-to-t from-cyan-300/35 via-teal-400/25 to-transparent blur-3xl"></div>
+
+       
+        <div className="absolute bottom-16 left-1/2 -translate-x-1/2 w-80 h-40 bg-cyan-300/25 blur-2xl rounded-full"></div>
+
+
+        <div className="absolute inset-0 bg-green-300/10 mix-blend-overlay"></div>
+      </div>
 
       {/* Left leaves */}
       <div className="absolute top-0 left-0 z-40">
@@ -51,9 +66,9 @@ export default function SpeechBubbleIntro({ onFinish }) {
         {[...Array(5)].map((_, i) => (
           <Image
             key={i}
-            src="/vine2.svg"
+            src="/cavevines.svg"
             alt="vine"
-            width={55}
+            width={45}
             height={80}
             className="object-contain vine-sway"
           />
@@ -71,8 +86,6 @@ export default function SpeechBubbleIntro({ onFinish }) {
         />
       </div>
 
-
- 
       {/* Character + Bubble container */}
       <div className="absolute top-95 left-1/3 -translate-x-1/2 flex flex-col items-center">
         {/* Bubble above Steve */}

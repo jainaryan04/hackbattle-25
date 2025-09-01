@@ -85,30 +85,30 @@ export default function Home() {
         </nav>
 
         {/* Right vines + leaves */}
-        <div className="absolute top-0 right-0 flex space-x-2 z-10">
+        <div className="absolute top-0 right-3 flex space-x-2 z-10">
           {/* Vines */}
           {[160, 120, 160, 140].map((h, i) => (
             <Image
               key={i}
-              src="/vine2.svg"
+              src="/cavevines.svg"
               alt={`Vine ${i + 1}`}
-              width={70}
+              width={50}
               height={h}
               className="object-contain vine-sway"
             />
           ))}
 
-          {/* Leaves overlay */}
-          <div className="absolute -top-3 right-50 flex space-x-[-20px]">
-            {[...Array(3)].map((_, i) => (
-              <Image
-                key={i}
-                src="/leaf-right.svg"
-                alt={`Leaf ${i + 1}`}
-                width={150}
-                height={150}
-                className="leaf-sway"
-              />
+         
+          <div className="absolute top-0 right-0 flex flex-row space-x-[-9px]">
+            {[...Array(2)].map((_, i) => (
+              <div key={i} className="relative w-[950px] h-[150px]">
+                <Image
+                  src="/leaf-right.svg"
+                  alt={`Leaf ${i + 1}`}
+                  fill
+                  className="leaf-sway object-contain"
+                />
+              </div>
             ))}
           </div>
         </div>
