@@ -7,13 +7,13 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Fake delay to simulate image loading
+  
     const timer = setTimeout(() => setLoading(false), 1500);
     return () => clearTimeout(timer);
   }, []);
 
   if (loading) {
-    return (
+     return (
       <div className="flex items-center justify-center min-h-screen bg-black">
         {/* Spinner */}
         <div className="w-16 h-16 border-4 border-amber-400 border-t-transparent rounded-full animate-spin"></div>
