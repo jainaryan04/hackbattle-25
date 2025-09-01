@@ -81,18 +81,18 @@ export default function LandingPagePhone() {
                 className=" flex items-center w-full"
               >
                 {/* Icon Frame */}
-                <div className="w-[88px] h-[128px] bg-[url('/wood-frame.svg')] bg-cover top-20 flex items-center justify-center">
+                <div className="w-24 h-32 bg-[url('/wood-frame.svg')] bg-cover top-20 flex items-center justify-center">
                   <Image
                     src={item.icon}
                     alt={item.label}
-                    width={96}
-                    height={96}
-                    className="object-contain"
+                    width={24}
+                    height={24}
+                    className="w-20 h-20 object-contain"
                   />
                 </div>
 
                 {/* Text Button */}
-                <div className="flex-1 h-[68px] bg-[url('/wood-button.svg')] bg-cover flex items-center justify-center text-amber-100 font-pixeboy text-5xl">
+                <div className="flex-1 h-16 bg-[url('/wood-button.svg')] bg-cover flex items-center justify-center text-amber-100 font-pixeboy text-5xl">
                   {item.label}
                 </div>
               </button>
@@ -115,7 +115,7 @@ export default function LandingPagePhone() {
         </section>
 
         {/* Character and Bubble container */}
-        
+
         <div className="absolute top-95 left-1/3 -translate-x-1/2 flex flex-col items-center">
           {/* Bubble above Steve */}
           <div className="relative mb-4">
@@ -127,8 +127,6 @@ export default function LandingPagePhone() {
                 height={300}
                 className="relative z-10"
               />
-
-             
 
               <div className="absolute inset-0 flex items-center bottom-10 justify-center z-30">
                 <button className="hover:scale-110 transition-transform">
@@ -146,7 +144,6 @@ export default function LandingPagePhone() {
             alt="character"
             width={300}
             height={300}
-           
           />
         </div>
       </div>

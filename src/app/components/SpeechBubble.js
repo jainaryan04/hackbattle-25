@@ -9,8 +9,18 @@ export default function SpeechBubbleIntro({ onFinish }) {
     "Are You Ready?",
   ];
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [loading, setLoading] = useState(true);
 
+  // Loader delay (simulate image preload)
   useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 1200); // 1.2s
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Handle text sequence once loader is gone
+  useEffect(() => {
+    if (loading) return; // don’t start until loader ends
+
     if (currentIndex === texts.length - 1) {
       const timeout = setTimeout(() => {
         onFinish();
@@ -23,7 +33,16 @@ export default function SpeechBubbleIntro({ onFinish }) {
     }, 2000);
 
     return () => clearInterval(interval);
-  }, [currentIndex, texts.length, onFinish]);
+  }, [loading, currentIndex, texts.length, onFinish]);
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen bg-black">
+        {/* Spinner */}
+        <div className="w-16 h-16 border-4 border-amber-400 border-t-transparent rounded-full animate-spin"></div>
+      </div>
+    );
+  }
 
   return (
     <div className="relative w-full h-screen overflow-hidden select-none">
@@ -37,16 +56,9 @@ export default function SpeechBubbleIntro({ onFinish }) {
 
       {/* Subtle glowing overlays */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
-        
-        <div className="absolute inset-0 bg-gradient-to-b from-blue-200/15 via-teal-200/10 to-transparent backdrop-blur-[1px] animate-shine"></div>
-
-    
+        <div className="absolute inset-0 bg-gradient-to-b from-blue-200/15 via-teal-200/10 to-transparent  animate-shine"></div>
         <div className="absolute bottom-0 inset-x-0 h-52 bg-gradient-to-t from-cyan-300/35 via-teal-400/25 to-transparent blur-3xl"></div>
-
-       
         <div className="absolute bottom-16 left-1/2 -translate-x-1/2 w-80 h-40 bg-cyan-300/25 blur-2xl rounded-full"></div>
-
-
         <div className="absolute inset-0 bg-green-300/10 mix-blend-overlay"></div>
       </div>
 
@@ -99,7 +111,7 @@ export default function SpeechBubbleIntro({ onFinish }) {
               className="relative z-10"
             />
             <div className="absolute inset-0 flex bottom-10 items-center justify-center z-30">
-              <p className="text-white text-2xl tracking-wide font-pixeboy text-center px-4">
+              <p className="text-white text-2xl tracking-wide font-pixeboy text-center px-4 whitespace-pre-line">
                 {texts[currentIndex]}
               </p>
             </div>
@@ -112,5 +124,3 @@ export default function SpeechBubbleIntro({ onFinish }) {
     </div>
   );
 }
-
-      

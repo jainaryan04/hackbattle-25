@@ -1,8 +1,25 @@
 "use client";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import MobileLanding from "./MobileLanding";
 
 export default function Home() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Fake delay to simulate image loading
+    const timer = setTimeout(() => setLoading(false), 1500);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen bg-black">
+        {/* Spinner */}
+        <div className="w-16 h-16 border-4 border-amber-400 border-t-transparent rounded-full animate-spin"></div>
+      </div>
+    );
+  }
   return (
     <div className="relative min-h-screen overflow-hidden select-none">
       {/* Background image for desktop */}
@@ -85,31 +102,35 @@ export default function Home() {
         </nav>
 
         {/* Right vines + leaves */}
-        <div className="absolute top-0 right-3 flex space-x-2 z-10">
-          {/* Vines */}
-          {[160, 120, 160, 140].map((h, i) => (
-            <Image
-              key={i}
-              src="/cavevines.svg"
-              alt={`Vine ${i + 1}`}
-              width={50}
-              height={h}
-              className="object-contain vine-sway"
-            />
-          ))}
-
-         
-          <div className="absolute top-0 right-0 flex flex-row space-x-[-9px]">
-            {[...Array(2)].map((_, i) => (
-              <div key={i} className="relative w-[950px] h-[150px]">
-                <Image
-                  src="/leaf-right.svg"
-                  alt={`Leaf ${i + 1}`}
-                  fill
-                  className="leaf-sway object-contain"
-                />
-              </div>
+        {/* Right vines + leaves */}
+        <div className="absolute top-0 right-3 flex z-10">
+          {/* Container is relative so leaves can anchor inside it */}
+          <div className="relative flex">
+            {/* Vines */}
+            {[160, 120, 160, 140].map((h, i) => (
+              <Image
+                key={i}
+                src="/cavevines.svg"
+                alt={`Vine ${i + 1}`}
+                width={50}
+                height={h}
+                className="object-contain vine-sway"
+              />
             ))}
+
+            {/* Leaves overlay — in a row */}
+            <div className="absolute top-0 right-0 flex w-full max-w-full">
+              {[...Array(2)].map((_, i) => (
+                <div key={i} className="relative w-4/5 h-[20vh]">
+                  <Image
+                    src="/leaf-right.svg"
+                    alt={`Leaf ${i + 1}`}
+                    fill
+                    className="leaf-sway object-contain "
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
@@ -128,16 +149,16 @@ export default function Home() {
           <div className="z-10 font-pixeboy text-6xl mt-2">Hackathon</div>
 
           {/* Register button */}
-          <div className="relative mt-6">
-            <button className="hover:scale-110 transition">
+          <div className="relative b mt-6">
+            <button className="hover:scale-110  transition">
               <Image
-                src="/register.svg"
+                src="/registerborder.svg"
                 alt="Register"
                 width={350}
                 height={400}
-                className="w-48 sm:w-64 lg:w-72"
+                className="w-48 sm:w-64 bg-amber-900 lg:w-72"
               />
-              <p className="relative font-pixeboy text-4xl bottom-15 text-amber-100 ">
+              <p className="relative font-pixeboy  text-4xl bottom-15 text-amber-100 ">
                 Register
               </p>
             </button>
