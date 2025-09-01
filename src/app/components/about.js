@@ -20,68 +20,73 @@ const About = () => {
 };
 
 const DesktopAbout = () => (
-    < section id="about">
-    <div className="w-full h-screen select-none bg-[url('/bg-about.svg')] bg-no-repeat bg-center bg-cover flex items-center justify-center relative">
-        {/* ✨ Glowing Spores */}
-        <div className="absolute inset-0 z-[1]">
-            <GlowingSpores />
-        </div>
-        <div className="relative w-[47vw] h-[72vh] rounded-[22px] bg-[url('/about-box-bg.svg')] bg-no-repeat bg-center bg-[length:100%_auto]">
+    <section id="about">
+        <div className="w-full h-screen bg-[url('/bg-about.svg')] select-none bg-center bg-cover flex items-center justify-center relative">
 
-            {/* Background box with text */}
-            <div className="absolute inset-0 p-8 text-[#faf6da] text-center font-['Press_Start_2P'] text-[1.1rem] leading-[1.6] z-[1] rounded-[22px] box-border">
-                {/* empty background container */}
+            {/* ✨ Glowing Spores */}
+            <div className="absolute inset-0 z-[1]">
+                <GlowingSpores />
             </div>
 
-            {/* Overlay Box */}
-            <img
-                src="/about-box-overlay.svg"
-                alt="Overlay Box"
-                className="absolute top-[3.4vh] left-[0vw] w-[594vw] h-[65vh] pointer-events-none z-[2] rounded-[18px]"
-            />
+            {/* Main box */}
+            <div className="relative w-[47vw] h-[72vh] rounded-[22px] bg-[url('/about-box-bg.svg')] bg-center bg-[length:100%_auto]">
 
-            {/* Text panel */}
-            <div className="absolute inset-0 flex items-center justify-center z-[2] pointer-events-none">
-                <div className="max-w-[520px] px-5 py-4 text-center text-[#FAF6DA] font-['Press_Start_2P']">
-                    <h2 className="mt-[1vh] mb-[5vw] text-[2.4rem] tracking-[2px] text-shadow-lg text-shadow-black/80">ABOUT</h2>
-                    <p className="m-[2px] text-[1.1rem] leading-[1.6] text-[#FAF6DA] text-shadow-lg text-shadow-black/80">
-                        Join the adrenaline-pumping 36-hour HackBattle by IEEE CS VIT, where tech innovators gather for
-                        groundbreaking challenges, keynote sessions, and engaging activities that ignite creativity and
-                        drive innovation.
-                    </p>
+                {/* Background box with text */}
+                <div className="absolute inset-0 p-8 text-[#faf6da] text-center font-['Press_Start_2P'] text-[1.1rem] leading-[1.6] z-[1] rounded-[22px] box-border">
+                </div>
+
+                {/* Overlay Box */}
+                <img
+                    src="/about-box-overlay.svg"
+                    alt="Overlay Box"
+                    className="absolute top-[3.4vh] left-0 w-[594vw] h-[65vh] z-[2] rounded-[18px] pointer-events-none"
+                />
+
+                {/* Text panel */}
+                <div className="absolute inset-0 flex items-center justify-center z-[2] pointer-events-none">
+                    <div className="max-w-[520px] px-5 py-4 text-center text-[#FAF6DA] font-['Press_Start_2P']">
+                        <h2 className="mt-[1vh] mb-[5vw] text-[2.4rem] text-shadow-lg text-shadow-black/80">
+                            ABOUT
+                        </h2>
+                        <p className="text-[1.1rem] leading-[1.6] text-shadow-lg text-shadow-black/80">
+                            Join the adrenaline-pumping 36-hour HackBattle by IEEE CS VIT, where tech innovators gather for
+                            groundbreaking challenges, keynote sessions, and engaging activities that ignite creativity and
+                            drive innovation.
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        {/* Axolotl */}
-        <img
-            src="/axolotl.svg"
-            alt="Axolotl"
-            className="absolute left-[8vw] bottom-[5vh] w-[12vw] h-auto pointer-events-none z-[3]"
-        />
-
-        {/* Torch */}
-        <div className="absolute left-[3vw] bottom-[8vh] z-[4]">
+            {/* Axolotl */}
             <img
-                src="/torch.svg"
-                alt="Torch"
-                className="w-[2vw] h-[15vh] pointer-events-none"
+                src="/axolotl.svg"
+                alt="Axolotl"
+                className="absolute left-[8vw] bottom-[5vh] w-[12vw] z-[3] pointer-events-none"
             />
-            <Smoke /> {/* 🌫️ Smoke rising */}
-        </div>
 
-        {/* Campfire */}
-        <div className="absolute right-[4vw] bottom-[3vh] z-[4]">
-            <img
-                src="/campfire.svg"
-                alt="Campfire"
-                className="w-[10vw] h-auto pointer-events-none"
-            />
-            <Smoke /> {/* 🌫️ Smoke rising */}
+            {/* Torch */}
+            <div className="absolute left-[3vw] bottom-[8vh] z-[4]">
+                <img
+                    src="/torch.svg"
+                    alt="Torch"
+                    className="w-[2vw] h-[15vh] pointer-events-none"
+                />
+                <Smoke /> {/* 🌫️ Smoke rising */}
+            </div>
+
+            {/* Campfire */}
+            <div className="absolute right-[4vw] bottom-[3vh] z-[4]">
+                <img
+                    src="/campfire.svg"
+                    alt="Campfire"
+                    className="w-[10vw] pointer-events-none"
+                />
+                <Smoke /> {/* 🌫️ Smoke rising */}
+            </div>
         </div>
-    </div>
-     </section>
+    </section>
 );
+
 
 const MobileAbout = () => (
     <div className="min-h-[100dvh] bg-[url('/mobile-about-bg.svg')] bg-no-repeat bg-cover flex flex-col items-center relative text-[#FAF6DA] font-['Press_Start_2P']">

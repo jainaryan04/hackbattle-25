@@ -153,7 +153,7 @@ export default function Home() {
                 alt="Register"
                 width={350}
                 height={400}
-                className="w-48 sm:w-64 lg:w-72"
+                className="w-48 lg:w-72"
                 draggable="false"
               />
             </button>
@@ -167,7 +167,7 @@ export default function Home() {
             alt="Hero"
             width={350}
             height={900}
-            className="w-40 sm:w-56 lg:w-80"
+            className="w-40 lg:w-80"
             draggable="false"
           />
         </div>
@@ -177,7 +177,7 @@ export default function Home() {
             alt="Creature2"
             height={54}
             width={54}
-            className="w-16 sm:w-20 lg:w-24"
+            className="w-16 lg:w-24"
             draggable="false"
           />
         </div>
