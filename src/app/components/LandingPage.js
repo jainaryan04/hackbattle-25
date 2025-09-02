@@ -55,6 +55,7 @@ export default function Home() {
   
   return (
     <div className="relative select-none min-h-screen overflow-hidden">
+    <div className="relative select-none min-h-screen overflow-hidden">
       {/* Background image for desktop */}
       <Image
         src="/background.svg"
@@ -62,6 +63,7 @@ export default function Home() {
         fill
         className="object-cover hidden md:block"
         priority
+        draggable="false"
       />
 
       {/* Background image for mobile */}
@@ -71,6 +73,7 @@ export default function Home() {
         fill
         className="object-cover md:hidden"
         priority
+        draggable="false"
       />
 
       <div className="absolute top-0 left-150 w-64 h-168 hidden md:block overflow-hidden z-0">
@@ -92,13 +95,14 @@ export default function Home() {
       <div className="hidden md:block">
         {/* Left vine + leaf */}
         <div className="absolute top-0 left-2 flex justify-center space-x-1 py-1 z-10">
-          <Image src="/vine1.svg" width={410} height={410} alt="Left Vine" />
+          <Image src="/vine1.svg" width={410} height={410} alt="Left Vine" draggable="false" />
           <Image
             src="/leaf1.svg"
             width={220}
             height={220}
             alt="Left Leaf"
             className="absolute top-0 left-4 leaf-sway"
+            draggable="false"
           />
         </div>
 

@@ -135,6 +135,7 @@ export default function SpeechBubbleIntro({ onFinish }) {
               width={300}
               height={300}
               className="relative z-10"
+              draggable="false"
             />
             <div className="absolute inset-0 flex bottom-10 items-center justify-center z-30">
               <p className="text-white text-2xl tracking-wide font-pixeboy text-center px-4 whitespace-pre-line">
@@ -145,7 +146,7 @@ export default function SpeechBubbleIntro({ onFinish }) {
         </div>
 
         {/* Character */}
-        <Image src="/phone-man.svg" alt="character" width={300} height={300} />
+        <Image src="/phone-man.svg" alt="character" width={300} height={300} draggable="false" />
       </div>
     </div>
   );
