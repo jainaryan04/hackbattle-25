@@ -54,7 +54,7 @@ export default function Home() {
   }
   
   return (
-    <div className="relative select-none min-h-screen overflow-hidden">
+   
     <div className="relative select-none min-h-screen overflow-hidden">
       {/* Background image for desktop */}
       <Image
