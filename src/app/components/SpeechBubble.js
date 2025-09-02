@@ -12,7 +12,7 @@ export default function SpeechBubbleIntro({ onFinish }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [loading, setLoading] = useState(true);
 
-  // ✅ Preload important assets before hiding loader
+
   useEffect(() => {
     const assets = [
       "/phone-bg.svg",
@@ -41,7 +41,7 @@ export default function SpeechBubbleIntro({ onFinish }) {
     });
   }, []);
 
-  // ✅ Bubble text sequencing
+
   useEffect(() => {
     if (loading) return;
 
@@ -59,7 +59,7 @@ export default function SpeechBubbleIntro({ onFinish }) {
     return () => clearInterval(interval);
   }, [loading, currentIndex, texts.length, onFinish]);
 
-  // ✅ Loader
+
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-screen bg-black">
@@ -68,7 +68,7 @@ export default function SpeechBubbleIntro({ onFinish }) {
     );
   }
 
-  // ✅ Main UI (unchanged except loader removed)
+
   return (
     <div className="relative w-full h-screen overflow-hidden select-none">
       {/* Background */}

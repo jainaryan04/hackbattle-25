@@ -7,7 +7,7 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // ✅ List of all important assets to preload
+   
     const assets = [
       "/background.svg",
       "/phone-bg.svg",
@@ -31,11 +31,11 @@ export default function Home() {
       img.onload = () => {
         loaded++;
         if (loaded === assets.length) {
-          setLoading(false); // ✅ hide loader only when all assets are ready
+          setLoading(false); 
         }
       };
       img.onerror = () => {
-        // if one fails, still count it so loader doesn't get stuck
+       
         loaded++;
         if (loaded === assets.length) {
           setLoading(false);
@@ -54,7 +54,7 @@ export default function Home() {
   }
   
   return (
-    <div className="relative min-h-screen overflow-hidden select-none">
+    <div className="relative select-none min-h-screen overflow-hidden">
       {/* Background image for desktop */}
       <Image
         src="/background.svg"
@@ -79,6 +79,7 @@ export default function Home() {
           src="/video/waterfall.gif"
           alt="Waterfall"
           className="w-full h-full object-cover"
+          draggable="false"
         />
       </div>
 
@@ -135,9 +136,8 @@ export default function Home() {
         </nav>
 
         {/* Right vines + leaves */}
-    
+
         <div className="absolute top-0 right-3 flex z-10">
-         
           <div className="relative flex">
             {/* Vines */}
             {[160, 120, 160, 140].map((h, i) => (
@@ -148,6 +148,7 @@ export default function Home() {
                 width={50}
                 height={h}
                 className="object-contain vine-sway"
+                draggable="false"
               />
             ))}
 
@@ -160,6 +161,7 @@ export default function Home() {
                     alt={`Leaf ${i + 1}`}
                     fill
                     className="leaf-sway object-contain "
+                    draggable="false"
                   />
                 </div>
               ))}
@@ -190,6 +192,7 @@ export default function Home() {
                 width={350}
                 height={400}
                 className="w-48 sm:w-64 bg-amber-900 lg:w-72"
+                draggable="false"
               />
               <p className="relative font-pixeboy  text-4xl bottom-15 text-amber-100 ">
                 Register
@@ -215,6 +218,7 @@ export default function Home() {
             height={164}
             width={164}
             className="w-full h-full"
+            draggable="false"
           />
         </div>
         <div className="absolute bottom-10 right-19 -translate-x-1/2 z-10">
@@ -224,6 +228,7 @@ export default function Home() {
             height={164}
             width={164}
             className="w-full h-full"
+            draggable="false"
           />
         </div>
       </div>

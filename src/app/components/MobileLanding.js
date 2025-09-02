@@ -85,9 +85,10 @@ export default function LandingPagePhone() {
                   <Image
                     src={item.icon}
                     alt={item.label}
-                    width={24}
-                    height={24}
-                    className="w-20 h-20 object-contain"
+                    width={96}
+                    height={96}
+                    className="object-contain"
+                    onDragStart={(e) => e.preventDefault()}
                   />
                 </div>
 
@@ -144,6 +145,7 @@ export default function LandingPagePhone() {
             alt="character"
             width={300}
             height={300}
+            draggable={false}
           />
         </div>
       </div>
