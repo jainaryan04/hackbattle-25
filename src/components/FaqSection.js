@@ -3,6 +3,9 @@
 import React, { useState, useEffect } from 'react';
 import { VT323 } from 'next/font/google';
 import FaqItem from '../components/FaqItem';
+import CharacterDisplay from '../components/CharacterDisplay';
+import { usePathname } from 'next/navigation';
+import Image from 'next/image';
 
 const vt323 = VT323({
   weight: '400',
@@ -34,66 +37,63 @@ const Fireflies = () => {
 
 export default function FaqSection() {
   
-  const flameBottom = 35; 
-  const flameLeft = 78;
   const [openIndex, setOpenIndex] = useState(null);
+  const [currentCharacter, setCurrentCharacter] = useState({ src: '/Blaze.gif', style: {} }); 
 
-  const toggleItem = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
+  const pathname = usePathname();
 
   const faqData = [
-    {
-      question: "What is Hack Battle?",
-      answer: "A gamified hackathon where developers team up, compete, and build projects.",
-      headImageSrc: "/minecraft-head-steve.jpeg", 
-    },
-    {
-      question: "Do I need Minecraft to join?",
-      answer: "Nope! The theme is Minecraft-inspired, but coding is done.",
-      headImageSrc: "/minecraft-head-alex.jpeg", 
-    },
-    {
-      question: "How do I register?",
-      answer: "Click the 'Register' button on the homepage.",
-      headImageSrc: "/minecraft-head-chicken.jpeg", 
-    }, 
-    {
-      question: "Is Hackbattle fresher friendly?",
-      answer: "Absolutely!, this is YOUR launchpad.",
-      headImageSrc: "/minecraft-head-creeper.jpeg", 
-    }
-    ,{
-      question: "What should i bring?",
-      answer: "Your laptop, extention cord, and things you might want.",
-      headImageSrc: "/minecraft-head-piglin.jpeg", 
-    },
-    {
-      question: "Is there a team size limit?",
-      answer: "Teams can consist of 2-4 members.",
-      headImageSrc: "/minecraft-head-zombie.jpeg", 
-    },
+    { question: "What is Hack Battle?", answer: "A gamified hackathon...", headImageSrc: "/minecraft-head-steve.jpeg", characterGif: "/Steve.gif", characterStyle: { transform: 'translateY(110px) scale(2.0)' } },
+    { question: "Do I need Minecraft to join?", answer: "Nope! The theme is...", headImageSrc: "/minecraft-head-alex.jpeg", characterGif: "/Alex.gif", characterStyle: { transform: 'translateY(115px) translateX(20px) scale(1.8)' } },
+    { question: "How do I register?", answer: "Click the 'Register' button...", headImageSrc: "/minecraft-head-chicken.jpeg", characterGif: "/Chicken.gif", characterStyle: { transform: 'translateY(158px) translateX(10px) scale(1.2)'} }, 
+    { question: "Is Hackbattle fresher friendly?", answer: "Absolutely!, this is YOUR launchpad.", headImageSrc: "/minecraft-head-creeper.jpeg", characterGif: "/Creeper.webp", characterStyle: { transform: 'translateY(200px) translateX(20px) scale(1.2)' } },
+    { question: "What should i bring?", answer: "Your laptop, extention cord...", headImageSrc: "/minecraft-head-piglin.jpg", characterGif: "/Piglin.gif", characterStyle: { transform: 'translateY(170px) translateX(-40px) scale(1.2)' } },
+    { question: "Is there a team size limit?", answer: "Teams can consist of 2-4 members.", headImageSrc: "/minecraft-head-zombie.jpeg", characterGif: "/Zombie.gif", characterStyle: { transform: 'translateY(155px) translateX(-50px) scale(1.2)' } },
   ];
+
+  const toggleItem = (index) => {
+    if (openIndex === index) {
+      setOpenIndex(null);
+      setCurrentCharacter({ src: '/Blaze.gif', style: {} });
+    } else {
+      setOpenIndex(index);
+
+      setCurrentCharacter({ 
+        src: faqData[index].characterGif, 
+        style: faqData[index].characterStyle || {} 
+      });
+    }
+  };
 
   return (
     <section id="faqs">
       <div
-        className={`relative min-h-screen w-full flex items-center justify-center p-4 bg-[url('/faq-background.svg')] bg-cover bg-center text-white overflow-hidden ${vt323.className}`}
+        className={`relative min-h-screen w-full flex flex-col items-center p-4 bg-[url('/faq-background.svg')] bg-cover bg-center text-white overflow-hidden ${vt323.className}`}
       >
         <Fireflies />
 
-        <main className="w-full mx-auto flex flex-col items-center z-10 p-4 md:flex-row md:items-start md:justify-between md:px-12">
-          <div className="w-full flex flex-col justify-center items-center mb-8 md:flex-none md:w-1/3 md:justify-start md:items-center md:ml-8 md:mt-10">
+        <div className="flex justify-center items-center gap-4 mt-8">
             <h1 className="text-6xl md:text-8xl font-bold text-[#f2e5a6] [text-shadow:3px_3px_#3a1d0c] animate-glow-pulse">
               FAQs
             </h1>
-            <div className="hidden md:block sticky z-10 mt-[15vh]">
-            <img
-              src="/minecraft-question-character.svg"
-              alt="Minecraft Character with Question Mark"
-              className="w-200 h-100 transform rotate-180"
+            <Image 
+              src="/question.svg"
+              alt="Question Mark"
+              width={64}
+              height={64}
             />
-          </div>
+        </div>
+
+        <main className="w-full mx-auto flex flex-col items-center z-10 p-4 md:flex-row md:items-start md:justify-between md:px-12">
+          
+          <div className="hidden md:flex md:w-1/3 md:items-end md:justify-center">
+            <div className="w-full mt-35">
+              <CharacterDisplay 
+                characterSrc={currentCharacter.src} 
+                style={currentCharacter.style} 
+                className={currentCharacter.src === '/Blaze.gif' ? 'transform scale-x-[-1]' : ''}
+              />
+            </div>
           </div>
 
           <div className="space-y-2 w-full md:flex-1">
@@ -109,8 +109,6 @@ export default function FaqSection() {
             ))}
           </div>
         </main>
-
-          
       </div>
     </section>
   );

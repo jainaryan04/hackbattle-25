@@ -21,8 +21,10 @@ export default function FaqItem({ question, answer, headImageSrc, isOpen, toggle
           {headImageSrc && (
             <img 
               src={headImageSrc} 
-              alt="Minecraft head" 
-              className="w-12 h-12 md:w-16 md:h-16 object-contain"
+              alt="Minecraft head"
+              draggable={false}
+              onDragStart={(e) => e.preventDefault()}
+              className="w-12 h-12 md:w-16 md:h-16 object-contain select-none"
             />
           )}
           <h2 className="text-3xl text-[#f2e5a6] [text-shadow:2px_2px_#3a1d0c] animate-faq-title-glow cursor-pointer">

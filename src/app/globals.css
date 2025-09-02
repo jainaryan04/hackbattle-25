@@ -156,3 +156,11 @@ html {
 .animate-vine {
   animation: vine-scroll 30s linear infinite;
 }
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0; }
+  25%, 75% { opacity: 1; }
+}
+
+.animate-fade-in-out {
+  animation: fadeInOut 1s ease-in-out;
+}
