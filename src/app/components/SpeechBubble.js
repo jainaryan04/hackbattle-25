@@ -8,18 +8,42 @@ export default function SpeechBubbleIntro({ onFinish }) {
     "There's a Battle Ahead",
     "Are You Ready?",
   ];
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [loading, setLoading] = useState(true);
 
-  // Loader delay (simulate image preload)
+  // ✅ Preload important assets before hiding loader
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 1200); // 1.2s
-    return () => clearTimeout(timer);
+    const assets = [
+      "/phone-bg.svg",
+      "/leaf1.svg",
+      "/cavevines.svg",
+      "/dialogbox-phone.svg",
+      "/phone-man.svg",
+    ];
+
+    let loaded = 0;
+    assets.forEach((src) => {
+      const img = new window.Image();
+      img.src = src;
+      img.onload = () => {
+        loaded++;
+        if (loaded === assets.length) {
+          setLoading(false);
+        }
+      };
+      img.onerror = () => {
+        loaded++;
+        if (loaded === assets.length) {
+          setLoading(false);
+        }
+      };
+    });
   }, []);
 
-  // Handle text sequence once loader is gone
+  // ✅ Bubble text sequencing
   useEffect(() => {
-    if (loading) return; // don’t start until loader ends
+    if (loading) return;
 
     if (currentIndex === texts.length - 1) {
       const timeout = setTimeout(() => {
@@ -35,15 +59,16 @@ export default function SpeechBubbleIntro({ onFinish }) {
     return () => clearInterval(interval);
   }, [loading, currentIndex, texts.length, onFinish]);
 
+  // ✅ Loader
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-screen bg-black">
-        {/* Spinner */}
         <div className="w-16 h-16 border-4 border-amber-400 border-t-transparent rounded-full animate-spin"></div>
       </div>
     );
   }
 
+  // ✅ Main UI (unchanged except loader removed)
   return (
     <div className="relative w-full h-screen overflow-hidden select-none">
       {/* Background */}
@@ -52,11 +77,12 @@ export default function SpeechBubbleIntro({ onFinish }) {
         alt="background"
         fill
         className="object-cover brightness-110 contrast-110"
+        priority
       />
 
       {/* Subtle glowing overlays */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-b from-blue-200/15 via-teal-200/10 to-transparent  animate-shine"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-blue-200/15 via-teal-200/10 to-transparent animate-shine"></div>
         <div className="absolute bottom-0 inset-x-0 h-52 bg-gradient-to-t from-cyan-300/35 via-teal-400/25 to-transparent blur-3xl"></div>
         <div className="absolute bottom-16 left-1/2 -translate-x-1/2 w-80 h-40 bg-cyan-300/25 blur-2xl rounded-full"></div>
         <div className="absolute inset-0 bg-green-300/10 mix-blend-overlay"></div>
@@ -90,15 +116,15 @@ export default function SpeechBubbleIntro({ onFinish }) {
       {/* Top-right leaves */}
       <div className="absolute top-0 right-0 z-40">
         <Image
-          src="/leaf3.svg"
+          src="/leaf1.svg"
           alt="leaf-right"
-          width={100}
-          height={100}
+          width={150}
+          height={150}
           className="leaf-sway"
         />
       </div>
 
-      {/* Character + Bubble container */}
+      {/* Character + Bubble */}
       <div className="absolute top-95 left-1/3 -translate-x-1/2 flex flex-col items-center">
         {/* Bubble above Steve */}
         <div className="relative mb-4">

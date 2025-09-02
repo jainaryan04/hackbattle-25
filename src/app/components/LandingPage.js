@@ -7,19 +7,52 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-  
-    const timer = setTimeout(() => setLoading(false), 1500);
-    return () => clearTimeout(timer);
+    // ✅ List of all important assets to preload
+    const assets = [
+      "/background.svg",
+      "/phone-bg.svg",
+      "/video/waterfall.gif",
+      "/video/frog.gif",
+      "/video/axo.gif",
+      "/vine1.svg",
+      "/leaf1.svg",
+      "/cavevines.svg",
+      "/leaf-right.svg",
+      "/man.svg",
+      "/discord.svg",
+      "/registerborder.svg",
+    ];
+
+    let loaded = 0;
+
+    assets.forEach((src) => {
+      const img = new window.Image();
+      img.src = src;
+      img.onload = () => {
+        loaded++;
+        if (loaded === assets.length) {
+          setLoading(false); // ✅ hide loader only when all assets are ready
+        }
+      };
+      img.onerror = () => {
+        // if one fails, still count it so loader doesn't get stuck
+        loaded++;
+        if (loaded === assets.length) {
+          setLoading(false);
+        }
+      };
+    });
   }, []);
 
   if (loading) {
-     return (
+    return (
       <div className="flex items-center justify-center min-h-screen bg-black">
         {/* Spinner */}
         <div className="w-16 h-16 border-4 border-amber-400 border-t-transparent rounded-full animate-spin"></div>
       </div>
     );
   }
+  
   return (
     <div className="relative min-h-screen overflow-hidden select-none">
       {/* Background image for desktop */}
@@ -69,14 +102,14 @@ export default function Home() {
         </div>
 
         {/* Navbar */}
-        <nav className="relative flex items-center justify-between px-8 py-4 bg-[#02554ACC] rounded-full shadow-lg z-20 w-fit mx-auto">
+        <nav className="relative flex items-center justify-between top-9 px-29 py-4 bg-[#02554ACC] rounded-full shadow-lg z-20 w-fit mx-auto">
           {/* Left links */}
           <div className="flex gap-8">
             {["Home", "Track", "About", "FAQ", "Timeline"].map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                className="text-xl lg:text-3xl font-bold font-pixeboy text-[#f8f5c0] hover:text-white transition"
+                className="text-xl lg:text-4xl font-bold font-pixeboy text-[#f8f5c0] hover:text-white transition"
               >
                 {item}
               </a>
@@ -102,9 +135,9 @@ export default function Home() {
         </nav>
 
         {/* Right vines + leaves */}
-        {/* Right vines + leaves */}
+    
         <div className="absolute top-0 right-3 flex z-10">
-          {/* Container is relative so leaves can anchor inside it */}
+         
           <div className="relative flex">
             {/* Vines */}
             {[160, 120, 160, 140].map((h, i) => (
@@ -175,22 +208,22 @@ export default function Home() {
             className="w-40 sm:w-56 lg:w-80"
           />
         </div>
-        <div className="absolute bottom-58 right-16 -translate-x-1/2 z-10">
+        <div className="absolute bottom-58 right-4 -translate-x-1/2 z-10">
           <Image
-            src="/frog.svg"
+            src="/video/frog.gif"
             alt="Creature2"
-            height={104}
-            width={104}
-            className="w-16 sm:w-20 lg:w-24"
+            height={164}
+            width={164}
+            className="w-full h-full"
           />
         </div>
-        <div className="absolute bottom-10 right-29 -translate-x-1/2 z-10">
+        <div className="absolute bottom-10 right-19 -translate-x-1/2 z-10">
           <Image
-            src="/axo.svg"
+            src="/video/axo.gif"
             alt="Creature2"
-            height={104}
-            width={104}
-            className="w-16 sm:w-20 lg:w-24"
+            height={164}
+            width={164}
+            className="w-full h-full"
           />
         </div>
       </div>
