@@ -78,7 +78,7 @@ export default function FaqSection() {
   return (
     <section id="faqs">
       <div
-        className={`relative min-h-screen w-full flex items-center justify-center p-4 bg-[url('/faq-background.svg')] bg-cover bg-center text-white overflow-hidden ${vt323.className}`}
+        className={`relative select-none min-h-screen w-full flex items-center justify-center p-4 bg-[url('/faq-background.svg')] bg-cover bg-center text-white overflow-hidden ${vt323.className}`}
       >
         <Fireflies />
 
@@ -92,6 +92,7 @@ export default function FaqSection() {
               src="/minecraft-question-character.svg"
               alt="Minecraft Character with Question Mark"
               className="w-200 h-100 transform rotate-180"
+              draggable="false"
             />
           </div>
           </div>

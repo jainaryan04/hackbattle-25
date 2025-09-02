@@ -20,77 +20,82 @@ const About = () => {
 };
 
 const DesktopAbout = () => (
-    < section id="about">
-    <div className="w-full h-screen overflow-hidden bg-[url('/bg-about.svg')] bg-no-repeat bg-center bg-cover flex items-center justify-center relative">
-        {/* ✨ Glowing Spores */}
-        <div className="absolute inset-0 z-[1]">
-            <GlowingSpores />
-        </div>
-        <div className="relative w-[min(660px,50vw)] h-[min(470px,50vw)] rounded-[22px] overflow-hidden [clip-path:inset(0_round_22px)] bg-[url('/about-box-bg.svg')] bg-no-repeat bg-center bg-[length:100%_auto]">
+    <section id="about">
+        <div className="w-full h-screen bg-[url('/bg-about.svg')] select-none bg-center bg-cover flex items-center justify-center relative">
 
-            {/* Background box with text */}
-            <div className="absolute inset-0 p-8 text-[#faf6da] text-center font-['Press_Start_2P',Arial,sans-serif] text-[1.1rem] leading-[1.6] z-[1] rounded-[22px] box-border">
-                {/* empty background container */}
+            {/* ✨ Glowing Spores */}
+            <div className="absolute inset-0 z-[1]">
+                <GlowingSpores />
             </div>
 
-            {/* Overlay Box */}
-            <img
-                src="/about-box-overlay.svg"
-                alt="Overlay Box"
-                className="absolute top-[min(26px,2vw)] left-[min(34px,3vw)] w-[min(590px,60vw)] h-auto pointer-events-none z-[2] rounded-[18px] drop-shadow-[0_6px_16px_rgba(0,0,0,0.45)] shadow-xl shadow-black/30"
-            />
+            {/* Main box */}
+            <div className="relative w-[47vw] h-[72vh] rounded-[22px] bg-[url('/about-box-bg.svg')] bg-center bg-[length:100%_auto]">
 
-            {/* Text panel */}
-            <div className="absolute inset-0 flex items-center justify-center z-[2] pointer-events-none">
-                <div className="max-w-[520px] px-5 py-4 text-center text-[#FAF6DA] font-['Press_Start_2P',Arial,sans-serif]">
-                    <h2 className="mt-[-10px] mb-[min(50px,5vw)] text-[2.4rem] tracking-[2px] text-shadow-lg text-shadow-black/80">ABOUT</h2>
-                    <p className="m-[2px] text-[1.1rem] leading-[1.6] text-[#FAF6DA] text-shadow-lg text-shadow-black/80">
-                        Join the adrenaline-pumping 36-hour HackBattle by IEEE CS VIT, where tech innovators gather for
-                        groundbreaking challenges, keynote sessions, and engaging activities that ignite creativity and
-                        drive innovation.
-                    </p>
+                {/* Background box with text */}
+                <div className="absolute inset-0 p-8 text-[#faf6da] text-center font-['Press_Start_2P'] text-[1.1rem] leading-[1.6] z-[1] rounded-[22px] box-border">
+                </div>
+
+                {/* Overlay Box */}
+                <img
+                    src="/about-box-overlay.svg"
+                    alt="Overlay Box"
+                    className="absolute top-[3.4vh] left-0 w-[594vw] h-[65vh] z-[2] rounded-[18px] pointer-events-none"
+                />
+
+                {/* Text panel */}
+                <div className="absolute inset-0 flex items-center justify-center z-[2] pointer-events-none">
+                    <div className="max-w-[520px] px-5 py-4 text-center text-[#FAF6DA] font-['Press_Start_2P']">
+                        <h2 className="mt-[1vh] mb-[5vw] text-[2.4rem] text-shadow-lg text-shadow-black/80">
+                            ABOUT
+                        </h2>
+                        <p className="text-[1.1rem] leading-[1.6] text-shadow-lg text-shadow-black/80">
+                            Join the adrenaline-pumping 36-hour HackBattle by IEEE CS VIT, where tech innovators gather for
+                            groundbreaking challenges, keynote sessions, and engaging activities that ignite creativity and
+                            drive innovation.
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        {/* Axolotl */}
-        <img
-            src="/axolotl.svg"
-            alt="Axolotl"
-            className="absolute left-[min(100px,8vw)] bottom-[min(50px,5vw)] w-[min(14vw,180px)] h-auto pointer-events-none z-[3]"
-        />
-
-        {/* Torch */}
-        <div className="absolute left-[min(30px,3vw)] bottom-[min(80px,6vw)] z-[4]">
+            {/* Axolotl */}
             <img
-                src="/torch.svg"
-                alt="Torch"
-                className="w-[min(9vw,40px)] h-auto pointer-events-none"
+                src="/axolotl.svg"
+                alt="Axolotl"
+                className="absolute left-[8vw] bottom-[5vh] w-[12vw] z-[3] pointer-events-none"
             />
-            <Smoke /> {/* 🌫️ Smoke rising */}
-        </div>
 
-        {/* Campfire */}
-        <div className="absolute right-[min(50px,5vw)] bottom-[min(28px,3vw)] z-[4]">
-            <img
-                src="/campfire.svg"
-                alt="Campfire"
-                className="w-[min(10vw,140px)] h-auto pointer-events-none"
-            />
-            <Smoke /> {/* 🌫️ Smoke rising */}
+            {/* Torch */}
+            <div className="absolute left-[3vw] bottom-[8vh] z-[4]">
+                <img
+                    src="/torch.svg"
+                    alt="Torch"
+                    className="w-[2vw] h-[15vh] pointer-events-none"
+                />
+                <Smoke /> {/* 🌫️ Smoke rising */}
+            </div>
+
+            {/* Campfire */}
+            <div className="absolute right-[4vw] bottom-[3vh] z-[4]">
+                <img
+                    src="/campfire.svg"
+                    alt="Campfire"
+                    className="w-[10vw] pointer-events-none"
+                />
+                <Smoke /> {/* 🌫️ Smoke rising */}
+            </div>
         </div>
-    </div>
-     </section>
+    </section>
 );
 
+
 const MobileAbout = () => (
-    <div className="w-screen min-h-[100dvh] bg-[url('/mobile-about-bg.svg')] bg-no-repeat bg-center bg-cover flex flex-col items-center justify-centre relative text-[#FAF6DA] font-['Press_Start_2P',Arial,sans-serif]">
-        <div className="relative w-full max-w-[min(320px,90vw)] translate-y-[32vh] ml-[min(4px,1vw)]">
+    <div className="min-h-[100dvh] bg-[url('/mobile-about-bg.svg')] bg-no-repeat bg-cover flex flex-col items-center relative text-[#FAF6DA] font-['Press_Start_2P']">
+        <div className="relative w-full max-w-[min90vw] translate-y-[32vh] ml-[1vw]">
             {/* Back glass (bigger) */}
             <img
                 src="/glass-back.svg"
                 alt=""
-                className="absolute inset-0 z-0 pointer-events-none
+                className="absolute z-0 pointer-events-none
                    w-[101%] max-w-none
                    left-1/2 -translate-x-1/2
                    top-1/2 -translate-y-1/2
@@ -100,16 +105,16 @@ const MobileAbout = () => (
             <img
                 src="/glass-front.svg"
                 alt=""
-                className="absolute inset-0 z-[1] pointer-events-none
+                className="absolute z-[1] pointer-events-none
                    w-[94%] max-w-none
-                   left-[min(3px,1vw)] -translate-x-1
+                   left-[1vw] -translate-x-1
                    top-1/2 -translate-y-1/2
                    scale-100"
             />
             <h2
                 className="
           absolute left-1/2 -translate-x-1/2
-          -top-[min(42vw)]
+          -top-[42vw]
           z-[2]
           text-[4rem] tracking-[2px]
           text-shadow-lg text-shadow-black/80
@@ -135,19 +140,17 @@ const MobileAbout = () => (
         <img
             src="/axolotl-mobile.svg"
             alt="Torch"
-            className="absolute left-[min(76vw)] bottom-[min(50vw)] w-[min(20vw)] h-auto pointer-events-none z-[3]"
+            className="absolute left-[76vw] bottom-[50vh] w-[20vw] h-auto pointer-events-none z-[3]"
         />
         {/* Campfire */}
-        <div className="absolute left-[min(32vw)] bottom-[min(28px,3vw)] z-[4]">
+        <div className="absolute left-[32vw] bottom-[3vw] z-[4]">
             <img
                 src="/campfire.svg"
                 alt="Campfire"
-                className="w-[min(34vw)] h-auto pointer-events-none"
+                className="w-[34vw] h-auto pointer-events-none"
             />
             <Smoke /> {/* 🌫️ Smoke rising */}
         </div>
     </div>
-   
 );
-
 export default About;

@@ -17,6 +17,7 @@ export default function LandingPagePhone() {
         fill
         priority
         className="object-cover"
+        draggable={false}
       />
       <div className="absolute inset-0 "></div>
 
@@ -67,7 +68,7 @@ export default function LandingPagePhone() {
           </button>
 
           {/* Menu Items */}
-          <div className="flex items-center flex-col gap-6 mt-16">
+          <div className="flex items-center select-none flex-col gap-6 mt-16">
             {[
               { icon: "/icon1.svg", label: "HOME", path: "/" },
               { icon: "/icon2.svg", label: "ABOUT", path: "/about" },
@@ -88,6 +89,7 @@ export default function LandingPagePhone() {
                     width={96}
                     height={96}
                     className="object-contain"
+                    onDragStart={(e) => e.preventDefault()}
                   />
                 </div>
 
@@ -126,6 +128,7 @@ export default function LandingPagePhone() {
                 width={300}
                 height={300}
                 className="relative z-10"
+                draggable={false}
               />
 
              
@@ -146,7 +149,7 @@ export default function LandingPagePhone() {
             alt="character"
             width={300}
             height={300}
-           
+            draggable={false}
           />
         </div>
       </div>

@@ -4,7 +4,7 @@ import MobileLanding from "./MobileLanding";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen overflow-hidden">
+    <div className="relative select-none min-h-screen overflow-hidden">
       {/* Background image for desktop */}
       <Image
         src="/background.svg"
@@ -12,6 +12,7 @@ export default function Home() {
         fill
         className="object-cover hidden md:block"
         priority
+        draggable="false"
       />
 
       {/* Background image for mobile */}
@@ -21,6 +22,7 @@ export default function Home() {
         fill
         className="object-cover md:hidden"
         priority
+        draggable="false"
       />
 
       <div className="absolute top-0 left-150 w-64 h-168 hidden md:block overflow-hidden z-0">
@@ -29,6 +31,7 @@ export default function Home() {
   src="/video/waterfall.gif"
   alt="Waterfall"
   className="w-full h-full object-cover"
+  draggable="false"
 />
 
       </div>
@@ -42,13 +45,14 @@ export default function Home() {
       <div className="hidden md:block">
         {/* Left vine + leaf */}
         <div className="absolute top-0 left-2 flex justify-center space-x-1 py-1 z-10">
-          <Image src="/vine1.svg" width={410} height={410} alt="Left Vine" />
+          <Image src="/vine1.svg" width={410} height={410} alt="Left Vine" draggable="false" />
           <Image
             src="/leaf1.svg"
             width={220}
             height={220}
             alt="Left Leaf"
             className="absolute top-0 left-4 leaf-sway"
+            draggable="false"
           />
         </div>
 
@@ -74,6 +78,7 @@ export default function Home() {
             width={70}
             height={160}
             className="object-contain vine-sway"
+            draggable="false"
           />{" "}
           <Image
             src="/vine2.svg"
@@ -81,6 +86,7 @@ export default function Home() {
             width={70}
             height={120}
             className="object-contain vine-sway"
+            draggable="false"
           />{" "}
           <Image
             src="/vine2.svg"
@@ -88,6 +94,7 @@ export default function Home() {
             width={70}
             height={160}
             className="object-contain vine-sway"
+            draggable="false"
           />{" "}
           <Image
             src="/vine2.svg"
@@ -95,6 +102,7 @@ export default function Home() {
             width={70}
             height={160}
             className="object-contain vine-sway"
+            draggable="false"
           />{" "}
           <div className="absolute -top-12 flex space-x-[-20px]">
             {" "}
@@ -104,6 +112,7 @@ export default function Home() {
               width={110}
               height={110}
               className="leaf-sway"
+              draggable="false"
             />{" "}
             <Image
               src="/leaf3.svg"
@@ -111,6 +120,7 @@ export default function Home() {
               width={110}
               height={110}
               className="leaf-sway"
+              draggable="false"
             />{" "}
             <Image
               src="/leaf3.svg"
@@ -118,6 +128,7 @@ export default function Home() {
               width={110}
               height={110}
               className="leaf-sway"
+              draggable="false"
             />
           </div>
         </div>
@@ -142,7 +153,8 @@ export default function Home() {
                 alt="Register"
                 width={350}
                 height={400}
-                className="w-48 sm:w-64 lg:w-72"
+                className="w-48 lg:w-72"
+                draggable="false"
               />
             </button>
           </div>
@@ -155,7 +167,8 @@ export default function Home() {
             alt="Hero"
             width={350}
             height={900}
-            className="w-40 sm:w-56 lg:w-80"
+            className="w-40 lg:w-80"
+            draggable="false"
           />
         </div>
         <div className="absolute bottom-59 right-1 -translate-x-1/2 z-10">
@@ -164,7 +177,8 @@ export default function Home() {
             alt="Creature2"
             height={54}
             width={54}
-            className="w-16 sm:w-20 lg:w-24"
+            className="w-16 lg:w-24"
+            draggable="false"
           />
         </div>
       </div>
