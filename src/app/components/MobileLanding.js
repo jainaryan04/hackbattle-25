@@ -9,7 +9,7 @@ export default function LandingPagePhone() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="relative min-h-screen w-full overflow-hidden text-white font-pixeboy">
+    <div className="relative min-h-screen w-full overflow-hidden text-white font-pixeboy select-none">
       {/* Background */}
       <Image
         src="/landing-bg.svg"
@@ -82,7 +82,7 @@ export default function LandingPagePhone() {
                 className=" flex items-center w-full"
               >
                 {/* Icon Frame */}
-                <div className="w-[88px] h-[128px] bg-[url('/wood-frame.svg')] bg-cover top-20 flex items-center justify-center">
+                <div className="w-24 h-32 bg-[url('/wood-frame.svg')] bg-cover top-20 flex items-center justify-center">
                   <Image
                     src={item.icon}
                     alt={item.label}
@@ -94,7 +94,7 @@ export default function LandingPagePhone() {
                 </div>
 
                 {/* Text Button */}
-                <div className="flex-1 h-[68px] bg-[url('/wood-button.svg')] bg-cover flex items-center justify-center text-amber-100 font-pixeboy text-5xl">
+                <div className="flex-1 h-16 bg-[url('/wood-button.svg')] bg-cover flex items-center justify-center text-amber-100 font-pixeboy text-5xl">
                   {item.label}
                 </div>
               </button>
@@ -117,7 +117,7 @@ export default function LandingPagePhone() {
         </section>
 
         {/* Character and Bubble container */}
-        
+
         <div className="absolute top-95 left-1/3 -translate-x-1/2 flex flex-col items-center">
           {/* Bubble above Steve */}
           <div className="relative mb-4">
@@ -130,8 +130,6 @@ export default function LandingPagePhone() {
                 className="relative z-10"
                 draggable={false}
               />
-
-             
 
               <div className="absolute inset-0 flex items-center bottom-10 justify-center z-30">
                 <button className="hover:scale-110 transition-transform">
