@@ -76,7 +76,7 @@ export default function Home() {
         draggable="false"
       />
 
-      <div className="absolute top-0 left-150 w-64 h-168 hidden md:block overflow-hidden z-0">
+      <div className="absolute top-0 left-172 w-64 h-168 hidden md:block overflow-hidden z-0">
         {/* Static Waterfall Background */}
         <img
           src="/video/waterfall.gif"
@@ -157,7 +157,7 @@ export default function Home() {
             ))}
 
             {/* Leaves overlay — in a row */}
-            <div className="absolute top-0 right-0 flex w-full max-w-full">
+            {/* <div className="absolute top-0 right-0 flex w-full max-w-full">
               {[...Array(2)].map((_, i) => (
                 <div key={i} className="relative w-4/5 h-[20vh]">
                   <Image
@@ -169,7 +169,7 @@ export default function Home() {
                   />
                 </div>
               ))}
-            </div>
+            </div> */}
           </div>
         </div>
 
@@ -191,16 +191,16 @@ export default function Home() {
           <div className="relative b mt-6">
             <button className="hover:scale-110  transition">
               <Image
-                src="/registerborder.svg"
+                src="/reg.svg"
                 alt="Register"
                 width={350}
                 height={400}
-                className="w-48 sm:w-64 bg-amber-900 lg:w-72"
+                className="w-48 sm:w-64 lg:w-80"
                 draggable="false"
               />
-              <p className="relative font-pixeboy  text-4xl bottom-15 text-amber-100 ">
+              {/* <p className="relative font-pixeboy  text-4xl bottom-15 text-amber-100 ">
                 Register
-              </p>
+              </p> */}
             </button>
           </div>
         </section>
