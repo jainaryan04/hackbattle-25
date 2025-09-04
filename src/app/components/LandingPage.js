@@ -47,9 +47,12 @@ export default function Home() {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center min-h-screen bg-black">
-        {/* Spinner */}
-        <div className="w-16 h-16 border-4 border-amber-400 border-t-transparent rounded-full animate-spin"></div>
+      <div className="fixed inset-0 flex items-center justify-center bg-black opacity-70 z-50">
+        <img
+          src="/loader.gif"
+          alt="Loading..."
+          className="w-20 h-20"
+        />
       </div>
     );
   }
@@ -113,16 +116,21 @@ export default function Home() {
         <nav className="relative flex items-center justify-between top-9 px-29 py-4 bg-[#02554ACC] rounded-full shadow-lg z-20 w-fit mx-auto">
           {/* Left links */}
           <div className="flex gap-8">
-            {["Home", "Track", "About", "FAQ"].map((item) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                className="text-xl lg:text-4xl font-bold font-pixeboy text-[#f8f5c0] hover:text-white transition"
-              >
-                {item}
-              </a>
-            ))}
-          </div>
+  {[
+    { label: "Home", path: "#home" },
+    { label: "About", path: "#about" },
+    { label: "Problem Statements", path: "#ps" },
+    { label: "FAQ", path: "#faqs" }
+  ].map(({ label, path }) => (
+    <a
+      key={label}
+      href={path}
+      className="text-xl lg:text-4xl font-bold font-pixeboy text-[#f8f5c0] hover:text-white transition"
+    >
+      {label}
+    </a>
+  ))}
+</div>
 
           <div className="flex items-center gap-4 ml-8">
             {/* Discord Icon */}

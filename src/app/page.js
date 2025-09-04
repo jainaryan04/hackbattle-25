@@ -7,7 +7,7 @@ import SpeechBubble from "src/app/components/SpeechBubble";
 import SpeakerSection from "./components/speaker";
 import VineDivider from "./components/VineDivider";
 import PS from "./components/ps";
-
+import CustomCursor from "./components/Cursor";
 export default function Page() {
   const [showContent, setShowContent] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -29,6 +29,7 @@ export default function Page() {
 
   return (
     <div>
+      <CustomCursor />
       <LandingPage />
       {/* <VineDivider />  */}
       <About />
