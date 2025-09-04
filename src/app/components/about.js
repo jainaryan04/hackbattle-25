@@ -45,7 +45,7 @@ const DesktopAbout = () => (
                 {/* Text panel */}
                 <div className="absolute inset-0 flex items-center justify-center z-[2] pointer-events-none">
                     <div className="max-w-[520px] px-5 py-4 text-center text-[#FAF6DA] font-['Press_Start_2P']">
-                        <h2 className="mt-[1vh] mb-[5vw] text-[2.4rem] text-shadow-lg text-shadow-black/80">
+                        <h2 className="mt-[1vh] mb-[5vw] text-[2.4rem]  font-bold text-[#f2e5a6] [text-shadow:3px_3px_#3a1d0c] animate-glow-pulse">
                             ABOUT
                         </h2>
                         <p className="text-[1.1rem] leading-[1.6] text-shadow-lg text-shadow-black/80">
@@ -98,19 +98,17 @@ const MobileAbout = () => (
                    top-1/2 -translate-y-1/2
                    scale-100"
             />
-            <h2
+            <h1
                 className="
           absolute left-1/2 -translate-x-1/2
           -top-[42vw]
           z-[2]
           text-[2.5rem] sm:text-[3rem] md:text-[4rem]
-          tracking-[2px]
-          text-shadow-lg text-shadow-black/80
-          text-[#EFE7A1] pointer-events-none
+         font-bold text-[#f2e5a6] [text-shadow:3px_3px_#3a1d0c] animate-glow-pulse
         "
             >
                 ABOUT
-            </h2>
+            </h1>
             {/* Text overlay ON TOP of front glass */}
             <div className="absolute inset-0 z-[2] flex items-center justify-center pointer-events-none">
                 <div className="w-[84%] text-center text-[#EFE7A1]">

@@ -1,0 +1,72 @@
+"use client";
+import { useState } from "react";
+import Image from "next/image";
+
+export default function ProblemStatements() {
+  const [active, setActive] = useState(null);
+
+  return (
+    <div className="relative flex flex-col items-center h-screen w-full text-center">
+      <Image
+        src="/ps.svg"
+        alt="Background"
+        fill
+        className="object-cover -z-10"
+        priority
+        draggable="false"
+      />
+
+      <h1 className="text-2xl md:text-[6vh] font-bold text-[#f2e5a6] [text-shadow:3px_3px_#3a1d0c] animate-glow-pulse relative z-10 my-[8vh]">
+        PROBLEM STATEMENTS
+      </h1>
+
+      <div className="flex flex-col md:flex-row w-[60vw] gap-y-[1vh] gap-x-[1vw] md:gap-y-0 h-[70vh] overflow-hidden relative z-10">
+        {Array.from({ length: 10 }, (_, i) => (
+          <div
+            key={i}
+            className={`relative transition-all duration-500 ease-in-out cursor-pointer rounded-2xl overflow-hidden
+              ${active === i 
+                ? "md:flex-[6] flex-[6]" 
+                : active === null 
+                  ? "flex-1" 
+                  : "md:flex-[0.5] flex-[0.5]"
+              }
+            `}
+            onMouseEnter={() => setActive(i)}
+            onMouseLeave={() => setActive(null)}
+          >
+            {/* Background Image using CSS background instead of Next Image */}
+            <div 
+              className="absolute inset-0 w-full h-full"
+              style={{
+                backgroundImage: `url(/ps/${i + 1}.svg)`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
+                filter: 'brightness(1.1) contrast(1.1)', // Enhance the image if it's dark
+              }}
+            />
+            
+            {/* Alternative: Try object-fill instead of object-cover */}
+            {/* 
+            <Image
+              src={`/ps/${i + 1}.svg`}
+              alt={`Problem Statement ${i + 1}`}
+              fill
+              className="object-fill" // This will stretch to fill, might distort but no black edges
+              draggable="false"
+            />
+            */}
+            
+            {/* Overlay Content */}
+            {active === i && (
+              <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 text-white text-2xl font-bold tracking-wider z-10">
+                Coming Soon
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
