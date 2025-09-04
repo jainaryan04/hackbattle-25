@@ -5,7 +5,15 @@ import Image from "next/image";
 export default function ProblemStatements() {
   const [active, setActive] = useState(null);
 
+  const handleHover = (i) => {
+    setActive(i);
+    const audio = new Audio("/audio/statement.wav"); // ✅ put problem.wav inside public/audio/
+    audio.play();
+  };
+
   return (
+    <section id="ps">
+
     <div className="relative flex flex-col items-center h-screen w-full text-center">
       <Image
         src="/ps.svg"
@@ -32,10 +40,9 @@ export default function ProblemStatements() {
                   : "md:flex-[0.5] flex-[0.5]"
               }
             `}
-            onMouseEnter={() => setActive(i)}
+            onMouseEnter={() => handleHover(i)}
             onMouseLeave={() => setActive(null)}
           >
-            {/* Background Image using CSS background instead of Next Image */}
             <div 
               className="absolute inset-0 w-full h-full"
               style={{
@@ -43,22 +50,10 @@ export default function ProblemStatements() {
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
-                filter: 'brightness(1.1) contrast(1.1)', // Enhance the image if it's dark
+                filter: 'brightness(1.1) contrast(1.1)',
               }}
             />
             
-            {/* Alternative: Try object-fill instead of object-cover */}
-            {/* 
-            <Image
-              src={`/ps/${i + 1}.svg`}
-              alt={`Problem Statement ${i + 1}`}
-              fill
-              className="object-fill" // This will stretch to fill, might distort but no black edges
-              draggable="false"
-            />
-            */}
-            
-            {/* Overlay Content */}
             {active === i && (
               <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 text-white text-2xl font-bold tracking-wider z-10">
                 Coming Soon
@@ -68,5 +63,6 @@ export default function ProblemStatements() {
         ))}
       </div>
     </div>
+    </section>
   );
 }

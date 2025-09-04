@@ -10,13 +10,18 @@ const vt323 = VT323({
 });
 
 export default function FaqItem({ question, answer, headImageSrc, isOpen, toggleItem }) {
-
   const minecraftBoxClipPath = "[clip-path:polygon(0px_16px,_8px_16px,_8px_8px,_16px_8px,_16px_0px,_calc(100%_-_16px)_0px,_calc(100%_-_16px)_8px,_calc(100%_-_8px)_8px,_calc(100%_-_8px)_16px,_100%_16px,_100%_calc(100%_-_16px),_calc(100%_-_8px)_calc(100%_-_16px),_calc(100%_-_8px)_calc(100%_-_8px),_calc(100%_-_16px)_calc(100%_-_8px),_calc(100%_-_16px)_100%,_16px_100%,_16px_calc(100%_-_8px),_8px_calc(100%_-_8px),_8px_calc(100%_-_16px),_0px_calc(100%_-_16px))]";
   const boxStyles = "bg-[#103818]/80 backdrop-blur-sm border-8 border-[#081c0c] shadow-[inset_0_0_0_6px_#225c3c] rounded-2xl transition-all duration-350 ease-in-out hover:scale-[1.02] hover:bg-[#043927]/90 hover:border-[#327a50] cursor-pointer";
 
+  const handleClick = () => {
+    const audio = new Audio('/audio/faq-open.wav'); // 👈 make sure file is in /public/audio/
+    audio.play();
+    toggleItem();
+  };
+
   return (
     <div className={`${boxStyles} select-none py-4 px-7 ${minecraftBoxClipPath} ${vt323.className}`}>
-      <div className="flex justify-between items-center" onClick={toggleItem}>
+      <div className="flex justify-between items-center" onClick={handleClick}>
         <div className="flex items-center gap-4">
           {headImageSrc && (
             <img 

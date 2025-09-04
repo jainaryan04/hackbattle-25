@@ -79,7 +79,9 @@ export default function Home() {
 
       <div className="absolute top-0 left-170 w-64 h-168 hidden md:block overflow-hidden z-0 opacity-60">
         {/* Static Waterfall Background */}
-        <img
+        <Image
+        width={0}
+        height={0}
           src="/video/waterfall.gif"
           alt="Waterfall"
           className="w-full h-full object-cover"
@@ -134,9 +136,9 @@ export default function Home() {
             </a>
 
             {/* Login Button */}
-            <button className="px-5 py-2 bg-yellow-500 text-black font-pixeboy text-xl rounded-full hover:bg-yellow-400 transition">
+            {/* <button className="px-5 py-2 bg-yellow-500 text-black font-pixeboy text-xl rounded-full hover:bg-yellow-400 transition">
               LOGIN
-            </button>
+            </button> */}
           </div>
         </nav>
 

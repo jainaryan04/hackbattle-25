@@ -20,7 +20,16 @@ export default function LandingPagePhone() {
         className="object-cover"
         draggable={false}
       />
-      <div className="absolute inset-0 "></div>
+      {/* Waterfall Background */}
+{/* Waterfall Background */}
+<div className="absolute top-0 left-1/2 -translate-x-1/2 flex items-center w-64 h-[100vh] overflow-hidden z-0 opacity-60">
+  <img
+    src="/video/waterfall.gif"
+    alt="Waterfall"
+    className="w-full h-full object-cover"
+    draggable="false"
+  />
+</div>
 
       {/* Top Navbar */}
       <div className="absolute top-0 left-0 right-0 flex justify-between items-center px-6 py-4 z-30">
@@ -30,12 +39,12 @@ export default function LandingPagePhone() {
         </button>
 
         {/* Login button */}
-        <button
+        {/* <button
           onClick={() => router.push("/login")}
           className="bg-[url('/wood-texture.svg')] bg-cover text-black px-4 py-2 rounded-lg text-2xl font-pixeboy"
         >
           LOGIN
-        </button>
+        </button> */}
       </div>
 
       {/* Sidebar Overlay */}
@@ -72,14 +81,17 @@ export default function LandingPagePhone() {
           <div className="flex items-center select-none flex-col gap-6 mt-16">
             {[
               { icon: "/icon1.svg", label: "HOME", path: "/" },
-              { icon: "/icon2.svg", label: "ABOUT", path: "/about" },
-              { icon: "/icon3.svg", label: "FAQs", path: "/faqs" },
-              { icon: "/icon4.svg", label: "TRACKS", path: "/tracks" },
-              { icon: "/icon5.svg", label: "TIMELINE", path: "/timeline" },
+              { icon: "/icon2.svg", label: "ABOUT", path: "/#about" },
+              { icon: "/icon3.svg", label: "FAQs", path: "/#faqs" },
+              { icon: "/icon4.svg", label: "PROBLEM STATEMENTS", path: "/#ps" },
+              // { icon: "/icon5.svg", label: "TIMELINE", path: "/timeline" },
             ].map((item, idx) => (
               <button
                 key={idx}
-                onClick={() => router.push(item.path)}
+                onClick={() => {
+                  router.push(item.path)
+                  setMenuOpen(false)   // ✅ close sidebar
+                }}
                 className=" flex items-center w-full"
               >
                 {/* Icon Frame */}
@@ -95,7 +107,7 @@ export default function LandingPagePhone() {
                 </div>
 
                 {/* Text Button */}
-                <div className="flex-1 h-16 bg-[url('/wood-button.svg')] bg-cover flex items-center justify-center text-amber-100 font-pixeboy text-5xl">
+                <div className="flex-1 h-16 bg-[url('/wood-button.svg')] bg-cover flex items-center justify-center text-amber-100 font-pixeboy text-3xl">
                   {item.label}
                 </div>
               </button>
