@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import Link from "next/link";
 
 export default function LandingPagePhone() {
   const router = useRouter();
@@ -47,7 +48,7 @@ export default function LandingPagePhone() {
 
       {/* Sidebar Menu */}
       <div
-        className={`fixed top-0 left-0 h-full w-full z-40 transform transition-transform duration-300 ${
+        className={`fixed top-0 left-0 h-full w-[100vw] overflow-x-hidden z-40 transform transition-transform duration-300 ${
           menuOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
@@ -106,14 +107,14 @@ export default function LandingPagePhone() {
       {/* Page Content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">
         <section className="relative z-10 flex flex-col items-center justify-center text-center font-pixeboy mt-32">
-          <div className="text-8xl bg-clip-text -mt-9 text-amber-100 leading-tight">
+          <div className="text-8xl bg-clip-text -mt-9 [text-shadow:4px_4px_4px_var(--tw-shadow-color)] shadow-[#FFF58C] text-[#F3EDCB] leading-tight">
             Hack
           </div>
-          <div className="text-8xl bg-clip-text -mt-15 text-amber-100 leading-tight">
+          <div className="text-8xl bg-clip-text -mt-15 [text-shadow:4px_4px_4px_var(--tw-shadow-color)] shadow-[#FFF58C] text-[#F3EDCB] leading-tight">
             BATTLE
           </div>
           <div className="text-4xl mt-4">JOIN THE ULTIMATE</div>
-          <div className="text-4xl -mt-2">HACKATHON</div>
+          <div className="text-4xl -mt-2">36 hour HACKATHON</div>
         </section>
 
         {/* Character and Bubble container */}
@@ -132,11 +133,14 @@ export default function LandingPagePhone() {
               />
 
               <div className="absolute inset-0 flex items-center bottom-10 justify-center z-30">
+            <Link href="https://gravitas.vit.ac.in/events/e3dd00a8-fc7f-433a-9bfa-3d20c3d5bdd0" target="_blank" rel="noopener noreferrer">
+
                 <button className="hover:scale-110 transition-transform">
                   <span className="text-5xl tracking-wide text-amber-100 font-pixeboy">
                     REGISTER
                   </span>
                 </button>
+                </Link>
               </div>
             </div>
           </div>

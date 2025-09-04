@@ -101,20 +101,23 @@ export default function SpeechBubbleIntro({ onFinish }) {
 
       {/* Right hanging vines */}
       <div className="absolute top-0 right-14 flex flex-row gap-4 z-20">
-        {[...Array(5)].map((_, i) => (
+                    {[250, 200, 300, 180].map((h, i) => (
           <Image
             key={i}
             src="/cavevines.svg"
-            alt="vine"
-            width={45}
-            height={80}
+            alt={`Vine ${i + 1}`}
+            width={50}
+            height={h}
+            style={{ height: `${h}px`, width: "70px" }}
             className="object-contain vine-sway"
+            draggable="false"
           />
         ))}
+        
       </div>
 
       {/* Top-right leaves */}
-      <div className="absolute top-0 right-0 z-40">
+      {/* <div className="absolute top-0 right-0 z-40">
         <Image
           src="/leaf1.svg"
           alt="leaf-right"
@@ -122,7 +125,7 @@ export default function SpeechBubbleIntro({ onFinish }) {
           height={150}
           className="leaf-sway"
         />
-      </div>
+      </div> */}
 
       {/* Character + Bubble */}
       <div className="absolute top-95 left-1/3 -translate-x-1/2 flex flex-col items-center">

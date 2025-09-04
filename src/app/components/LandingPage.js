@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import MobileLanding from "./MobileLanding";
+import Link from "next/link";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -76,7 +77,7 @@ export default function Home() {
         draggable="false"
       />
 
-      <div className="absolute top-0 left-172 w-64 h-168 hidden md:block overflow-hidden z-0">
+      <div className="absolute top-0 left-170 w-64 h-168 hidden md:block overflow-hidden z-0 opacity-60">
         {/* Static Waterfall Background */}
         <img
           src="/video/waterfall.gif"
@@ -110,7 +111,7 @@ export default function Home() {
         <nav className="relative flex items-center justify-between top-9 px-29 py-4 bg-[#02554ACC] rounded-full shadow-lg z-20 w-fit mx-auto">
           {/* Left links */}
           <div className="flex gap-8">
-            {["Home", "Track", "About", "FAQ", "Timeline"].map((item) => (
+            {["Home", "Track", "About", "FAQ"].map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
@@ -144,17 +145,20 @@ export default function Home() {
         <div className="absolute top-0 right-3 flex z-10">
           <div className="relative flex">
             {/* Vines */}
-            {[160, 120, 160, 140].map((h, i) => (
-              <Image
-                key={i}
-                src="/cavevines.svg"
-                alt={`Vine ${i + 1}`}
-                width={50}
-                height={h}
-                className="object-contain vine-sway"
-                draggable="false"
-              />
-            ))}
+            {[250, 200, 300, 180].map((h, i) => (
+  <Image
+    key={i}
+    src="/cavevines.svg"
+    alt={`Vine ${i + 1}`}
+    width={50}
+    height={h}
+    style={{ height: `${h}px`, width: "70px" }}
+    className="object-contain vine-sway"
+    draggable="false"
+  />
+))}
+
+
 
             {/* Leaves overlay — in a row */}
             {/* <div className="absolute top-0 right-0 flex w-full max-w-full">
@@ -185,10 +189,11 @@ export default function Home() {
           <div className="z-10 font-pixeboy text-6xl mt-4">
             JOIN THE ULTIMATE
           </div>
-          <div className="z-10 font-pixeboy text-6xl mt-2">Hackathon</div>
+          <div className="z-10 font-pixeboy text-6xl mt-2">36 hour Hackathon</div>
 
           {/* Register button */}
           <div className="relative b mt-6">
+            <Link href="https://gravitas.vit.ac.in/events/e3dd00a8-fc7f-433a-9bfa-3d20c3d5bdd0" target="_blank" rel="noopener noreferrer">
             <button className="hover:scale-110  transition">
               <Image
                 src="/reg.svg"
@@ -202,6 +207,7 @@ export default function Home() {
                 Register
               </p> */}
             </button>
+            </Link>
           </div>
         </section>
 
@@ -212,6 +218,7 @@ export default function Home() {
             alt="Hero"
             width={350}
             height={900}
+            draggable="false"
             className="w-40 sm:w-56 lg:w-80"
           />
         </div>

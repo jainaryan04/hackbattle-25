@@ -5,14 +5,14 @@ import Smoke from "./Smoke";
 
 const About = () => {
     return (
-           <>
+        <>
             {/* Desktop */}
             <div className="hidden md:block">
                 <DesktopAbout />
             </div>
 
             {/* Mobile */}
-            <div className="block md:hidden">
+            <div className="block md:hidden overflow-x-hidden">
                 <MobileAbout />
             </div>
         </>
@@ -21,7 +21,7 @@ const About = () => {
 
 const DesktopAbout = () => (
     <section id="about">
-        <div className="w-full h-screen bg-[url('/bg-about.svg')] select-none bg-center bg-cover flex items-center justify-center relative">
+        <div className="w-full h-screen bg-[url('/about.svg')] select-none bg-center bg-cover flex items-center justify-center relative">
 
             {/* ✨ Glowing Spores */}
             <div className="absolute inset-0 z-[1]">
@@ -57,46 +57,33 @@ const DesktopAbout = () => (
                 </div>
             </div>
 
-            {/* Axolotl */}
-            <img
-                src="/axolotl.svg"
-                alt="Axolotl"
-                className="absolute left-[8vw] bottom-[5vh] w-[12vw] z-[3] pointer-events-none"
-            />
-
+            
             {/* Torch */}
             <div className="absolute left-[3vw] bottom-[8vh] z-[4]">
-                <img
-                    src="/torch.svg"
-                    alt="Torch"
-                    className="w-[2vw] h-[15vh] pointer-events-none"
-                />
-                <Smoke /> {/* 🌫️ Smoke rising */}
+                <Smoke />
             </div>
 
             {/* Campfire */}
             <div className="absolute right-[4vw] bottom-[3vh] z-[4]">
                 <img
-                    src="/campfire.svg"
+                    src="/campfire.webp"
                     alt="Campfire"
-                    className="w-[10vw] pointer-events-none"
+                    className="w-[20vw] pointer-events-none"
                 />
-                <Smoke /> {/* 🌫️ Smoke rising */}
+                <Smoke />
             </div>
         </div>
     </section>
 );
 
-
 const MobileAbout = () => (
-    <div className="min-h-[100dvh] bg-[url('/mobile-about-bg.svg')] bg-no-repeat bg-cover flex flex-col items-center relative text-[#FAF6DA] font-['Press_Start_2P']">
-        <div className="relative w-full max-w-[min90vw] translate-y-[32vh] ml-[1vw]">
+    <div className="h-[100vh] overflow-x-hidden bg-[url('/mobile-about-bg.svg')] bg-no-repeat bg-cover flex flex-col items-center relative text-[#FAF6DA] font-['Press_Start_2P']">
+        <div className="relative w-full mt-[25vh]">
             {/* Back glass (bigger) */}
             <img
                 src="/glass-back.svg"
                 alt=""
                 className="absolute z-0 pointer-events-none
-                   w-[101%] max-w-none
                    left-1/2 -translate-x-1/2
                    top-1/2 -translate-y-1/2
                    scale-110 opacity-90 -rotate-[7deg]"
@@ -106,8 +93,8 @@ const MobileAbout = () => (
                 src="/glass-front.svg"
                 alt=""
                 className="absolute z-[1] pointer-events-none
-                   w-[94%] max-w-none
-                   left-[1vw] -translate-x-1
+                   w-[90%]
+                   left-1/2 -translate-x-1/2
                    top-1/2 -translate-y-1/2
                    scale-100"
             />
@@ -116,7 +103,8 @@ const MobileAbout = () => (
           absolute left-1/2 -translate-x-1/2
           -top-[42vw]
           z-[2]
-          text-[4rem] tracking-[2px]
+          text-[2.5rem] sm:text-[3rem] md:text-[4rem]
+          tracking-[2px]
           text-shadow-lg text-shadow-black/80
           text-[#EFE7A1] pointer-events-none
         "
@@ -137,20 +125,17 @@ const MobileAbout = () => (
             <div className="invisible w-full pt-[100%]" />
         </div>
         {/* Axolotl */}
-        <img
-            src="/axolotl-mobile.svg"
-            alt="Torch"
-            className="absolute left-[76vw] bottom-[50vh] w-[20vw] h-auto pointer-events-none z-[3]"
-        />
+        
         {/* Campfire */}
         <div className="absolute left-[32vw] bottom-[3vw] z-[4]">
             <img
-                src="/campfire.svg"
+                src="/campfire.webp"
                 alt="Campfire"
-                className="w-[34vw] h-auto pointer-events-none"
+                className="w-[50vw] h-auto pointer-events-none"
             />
-            <Smoke /> {/* 🌫️ Smoke rising */}
+            <Smoke />
         </div>
     </div>
 );
+
 export default About;

@@ -31,7 +31,7 @@ export default function Page() {
       <LandingPage />
       {/* <VineDivider />  */}
       <About />
-      <SpeakerSection/>
+      {/* <SpeakerSection/> */}
       <FaqSection />
     </div>
   );
