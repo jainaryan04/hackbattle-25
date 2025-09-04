@@ -44,7 +44,7 @@ export default function FaqSection() {
 
   const faqData = [
     { question: "What is Hack Battle?", answer: "A gamified hackathon...", headImageSrc: "/minecraft-head-steve.jpeg", characterGif: "/Steve.gif", characterStyle: { transform: 'translateY(110px) scale(2.0)' } },
-    { question: "Do I need Minecraft to join?", answer: "Nope! The theme is...", headImageSrc: "/minecraft-head-alex.jpeg", characterGif: "/Alex.gif", characterStyle: { transform: 'translateY(115px) translateX(20px) scale(1.8)' } },
+    { question: "Do I need Minecraft to join?", answer: "Nope! The theme is...", headImageSrc: "/minecraft-head-alex.jpeg", characterGif: "/Alex.gif", characterStyle: { transform: 'translateY(100px) translateX(20px) scale(2.0)' } },
     { question: "How do I register?", answer: "Click the 'Register' button...", headImageSrc: "/minecraft-head-chicken.jpeg", characterGif: "/Chicken.gif", characterStyle: { transform: 'translateY(158px) translateX(10px) scale(1.2)'} }, 
     { question: "Is Hackbattle fresher friendly?", answer: "Absolutely!, this is YOUR launchpad.", headImageSrc: "/minecraft-head-creeper.jpeg", characterGif: "/Creeper.webp", characterStyle: { transform: 'translateY(200px) translateX(20px) scale(1.2)' } },
     { question: "What should i bring?", answer: "Your laptop, extention cord...", headImageSrc: "/minecraft-head-piglin.jpg", characterGif: "/Piglin.gif", characterStyle: { transform: 'translateY(170px) translateX(-40px) scale(1.2)' } },
@@ -57,7 +57,6 @@ export default function FaqSection() {
       setCurrentCharacter({ src: '/Blaze.gif', style: {} });
     } else {
       setOpenIndex(index);
-
       setCurrentCharacter({ 
         src: faqData[index].characterGif, 
         style: faqData[index].characterStyle || {} 
@@ -90,7 +89,7 @@ export default function FaqSection() {
             <div className="w-full mt-35">
               <CharacterDisplay 
                 characterSrc={currentCharacter.src} 
-                style={currentCharacter.style} 
+                style={currentCharacter.style}
                 className={currentCharacter.src === '/Blaze.gif' ? 'transform scale-x-[-1]' : ''}
               />
             </div>

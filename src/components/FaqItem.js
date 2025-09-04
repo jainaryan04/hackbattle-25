@@ -15,7 +15,7 @@ export default function FaqItem({ question, answer, headImageSrc, isOpen, toggle
   const boxStyles = "bg-[#103818]/80 backdrop-blur-sm border-8 border-[#081c0c] shadow-[inset_0_0_0_6px_#225c3c] rounded-2xl transition-all duration-350 ease-in-out hover:scale-[1.02] hover:bg-[#043927]/90 hover:border-[#327a50] cursor-pointer";
 
   return (
-    <div className={`${boxStyles} py-4 px-7 ${minecraftBoxClipPath} ${vt323.className}`}> 
+    <div className={`${boxStyles} select-none py-4 px-7 ${minecraftBoxClipPath} ${vt323.className}`}>
       <div className="flex justify-between items-center" onClick={toggleItem}>
         <div className="flex items-center gap-4">
           {headImageSrc && (

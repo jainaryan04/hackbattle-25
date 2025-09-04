@@ -14,12 +14,7 @@ export default function SpeakerSection() {
 
       {/* Center Scroll */}
       <div className="relative w-[600px] h-[600px] flex items-center justify-center">
-        <Image
-          src="/scroll.svg"
-          alt="Scroll"
-          fill
-          className="object-contain pointer-events-none"
-        />
+        
       </div>
 
       {/* Left Steve */}
@@ -30,6 +25,7 @@ export default function SpeakerSection() {
           width={200}
           height={200}
           className="object-contain"
+          draggable="false"
         />
       </div>
 
@@ -41,6 +37,7 @@ export default function SpeakerSection() {
           width={200}
           height={200}
           className="object-contain"
+          draggable="false"
         />
       </div>
     </section>
