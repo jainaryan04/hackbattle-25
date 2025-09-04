@@ -14,28 +14,26 @@ export default function Page() {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
     handleResize();
     window.addEventListener("resize", handleResize);
-
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  if (isMobile && !showContent) {
-    return <SpeechBubble onFinish={() => setShowContent(true)} />;
+  if (!showContent) {
+    if (isMobile) {
+      return <SpeechBubble onFinish={() => setShowContent(true)} />;
+    }
+    return <LandingPage onFinish={() => setShowContent(true)} />;
   }
 
   return (
     <div>
       {!isMobile && <CustomCursor />}
-      <LandingPage />
-      {/* <VineDivider />  */}
+      {/* <VineDivider /> */}
       <About />
       <PS />
-      {/* <SpeakerSection/> */}
+      {/* <SpeakerSection /> */}
       <FaqSection />
     </div>
   );

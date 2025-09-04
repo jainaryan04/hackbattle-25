@@ -60,17 +60,13 @@ export default function SpeechBubbleIntro({ onFinish }) {
   }, [loading, currentIndex, texts.length, onFinish]);
 
 
-  if (loading) {
-    return (
-      <div className="flex items-center justify-center min-h-screen bg-black">
-        <div className="w-16 h-16 border-4 border-amber-400 border-t-transparent rounded-full animate-spin"></div>
-      </div>
-    );
-  }
-
-
   return (
     <div className="relative w-full h-screen overflow-hidden select-none">
+      {loading && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black/70 z-50">
+          <img src="/loader.gif" alt="Loading..." className="w-32 h-32" />
+        </div>
+      )}
       {/* Background */}
       <Image
         src="/phone-bg.svg"
