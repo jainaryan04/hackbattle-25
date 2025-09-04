@@ -50,13 +50,15 @@ export default function Page() {
       )}
 
       {/* Only render other pages after landing sequence is complete */}
-      {landingLoaded && speechBubbleComplete && (
-        <>
-          <About />
-          <PS />
-          <FaqSection />
-        </>
-      )}
+      {((isMobile && landingLoaded && speechBubbleComplete) ||
+  (!isMobile && landingLoaded)) && (
+  <>
+    <About />
+    <PS />
+    <FaqSection />
+  </>
+)}
+
     </div>
   );
 }
