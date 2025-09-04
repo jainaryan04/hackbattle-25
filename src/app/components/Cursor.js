@@ -7,9 +7,10 @@ export default function CustomCursor() {
     cursor.src = "/diamond-pickaxe.gif";
     cursor.style.position = "fixed";
     cursor.style.pointerEvents = "none";
-    cursor.style.width = "48px";
-    cursor.style.height = "48px";
+    cursor.style.width = "36px";
+    cursor.style.height = "36px";
     cursor.style.zIndex = "9999";
+    cursor.style.transform = "translate(-40%, -40%) scaleX(-1)"; // ✅ flipped
     document.body.appendChild(cursor);
 
     const move = (e) => {

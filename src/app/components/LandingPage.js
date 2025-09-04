@@ -45,22 +45,16 @@ export default function Home() {
     });
   }, []);
 
-  if (loading) {
-    return (
-      <div className="fixed inset-0 flex items-center justify-center bg-black opacity-70 z-50">
-        <img
-          src="/loader.gif"
-          alt="Loading..."
-          className="w-20 h-20"
-        />
-      </div>
-    );
-  }
   
   return (
    
     <div className="relative select-none min-h-screen overflow-hidden">
       {/* Background image for desktop */}
+      {loading && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black/70 z-50">
+          <img src="/loader.gif" alt="Loading..." className="w-32 h-32" />
+        </div>
+      )}
       <Image
         src="/background.svg"
         alt="Background"
@@ -190,16 +184,16 @@ export default function Home() {
         {/* Hero section */}
 
         <section className="relative w-[50vw] z-10 flex flex-col items-center text-center mt-10">
-          <div className="z-10 font-pixeboy text-[20vh] leading-none [text-shadow:4px_4px_4px_var(--tw-shadow-color)] shadow-[#FFF58C] text-[#F3EDCB]">
+          <div className="z-10 font-pixeboy text-[20vh] leading-none [text-shadow:4px_4px_4px_var(--tw-shadow-color)] shadow-[#FFF58C] text-[#F3EDCB] animate-glow-pulse">
             HACK
           </div>
-          <div className="z-10 font-pixeboy text-[20vh] leading-none [text-shadow:4px_4px_4px_var(--tw-shadow-color)] shadow-[#FFF58C] text-[#F3EDCB]">
+          <div className="z-10 font-pixeboy text-[20vh] leading-none [text-shadow:4px_4px_4px_var(--tw-shadow-color)] shadow-[#FFF58C] text-[#F3EDCB] animate-glow-pulse">
             BATTLE
           </div>
-          <div className="z-10 font-pixeboy text-6xl mt-4">
+          <div className="z-10 font-pixeboy text-6xl mt-4 animate-glow-pulse">
             JOIN THE ULTIMATE
           </div>
-          <div className="z-10 font-pixeboy text-6xl mt-2">36 hour Hackathon</div>
+          <div className="z-10 font-pixeboy text-6xl mt-2 animate-glow-pulse">36 hour Hackathon</div>
 
           {/* Register button */}
           <div className="relative b mt-6">

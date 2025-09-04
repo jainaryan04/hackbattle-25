@@ -8,16 +8,17 @@ import SpeakerSection from "./components/speaker";
 import VineDivider from "./components/VineDivider";
 import PS from "./components/ps";
 import CustomCursor from "./components/Cursor";
+
 export default function Page() {
   const [showContent, setShowContent] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768); // mobile breakpoint
+      setIsMobile(window.innerWidth < 768);
     };
 
-    handleResize(); // check on mount
+    handleResize();
     window.addEventListener("resize", handleResize);
 
     return () => window.removeEventListener("resize", handleResize);
@@ -29,14 +30,13 @@ export default function Page() {
 
   return (
     <div>
-      <CustomCursor />
+      {!isMobile && <CustomCursor />}
       <LandingPage />
       {/* <VineDivider />  */}
       <About />
       <PS />
       {/* <SpeakerSection/> */}
       <FaqSection />
-      
     </div>
   );
 }
