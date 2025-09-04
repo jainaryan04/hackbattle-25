@@ -156,6 +156,16 @@ html {
 .animate-vine {
   animation: vine-scroll 30s linear infinite;
 }
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0; }
+  25%, 75% { opacity: 1; }
+}
+
+.animate-fade-in-out {
+  animation: fadeInOut 1s ease-in-out;
+}
+
 @keyframes waterfall {
   0% {
     background-position: 0 100%;
@@ -169,3 +179,4 @@ html {
   animation: waterfall 4s linear infinite;
   background-repeat: repeat-y;
 }
+
