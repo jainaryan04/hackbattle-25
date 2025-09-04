@@ -5,7 +5,7 @@ import Smoke from "./Smoke";
 
 const About = () => {
     return (
-        <>
+        <section id="about">
             {/* Desktop */}
             <div className="hidden md:block">
                 <DesktopAbout />
@@ -15,12 +15,12 @@ const About = () => {
             <div className="block md:hidden overflow-x-hidden">
                 <MobileAbout />
             </div>
-        </>
+            </section>
     );
 };
 
 const DesktopAbout = () => (
-    <section id="about">
+    
         <div className="w-full h-screen bg-[url('/about.svg')] select-none bg-center bg-cover flex items-center justify-center relative">
 
             {/* ✨ Glowing Spores */}
@@ -73,7 +73,6 @@ const DesktopAbout = () => (
                 <Smoke />
             </div>
         </div>
-    </section>
 );
 
 const MobileAbout = () => (

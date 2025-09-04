@@ -32,7 +32,7 @@ export default function LandingPagePhone() {
 </div>
 
       {/* Top Navbar */}
-      <div className="absolute top-0 left-0 right-0 flex justify-between items-center px-6 py-4 z-30">
+      <div className="absolute fixed top-0 left-0 right-0 flex justify-between items-center px-6 py-4 z-30">
         {/* Menu button */}
         <button onClick={() => setMenuOpen(true)} className=" text-3xl">
           ☰
@@ -82,8 +82,8 @@ export default function LandingPagePhone() {
             {[
               { icon: "/icon1.svg", label: "HOME", path: "/" },
               { icon: "/icon2.svg", label: "ABOUT", path: "/#about" },
-              { icon: "/icon3.svg", label: "FAQs", path: "/#faqs" },
               { icon: "/icon4.svg", label: "PROBLEM STATEMENTS", path: "/#ps" },
+              { icon: "/icon3.svg", label: "FAQs", path: "/#faqs" },
               // { icon: "/icon5.svg", label: "TIMELINE", path: "/timeline" },
             ].map((item, idx) => (
               <button
