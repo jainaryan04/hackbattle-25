@@ -10,7 +10,7 @@ export default function LandingPagePhone() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="relative min-h-screen w-full overflow-hidden text-white font-pixeboy select-none">
+    <div className="relative h-[100dvh] w-full overflow-hidden text-white font-pixeboy select-none">
       {/* Background */}
       <Image
         src="/landing-bg.svg"
@@ -32,7 +32,7 @@ export default function LandingPagePhone() {
 </div>
 
       {/* Top Navbar */}
-      <div className="absolute fixed top-0 left-0 right-0 flex justify-between items-center px-6 py-4 z-30">
+      <div className="fixed top-0 left-0 right-0 flex justify-between items-center px-6 py-4 z-30">
         {/* Menu button */}
         <button onClick={() => setMenuOpen(true)} className=" text-3xl">
           ☰
@@ -118,8 +118,8 @@ export default function LandingPagePhone() {
 
       {/* Page Content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">
-        <section className="relative z-10 flex flex-col items-center justify-center text-center font-pixeboy mt-32">
-          <div className="text-8xl bg-clip-text -mt-9 [text-shadow:4px_4px_4px_var(--tw-shadow-color)] shadow-[#FFF58C] text-[#F3EDCB] leading-tight">
+        <section className="relative z-10 flex flex-col items-center justify-center text-center font-pixeboy -mt-[60vh]">
+          <div className="text-8xl bg-clip-text [text-shadow:4px_4px_4px_var(--tw-shadow-color)] shadow-[#FFF58C] text-[#F3EDCB] leading-tight">
             Hack
           </div>
           <div className="text-8xl bg-clip-text -mt-15 [text-shadow:4px_4px_4px_var(--tw-shadow-color)] shadow-[#FFF58C] text-[#F3EDCB] leading-tight">
