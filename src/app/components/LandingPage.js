@@ -4,11 +4,10 @@ import Image from "next/image";
 import MobileLanding from "./MobileLanding";
 import Link from "next/link";
 
-export default function Home() {
+export default function Home({ onFinish }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-   
     const assets = [
       "/background.svg",
       "/phone-bg.svg",
@@ -32,18 +31,19 @@ export default function Home() {
       img.onload = () => {
         loaded++;
         if (loaded === assets.length) {
-          setLoading(false); 
+          setLoading(false);
+          if (onFinish) onFinish(); // notify parent
         }
       };
       img.onerror = () => {
-       
         loaded++;
         if (loaded === assets.length) {
           setLoading(false);
+          if (onFinish) onFinish(); // notify parent
         }
       };
     });
-  }, []);
+  }, [onFinish]);
 
   
   return (
