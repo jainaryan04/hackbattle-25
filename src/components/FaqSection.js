@@ -81,7 +81,7 @@ export default function FaqSection() {
     { 
       question: "Is there a team size limit?", 
       answer: "Yes. Teams must have 3–5 members. Solo participation is not permitted, but members can come from any background or discipline.", 
-      headImageSrc: "/minecraft-head-zombie.jpeg", 
+      headImageSrc: "/minecraft-head-zombie.png", 
       characterGif: "/Zombie.gif", 
       characterStyle: { transform: 'translateY(155px) translateX(-50px) scale(1.2)' } 
     },
