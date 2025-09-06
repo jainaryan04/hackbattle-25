@@ -1,6 +1,7 @@
 'use client'; 
 import React from 'react';
 import { VT323 } from 'next/font/google';
+import Image from 'next/image';
 
 const vt323 = VT323({
   weight: '400',
@@ -35,8 +36,11 @@ export default function FaqItem({
       <div className="flex justify-between items-center" onClick={handleClick}>
         <div className="flex items-center gap-4">
           {headImageSrc && (
-            <img 
+            <Image 
+            loading='lazy'
               src={headImageSrc} 
+              height={0}
+              width={0}
               alt="Minecraft head"
               draggable={false}
               onDragStart={(e) => e.preventDefault()}

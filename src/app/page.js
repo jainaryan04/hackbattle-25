@@ -6,6 +6,7 @@ import FaqSection from "src/components/FaqSection";
 import SpeechBubble from "src/app/components/SpeechBubble";
 import PS from "./components/ps";
 import CustomCursor from "./components/Cursor";
+import Image from "next/image";
 
 export default function Page() {
   const [speechBubbleComplete, setSpeechBubbleComplete] = useState(false);
@@ -33,7 +34,7 @@ export default function Page() {
   if (!cookieChecked) {
     return (
       <div className="fixed inset-0 flex items-center justify-center bg-black/70 z-50">
-        <img src="/loader.gif" alt="Loading..." className="w-32 h-32" />
+        <Image src="/loader.gif" alt="Loading..." height={0} width={0} className="w-32 h-32" />
       </div>
     );
   }

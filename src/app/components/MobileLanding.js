@@ -20,16 +20,17 @@ export default function LandingPagePhone() {
         className="object-cover"
         draggable={false}
       />
-      {/* Waterfall Background */}
-{/* Waterfall Background */}
-<div className="absolute top-0 left-1/2 -translate-x-1/2 flex items-center w-64 h-[100vh] overflow-hidden z-0 opacity-60">
-  <img
+      
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 flex items-center w-64 h-[100vh] overflow-hidden z-0 opacity-60">
+  <Image
     src="/video/waterfall.gif"
     alt="Waterfall"
-    className="w-full h-full object-cover"
-    draggable="false"
+    fill
+    className="object-cover"
+    draggable={false}
   />
 </div>
+
 
       {/* Top Navbar */}
       <div className="fixed top-0 left-0 right-0 flex justify-between items-center px-6 py-4 z-30">
@@ -97,6 +98,7 @@ export default function LandingPagePhone() {
                 {/* Icon Frame */}
                 <div className="w-24 h-32 bg-[url('/wood-frame.svg')] bg-cover top-20 flex items-center justify-center">
                   <Image
+                  loading="lazy"
                     src={item.icon}
                     alt={item.label}
                     width={96}
@@ -136,6 +138,7 @@ export default function LandingPagePhone() {
           <div className="relative mb-4">
             <div className="relative inline-block translate-x-15">
               <Image
+              loading="lazy"
                 src="/dialogbox-phone.svg"
                 alt="bubble"
                 width={300}

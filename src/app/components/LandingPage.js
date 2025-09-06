@@ -52,7 +52,7 @@ export default function Home({ onFinish }) {
       {/* Background image for desktop */}
       {loading && (
         <div className="fixed inset-0 flex items-center justify-center bg-black/70 z-50">
-          <img src="/loader.gif" alt="Loading..." className="w-32 h-32" />
+          <Image src="/loader.gif" alt="Loading..." height={0} width={0} className="w-32 h-32" />
         </div>
       )}
       <Image
@@ -134,7 +134,7 @@ export default function Home({ onFinish }) {
               rel="noopener noreferrer"
               className="bg-[#1e2e24] p-2 rounded-full hover:scale-110 transition"
             >
-              <img src="/discord.svg" alt="Discord" className="w-6 h-6" />
+              <Image src="/discord.svg" alt="Discord" height={0} width={0} className="w-6 h-6" />
             </a>
 
             {/* Login Button */}

@@ -64,7 +64,7 @@ export default function SpeechBubbleIntro({ onFinish }) {
     <div className="relative w-full h-screen overflow-hidden select-none">
       {loading && (
         <div className="fixed inset-0 flex items-center justify-center bg-black/70 z-50">
-          <img src="/loader.gif" alt="Loading..." className="w-32 h-32" />
+          <Image src="/loader.gif" height={0} width={0} alt="Loading..." className="w-32 h-32" />
         </div>
       )}
       {/* Background */}
