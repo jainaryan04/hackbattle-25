@@ -10,7 +10,7 @@ export default function ProblemStatements() {
   };
 
   return (
-    <div className="relative flex flex-col items-center h-screen w-full text-center">
+    <div id="ps" className="relative flex flex-col items-center h-screen w-full text-center">
       <Image
         src="/ps.svg"
         alt="Background"
