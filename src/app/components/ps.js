@@ -24,26 +24,27 @@ export default function ProblemStatements() {
         PROBLEM STATEMENTS
       </h1>
 
-      <div className="flex flex-col md:flex-row w-[60vw] gap-y-[1vh] gap-x-[1vw] md:gap-y-0 h-[70vh] overflow-hidden relative z-10">
+      <div className="flex flex-col md:flex-row w-[60vw] gap-y-[1vh] gap-x-[1vw] md:gap-y-0 h-[80vh] overflow-hidden relative z-10">
         {Array.from({ length: 10 }, (_, i) => (
           <div
-            key={i}
-            className={`relative transition-all duration-500 ease-in-out cursor-pointer rounded-2xl overflow-hidden
-              ${active === i 
-                ? "md:flex-[6] flex-[6]" 
-                : active === null 
-                  ? "flex-1" 
-                  : "md:flex-[0.5] flex-[0.5]"
-              }
-            `}
-            onMouseEnter={() => !("ontouchstart" in window) && setActive(i)}
-            onMouseLeave={() => !("ontouchstart" in window) && setActive(null)}
-            onClick={() => handleActivate(i)} // for touch + click
-          >
+          key={i}
+          className={`relative transition-all duration-300 cursor-pointer rounded-2xl overflow-hidden
+            ${active === i 
+              ? "md:flex-[6] flex-[6] expand-bounce" 
+              : active === null 
+                ? "flex-1" 
+                : "md:flex-[0.5] flex-[0.5]"
+            }
+          `}
+          onMouseEnter={() => !("ontouchstart" in window) && setActive(i)}
+          onMouseLeave={() => !("ontouchstart" in window) && setActive(null)}
+          onClick={() => handleActivate(i)}
+        >
+        
             <div 
               className="absolute inset-0 w-full h-full"
               style={{
-                backgroundImage: `url(/ps/${i + 1}.svg)`,
+                backgroundImage: `url(/ps/${i + 1}.png)`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
@@ -55,7 +56,7 @@ export default function ProblemStatements() {
               <div
                 className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 text-white text-2xl font-bold tracking-wider z-10"
                 style={{
-                  backgroundImage: `url(/ps/${i + 1}.svg)`,
+                  backgroundImage: `url(/ps/${i + 1}.png)`,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                   backgroundRepeat: "no-repeat",

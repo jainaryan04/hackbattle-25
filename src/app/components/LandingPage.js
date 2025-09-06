@@ -48,7 +48,7 @@ export default function Home({ onFinish }) {
   
   return (
    
-    <div className="relative select-none min-h-screen overflow-hidden">
+    <div className="relative select-none h-[100dvh] overflow-hidden">
       {/* Background image for desktop */}
       {loading && (
         <div className="fixed inset-0 flex items-center justify-center bg-black/70 z-50">
