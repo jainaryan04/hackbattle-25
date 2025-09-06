@@ -111,7 +111,7 @@ export default function Home({ onFinish }) {
           {/* Left links */}
           <div className="flex gap-8">
   {[
-    { label: "Home", path: "#home" },
+    { label: "Home" },
     { label: "About", path: "#about" },
     { label: "Problem Statements", path: "#ps" },
     { label: "FAQ", path: "#faqs" }

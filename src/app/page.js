@@ -57,25 +57,10 @@ export default function Page() {
         <Home onFinish={() => setLandingLoaded(true)} />
       </div>
 
-      <div className="block md:hidden">
-        {landingLoaded && speechBubbleComplete && (
-          <>
             <About />
             <PS />
             <FaqSection />
-          </>
-        )}
-      </div>
 
-      <div className="hidden md:block">
-        {landingLoaded && (
-          <>
-            <About />
-            <PS />
-            <FaqSection />
-          </>
-        )}
-      </div>
     </div>
   );
 }
