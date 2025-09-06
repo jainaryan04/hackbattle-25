@@ -7,7 +7,7 @@ import SpeechBubble from "src/app/components/SpeechBubble";
 import PS from "./components/ps";
 import CustomCursor from "./components/Cursor";
 import Image from "next/image";
-
+import SpeakerSection from "./components/speaker";
 export default function Page() {
   const [speechBubbleComplete, setSpeechBubbleComplete] = useState(false);
   const [landingLoaded, setLandingLoaded] = useState(false);
@@ -62,6 +62,7 @@ export default function Page() {
           <>
             <About />
             <PS />
+            <SpeakerSection />
             <FaqSection />
           </>
         )}
@@ -72,6 +73,7 @@ export default function Page() {
           <>
             <About />
             <PS />
+            <SpeakerSection />
             <FaqSection />
           </>
         )}

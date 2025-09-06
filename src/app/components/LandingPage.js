@@ -114,6 +114,7 @@ export default function Home({ onFinish }) {
     { label: "Home", path: "#home" },
     { label: "About", path: "#about" },
     { label: "Problem Statements", path: "#ps" },
+    { label: "Speaker", path: "#speaker" },
     { label: "FAQ", path: "#faqs" }
   ].map(({ label, path }) => (
     <a
