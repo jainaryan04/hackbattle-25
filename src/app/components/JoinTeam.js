@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React,{ useState, useEffect } from 'react';
 import Image from 'next/image';
 
 // --- Snowflakes Component ---
@@ -25,7 +25,7 @@ const Snowflakes = () => {
 };
 
 
-
+// --- Reusable Modal Component ---
 const Modal = ({ title, inputLabel, buttonText, onClose, onSubmit }) => {
   const [inputValue, setInputValue] = useState('');
 
@@ -69,8 +69,9 @@ const Modal = ({ title, inputLabel, buttonText, onClose, onSubmit }) => {
   );
 };
 
+// --- Main Join Team Component ---
 export default function JoinTeam() {
-  const [modal, setModal] = useState(null); 
+  const [modal, setModal] = useState(null); // 'join', 'create', or null
 
   const handleJoinTeam = (code) => {
     console.log("Joining team with code:", code);
@@ -86,6 +87,7 @@ export default function JoinTeam() {
   };
 
   return (
+    // UPDATED: Changed back to `bg-cover` to fill the screen
     <div className="relative min-h-screen w-full flex flex-col items-center justify-center p-4 bg-[url('/your-background.svg')] bg-cover bg-center text-white font-pixeboy">
       
       <Snowflakes />
