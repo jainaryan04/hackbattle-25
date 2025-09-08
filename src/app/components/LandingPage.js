@@ -52,7 +52,7 @@ export default function Home({ onFinish }) {
       {/* Background image for desktop */}
       {loading && (
         <div className="fixed inset-0 flex items-center justify-center bg-black/70 z-50">
-          <Image src="/loader.gif" alt="Loading..." height={0} width={0} className="w-32 h-32" />
+          <Image src="/loader.webp" alt="Loading..." height={0} width={0} className="w-32 h-32" />
         </div>
       )}
       <Image
@@ -64,15 +64,6 @@ export default function Home({ onFinish }) {
         draggable="false"
       />
 
-      {/* Background image for mobile */}
-      <Image
-        src="/phone-bg.svg"
-        alt="Background"
-        fill
-        className="object-cover md:hidden"
-        priority
-        draggable="false"
-      />
 
       <div className="absolute top-0 left-170 w-64 h-168 hidden md:block overflow-hidden z-0 opacity-60">
         {/* Static Waterfall Background */}
