@@ -12,11 +12,7 @@ export default function SpeakerSection() {
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setAnimate(true);
-        } else {
-          setAnimate(false);
-        }
+        setAnimate(entry.isIntersecting);
       },
       { threshold: 0.5 }
     );
@@ -29,7 +25,7 @@ export default function SpeakerSection() {
     <section
       id="speaker"
       ref={sectionRef}
-      className="relative w-full min-h-screen flex items-center justify-center bg-[url('/speaker.svg')] bg-cover bg-center"
+      className="relative w-full min-h-screen flex items-center justify-center bg-[url('/speaker.webp')] bg-cover bg-center"
     >
       {/* Title */}
       <h2 className="absolute top-10 text-6xl text-[#EFE7A1] font-pixeboy text-shadow-lg text-shadow-black/80">
@@ -38,12 +34,12 @@ export default function SpeakerSection() {
 
       {/* Scroll + Overlay Text */}
       <div
-        className={`relative flex items-center justify-center z-20 origin-top transition-transform duration-700 ${
-          animate ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0"
-        }`}
+        className={`relative flex items-center justify-center z-20 origin-top transition-all duration-700 ease-in-out
+          ${animate ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0"}
+        `}
       >
         <Image
-          src="/patch.svg"
+          src="/patch.webp"
           alt="Patch"
           width={450}
           height={450}
@@ -52,7 +48,13 @@ export default function SpeakerSection() {
         />
 
         {/* Overlay Text */}
-        <p className="absolute text-6xl font-pixeboy text-black">STAY TUNED</p>
+        <p
+          className={`absolute text-6xl font-pixeboy text-black transition-opacity duration-700 delay-100
+            ${animate ? "opacity-100" : "opacity-0"}
+          `}
+        >
+          STAY TUNED
+        </p>
       </div>
     </section>
   );

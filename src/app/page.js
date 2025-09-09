@@ -41,7 +41,17 @@ export default function Page() {
   if (!cookieChecked) {
     return (
       <div className="fixed inset-0 flex items-center justify-center bg-black/70 z-50">
-        <Image src="/loader.webp" alt="Loading..." height={128} width={128} className="w-32 h-32" />
+        <video
+          src="/loader.webm"
+          autoPlay
+          loop
+          muted
+          playsInline
+          alt="Loading..."
+          height={128}
+          width={128}
+          className="w-32 h-32"
+        />
       </div>
     );
   }
