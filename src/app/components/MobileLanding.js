@@ -13,7 +13,7 @@ export default function LandingPagePhone() {
     <div className="relative h-[100dvh] w-full overflow-hidden text-white font-pixeboy select-none">
       {/* Background */}
       <Image
-        src="/landing-bg.svg"
+        src="/landing-bg.webp"
         alt="Background"
         fill
         priority
@@ -22,11 +22,14 @@ export default function LandingPagePhone() {
       />
 
       <div className="absolute top-0 left-1/2 -translate-x-1/2 flex items-center w-64 h-[100vh] overflow-hidden z-0 opacity-60">
-        <Image
-          src="/video/waterfall.gif"
+        <video
+          src="/video/waterfall.webm"
           alt="Waterfall"
-          fill
-          className="object-cover"
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-100 h-210 object-cover"
           draggable={false}
         />
       </div>
@@ -63,12 +66,12 @@ export default function LandingPagePhone() {
       >
         {/* Borders */}
         <div className="absolute inset-0 z-50 pointer-events-none flex justify-between">
-          <div className="h-full w-8 bg-[url('/border.svg')] bg-repeat-y bg-left bg-contain"></div>
-          <div className="h-full w-8 bg-[url('/border.svg')] bg-repeat-y bg-right bg-contain"></div>
+          <div className="h-full w-8 bg-[url('/border.webp')] bg-repeat-y bg-left bg-contain"></div>
+          <div className="h-full w-8 bg-[url('/border.webp')] bg-repeat-y bg-right bg-contain"></div>
         </div>
 
         {/* Sidebar content */}
-        <div className="h-full w-full bg-[url('/menu-bg.svg')] bg-cover top- flex flex-col p-6 relative z-40">
+        <div className="h-full w-full bg-[url('/menu-bg.webp')] bg-cover top- flex flex-col p-6 relative z-40">
           {/* Close button */}
           <button
             onClick={() => setMenuOpen(false)}
@@ -80,11 +83,15 @@ export default function LandingPagePhone() {
           {/* Menu Items */}
           <div className="flex items-center select-none flex-col gap-6 mt-16">
             {[
-              { icon: "/icon1.svg", label: "HOME", path: "/" },
-              { icon: "/icon2.svg", label: "ABOUT", path: "/#about" },
-              { icon: "/icon4.svg", label: "PROBLEM STATEMENTS", path: "/#ps" },
-              { icon: "/icon4.svg", label: "SPEAKER", path: "/#speaker" },
-              { icon: "/icon3.svg", label: "FAQs", path: "/#faqs" },
+              { icon: "/icon1.webp", label: "HOME", path: "/" },
+              { icon: "/icon2.webp", label: "ABOUT", path: "/#about" },
+              {
+                icon: "/icon4.webp",
+                label: "PROBLEM STATEMENTS",
+                path: "/#ps",
+              },
+              { icon: "/icon4.webp", label: "SPEAKER", path: "/#speaker" },
+              { icon: "/icon3.webp", label: "FAQs", path: "/#faqs" },
               // { icon: "/icon5.svg", label: "TIMELINE", path: "/timeline" },
             ].map((item, idx) => (
               <button
@@ -96,7 +103,7 @@ export default function LandingPagePhone() {
                 className=" flex items-center w-full"
               >
                 {/* Icon Frame */}
-                <div className="w-24 h-32 bg-[url('/wood-frame.svg')] bg-cover top-20 flex items-center justify-center">
+                <div className="w-24 h-32 bg-[url('/wood-frame.webp')] bg-cover top-20 flex items-center justify-center">
                   <Image
                     loading="lazy"
                     src={item.icon}
@@ -109,7 +116,7 @@ export default function LandingPagePhone() {
                 </div>
 
                 {/* Text Button */}
-                <div className="flex-1 h-16 bg-[url('/wood-button.svg')] bg-cover flex items-center justify-center text-amber-100 font-pixeboy text-3xl">
+                <div className="flex-1 h-16 bg-[url('/wood-button.webp')] bg-cover flex items-center justify-center text-amber-100 font-pixeboy text-3xl">
                   {item.label}
                 </div>
               </button>
@@ -139,7 +146,7 @@ export default function LandingPagePhone() {
             <div className="relative inline-block translate-x-15">
               <Image
                 loading="lazy"
-                src="/dialogbox-phone.svg"
+                src="/dialogbox-phone.webp"
                 alt="bubble"
                 width={300}
                 height={300}
@@ -165,7 +172,7 @@ export default function LandingPagePhone() {
 
           {/* Character at the bottom */}
           <Image
-            src="/phone-man.svg"
+            src="/phone-man.webp"
             alt="character"
             width={300}
             height={300}
