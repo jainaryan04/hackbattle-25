@@ -10,7 +10,6 @@ export default function Home({ onFinish }) {
   useEffect(() => {
     const assets = [
       "/background.svg",
-      "/phone-bg.svg",
       "/video/waterfall.gif",
       "/video/frog.gif",
       "/video/axo.gif",
@@ -20,7 +19,6 @@ export default function Home({ onFinish }) {
       "/leaf-right.svg",
       "/man.svg",
       "/discord.svg",
-      "/registerborder.svg",
     ];
 
     let loaded = 0;

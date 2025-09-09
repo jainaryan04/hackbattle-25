@@ -6,7 +6,6 @@ import FaqSection from "src/components/FaqSection";
 import SpeechBubble from "src/app/components/SpeechBubble";
 import PS from "./components/ps";
 import CustomCursor from "./components/Cursor";
-import JoinTeam from "src/app/components/JoinTeam";
 import SpeakerSection from "./components/speaker";
 import Image from "next/image";
 
@@ -70,7 +69,6 @@ export default function Page() {
           <PS />
           <SpeakerSection />
           <FaqSection />
-          <JoinTeam />
         </>
       )}
     </div>
