@@ -15,10 +15,10 @@ export default function SpeechBubbleIntro({ onFinish }) {
 
   useEffect(() => {
     const assets = [
-      "/leaf1.svg",
-      "/cavevines.svg",
-      "/dialogbox-phone.svg",
-      "/phone-man.svg",
+      "/leaf1.webp",
+      "/cavevines.webp",
+      "/dialogbox-phone.webp",
+      "/phone-man.webp",
     ];
 
     let loaded = 0;
@@ -80,7 +80,7 @@ export default function SpeechBubbleIntro({ onFinish }) {
       {/* Left leaves */}
       <div className="absolute top-0 left-0 z-40">
         <Image
-          src="/leaf1.svg"
+          src="/leaf1.webp"
           alt="leaves"
           width={160}
           height={200}
@@ -93,7 +93,7 @@ export default function SpeechBubbleIntro({ onFinish }) {
                     {[250, 200, 300, 180].map((h, i) => (
           <Image
             key={i}
-            src="/cavevines.svg"
+            src="/cavevines.webp"
             alt={`Vine ${i + 1}`}
             width={50}
             height={h}
@@ -108,7 +108,7 @@ export default function SpeechBubbleIntro({ onFinish }) {
       {/* Top-right leaves */}
       {/* <div className="absolute top-0 right-0 z-40">
         <Image
-          src="/leaf1.svg"
+          src="/leaf1.webp"
           alt="leaf-right"
           width={150}
           height={150}
@@ -121,7 +121,7 @@ export default function SpeechBubbleIntro({ onFinish }) {
         {/* Bubble above Steve */}
         <div className="relative inline-block translate-x-15">
   <Image
-    src="/dialogbox-phone.svg"
+    src="/dialogbox-phone.webp"
     alt="bubble"
     width={300}
     height={300}
@@ -135,7 +135,7 @@ export default function SpeechBubbleIntro({ onFinish }) {
   </div>
 </div>
         {/* Character */}
-        <Image src="/phone-man.svg" alt="character" width={300} height={300} draggable="false" />
+        <Image src="/phone-man.webp" alt="character" width={300} height={300} draggable="false" />
       </div>
     </div>
   );
