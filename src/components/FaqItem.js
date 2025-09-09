@@ -1,10 +1,7 @@
-'use client';
+'use client'; 
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { VT323 } from 'next/font/google';
-import FaqItem from '../components/FaqItem';
-import CharacterDisplay from '../components/CharacterDisplay';
-import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 
 const vt323 = VT323({
@@ -13,105 +10,40 @@ const vt323 = VT323({
   display: 'swap',
 });
 
-const Fireflies = () => {
-  const fireflyCount = 25;
-  const [fireflies, setFireflies] = useState([]);
+export default function FaqItem({ question, answer, headImageSrc, isOpen, toggleItem }) {
 
-  useEffect(() => {
-    const generatedFireflies = Array.from({ length: fireflyCount }).map((_, i) => {
-      const style = {
-        top: `${Math.random() * 100}%`,
-        left: `${Math.random() * 100}%`,
-        width: `${Math.random() * 3 + 2}px`,
-        height: `${Math.random() * 3 + 2}px`,
-        animationDuration: `${Math.random() * 3 + 2}s`,
-        animationDelay: `${Math.random() * 5}s`,
-      };
-      return <span key={i} className="firefly" style={style}></span>;
-    });
-    setFireflies(generatedFireflies);
-  }, []);
-
-  return <div className="absolute top-0 left-0 w-full h-full z-0">{fireflies}</div>;
-};
-
-export default function FaqSection() {
-  
-  const [openIndex, setOpenIndex] = useState(null);
-  // UPDATED: The default state now points to the Blaze.webm file
-  const [currentCharacter, setCurrentCharacter] = useState({ src: '/Blaze.webm', style: {} }); 
-
-  const pathname = usePathname();
-
-  // UPDATED: All character files now point to the .webm format
-  const faqData = [
-    { question: "What is Hack Battle?", answer: "A gamified hackathon...", headImageSrc: "/minecraft-head-steve.jpeg", characterWebM: "/Steve.webm", characterStyle: { transform: 'translateY(110px) scale(2.0)' } },
-    { question: "Do I need Minecraft to join?", answer: "Nope! The theme is...", headImageSrc: "/minecraft-head-alex.jpeg", characterWebM: "/Alex.webm", characterStyle: { transform: 'translateY(100px) translateX(20px) scale(2.0)' } },
-    { question: "How do I register?", answer: "Click the 'Register' button...", headImageSrc: "/minecraft-head-chicken.jpeg", characterWebM: "/Chicken.webm", characterStyle: { transform: 'translateY(158px) translateX(10px) scale(1.2)'} }, 
-    { question: "Is Hackbattle fresher friendly?", answer: "Absolutely!, this is YOUR launchpad.", headImageSrc: "/minecraft-head-creeper.jpeg", characterWebM: "/Creeper.webm", characterStyle: { transform: 'translateY(200px) translateX(20px) scale(1.2)' } },
-    { question: "What should i bring?", answer: "Your laptop, extention cord...", headImageSrc: "/minecraft-head-piglin.jpg", characterWebM: "/Piglin.webm", characterStyle: { transform: 'translateY(170px) translateX(-40px) scale(1.2)' } },
-    { question: "Is there a team size limit?", answer: "Teams can consist of 2-4 members.", headImageSrc: "/minecraft-head-zombie.jpeg", characterWebM: "/Zombie.webm", characterStyle: { transform: 'translateY(155px) translateX(-50px) scale(1.2)' } },
-  ];
-
-  const toggleItem = (index) => {
-    if (openIndex === index) {
-      setOpenIndex(null);
-      setCurrentCharacter({ src: '/Blaze.webm', style: {} });
-    } else {
-      setOpenIndex(index);
-      // I've renamed `characterWebM` to `characterSrc` for clarity, but you can keep it as is
-      setCurrentCharacter({ 
-        src: faqData[index].characterWebM, 
-        style: faqData[index].characterStyle || {} 
-      });
-    }
-  };
+  const boxStyles = "bg-[#103818]/80 backdrop-blur-sm border-8 border-[#081c0c] shadow-[inset_0_0_0_6px_#225c3c] rounded-2xl transition-all duration-350 ease-in-out hover:scale-[1.02] hover:bg-[#043927]/90 hover:border-[#327a50] cursor-pointer";
+  const minecraftBoxClipPath = "[clip-path:polygon(0px_16px,_8px_16px,_8px_8px,_16px_8px,_16px_0px,_calc(100%_-_16px)_0px,_calc(100%_-_16px)_8px,_calc(100%_-_8px)_8px,_calc(100%_-_8px)_16px,_100%_16px,_100%_calc(100%_-_16px),_calc(100%_-_8px)_calc(100%_-_16px),_calc(100%_-_8px)_calc(100%_-_8px),_calc(100%_-_16px)_calc(100%_-_8px),_calc(100%_-_16px)_100%,_16px_100%,_16px_calc(100%_-_8px),_8px_calc(100%_-_8px),_8px_calc(100%_-_16px),_0px_calc(100%_-_16px))]";
 
   return (
-    <section id="faqs">
-      <div
-        className={`relative min-h-screen w-full flex flex-col items-center p-4 bg-[url('/faq-background.svg')] bg-cover bg-center text-white overflow-hidden ${vt323.className}`}
-      >
-        <Fireflies />
-
-        <div className="flex justify-center items-center gap-4 mt-8">
-            <h1 className="text-6xl md:text-8xl font-bold text-[#f2e5a6] [text-shadow:3px_3px_#3a1d0c] animate-glow-pulse">
-              FAQs
-            </h1>
+    <div className={`${boxStyles} select-none py-4 px-7 ${minecraftBoxClipPath} ${vt323.className}`}>
+      <div className="flex justify-between items-center" onClick={toggleItem}>
+        <div className="flex items-center gap-4">
+          {headImageSrc && (
             <Image 
-              src="/question.svg"
-              alt="Question Mark"
-              width={64}
-              height={64}
+              loading='lazy'
+              src={headImageSrc} 
+              height={0}
+              width={0}
+              alt="Minecraft head" 
+              draggable={false}
+              onDragStart={(e) => e.preventDefault()}
+              className="w-12 h-12 md:w-16 md:h-16 object-contain select-none"
             />
+          )}
+          <h2 className="text-3xl text-[#f2e5a6] [text-shadow:2px_2px_#3a1d0c] animate-faq-title-glow cursor-pointer">
+            {question}
+          </h2>
         </div>
-
-        <main className="w-full mx-auto flex flex-col items-center z-10 p-4 md:flex-row md:items-start md:justify-between md:px-12">
-          
-          <div className="hidden md:flex md:w-1/3 md:items-end md:justify-center">
-            <div className="w-full mt-35">
-              <CharacterDisplay 
-                characterSrc={currentCharacter.src} 
-                style={currentCharacter.style}
-                className={currentCharacter.src === '/Blaze.webm' ? 'transform scale-x-[-1]' : ''}
-              />
-            </div>
-          </div>
-
-          <div className="space-y-2 w-full md:flex-1">
-            {faqData.map((item, index) => (
-              <FaqItem
-                key={index}
-                question={item.question}
-                answer={item.answer}
-                headImageSrc={item.headImageSrc}
-                isOpen={openIndex === index}
-                toggleItem={() => toggleItem(index)}
-              />
-            ))}
-          </div>
-        </main>
+        <span className="text-3xl text-[#f2e5a6] [text-shadow:2px_2px_#3a1d0c]">
+          {isOpen ? '-' : '+'}
+        </span>
       </div>
-    </section>
+      {isOpen && (
+        <p className="text-2xl leading-relaxed text-[#c8d4a6] mt-4 transition-all duration-300 ease-in-out">
+          {answer}
+        </p>
+      )}
+    </div>
   );
 }
