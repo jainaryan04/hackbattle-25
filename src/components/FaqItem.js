@@ -1,4 +1,5 @@
 'use client'; 
+
 import React from 'react';
 import { VT323 } from 'next/font/google';
 import Image from 'next/image';
@@ -9,39 +10,22 @@ const vt323 = VT323({
   display: 'swap',
 });
 
-export default function FaqItem({ 
-  question, 
-  answer, 
-  headImageSrc, 
-  isOpen, 
-  anyOpen,
-  toggleItem 
-}) {
-  const minecraftBoxClipPath = "[clip-path:polygon(0px_16px,_8px_16px,_8px_8px,_16px_8px,_16px_0px,_calc(100%_-_16px)_0px,_calc(100%_-_16px)_8px,_calc(100%_-_8px)_8px,_calc(100%_-_8px)_16px,_100%_16px,_100%_calc(100%_-_16px),_calc(100%_-_8px)_calc(100%_-_16px),_calc(100%_-_8px)_calc(100%_-_8px),_calc(100%_-_16px)_calc(100%_-_8px),_calc(100%_-_16px)_100%,_16px_100%,_16px_calc(100%_-_8px),_8px_calc(100%_-_8px),_8px_calc(100%_-_16px),_0px_calc(100%_-_16px))]";
-  const boxStyles = "bg-[#103818]/80 backdrop-blur-sm border-8 border-[#081c0c] shadow-[inset_0_0_0_6px_#225c3c] rounded-2xl transition-all duration-350 ease-in-out hover:scale-[1.02] hover:bg-[#043927]/90 hover:border-[#327a50] cursor-pointer";
+export default function FaqItem({ question, answer, headImageSrc, isOpen, toggleItem }) {
 
-  const handleClick = () => {
-    let audio;
-    if (isOpen) {
-      audio = new Audio('/audio/chest-closing.mp3');
-    } else {
-      audio = new Audio('/audio/faq-open.wav');
-    }
-    audio.play();
-    toggleItem();
-  };
+  const boxStyles = "bg-[#103818]/80 backdrop-blur-sm border-8 border-[#081c0c] shadow-[inset_0_0_0_6px_#225c3c] rounded-2xl transition-all duration-350 ease-in-out hover:scale-[1.02] hover:bg-[#043927]/90 hover:border-[#327a50] cursor-pointer";
+  const minecraftBoxClipPath = "[clip-path:polygon(0px_16px,_8px_16px,_8px_8px,_16px_8px,_16px_0px,_calc(100%_-_16px)_0px,_calc(100%_-_16px)_8px,_calc(100%_-_8px)_8px,_calc(100%_-_8px)_16px,_100%_16px,_100%_calc(100%_-_16px),_calc(100%_-_8px)_calc(100%_-_16px),_calc(100%_-_8px)_calc(100%_-_8px),_calc(100%_-_16px)_calc(100%_-_8px),_calc(100%_-_16px)_100%,_16px_100%,_16px_calc(100%_-_8px),_8px_calc(100%_-_8px),_8px_calc(100%_-_16px),_0px_calc(100%_-_16px))]";
 
   return (
     <div className={`${boxStyles} select-none py-4 px-7 ${minecraftBoxClipPath} ${vt323.className}`}>
-      <div className="flex justify-between items-center" onClick={handleClick}>
+      <div className="flex justify-between items-center" onClick={toggleItem}>
         <div className="flex items-center gap-4">
           {headImageSrc && (
             <Image 
-            loading='lazy'
+              loading='lazy'
               src={headImageSrc} 
               height={0}
               width={0}
-              alt="Minecraft head"
+              alt="Minecraft head" 
               draggable={false}
               onDragStart={(e) => e.preventDefault()}
               className="w-12 h-12 md:w-16 md:h-16 object-contain select-none"
@@ -63,3 +47,4 @@ export default function FaqItem({
     </div>
   );
 }
+

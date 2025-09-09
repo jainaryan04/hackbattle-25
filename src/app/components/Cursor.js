@@ -9,7 +9,7 @@ export default function CustomCursor() {
     if (isTouchDevice) return; // 🚫 Skip on mobiles/tablets
 
     const cursor = document.createElement("img");
-    cursor.src = "/diamond-pickaxe.gif";
+    cursor.src = "/diamond-pickaxe.webp";
     cursor.style.position = "fixed";
     cursor.style.pointerEvents = "none";
     cursor.style.width = "36px";

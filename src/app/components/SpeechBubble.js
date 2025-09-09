@@ -15,7 +15,6 @@ export default function SpeechBubbleIntro({ onFinish }) {
 
   useEffect(() => {
     const assets = [
-      "/phone-bg.svg",
       "/leaf1.svg",
       "/cavevines.svg",
       "/dialogbox-phone.svg",
@@ -64,17 +63,11 @@ export default function SpeechBubbleIntro({ onFinish }) {
     <div className="relative w-full h-screen overflow-hidden select-none">
       {loading && (
         <div className="fixed inset-0 flex items-center justify-center bg-black/70 z-50">
-          <Image src="/loader.gif" height={0} width={0} alt="Loading..." className="w-32 h-32" />
+          <Image src="/loader.webp" height={0} width={0} alt="Loading..." className="w-32 h-32" />
         </div>
       )}
       {/* Background */}
-      <Image
-        src="/phone-bg.svg"
-        alt="background"
-        fill
-        className="object-cover brightness-110 contrast-110"
-        priority
-      />
+      
 
       {/* Subtle glowing overlays */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
