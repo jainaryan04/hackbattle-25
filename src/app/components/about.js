@@ -14,11 +14,11 @@ const About = () => {
       </div>
 
       {/* Desktop layout */}
-      <div className="hidden md:flex w-full h-full bg-[url('/about.svg')] bg-center bg-cover items-center justify-center relative">
+      <div className="hidden md:flex w-full h-full bg-[url('/about.webp')] bg-center bg-cover items-center justify-center relative">
         <div className="relative w-[47vw] h-[72vh] rounded-[22px] bg-[url('/about-box-bg.svg')] bg-center bg-[length:100%_auto]">
           <Image
           loading='lazy'
-            src="/about-marble.png"
+            src="/about-marble.webp"
             alt="Overlay Box"
             width={594}
             height={650}
@@ -61,7 +61,7 @@ const About = () => {
         <div className="relative w-full mt-[25vh]">
           <Image
           loading='lazy'
-            src="/glass-back.svg"
+            src="/glass-back.webp"
             alt="Glass Back"
             width={500}
             height={500}
@@ -72,7 +72,7 @@ const About = () => {
           />
           <Image
           loading='lazy'
-            src="/glass-front.svg"
+            src="/glass-front.webp"
             alt="Glass Front"
             width={500}
             height={500}

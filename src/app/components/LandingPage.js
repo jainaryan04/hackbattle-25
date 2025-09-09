@@ -51,11 +51,13 @@ export default function Home({ onFinish }) {
       {/* Background image for desktop */}
       {loading && (
         <div className="fixed inset-0 flex items-center justify-center bg-black/70 z-50">
-          <Image
-            src="/loader.gif"
+          <video
+            src="/loader.webm"
             alt="Loading..."
-            height={0}
-            width={0}
+            autoPlay
+            loop
+            muted
+            playsInline
             className="w-32 h-32"
           />
         </div>
