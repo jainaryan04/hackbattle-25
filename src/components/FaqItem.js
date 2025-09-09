@@ -47,3 +47,4 @@ export default function FaqItem({ question, answer, headImageSrc, isOpen, toggle
     </div>
   );
 }
+
