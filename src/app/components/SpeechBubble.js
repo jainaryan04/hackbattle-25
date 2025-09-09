@@ -19,6 +19,10 @@ export default function SpeechBubbleIntro({ onFinish }) {
       "/cavevines.webp",
       "/dialogbox-phone.webp",
       "/phone-man.webp",
+      "/leaf1.webp",
+      "/cavevines.webp",
+      "/dialogbox-phone.webp",
+      "/phone-man.webp",
     ];
 
     let loaded = 0;
@@ -90,6 +94,7 @@ export default function SpeechBubbleIntro({ onFinish }) {
       <div className="absolute top-0 left-0 z-40">
         <Image
           src="/leaf1.webp"
+          src="/leaf1.webp"
           alt="leaves"
           width={160}
           height={200}
@@ -102,6 +107,7 @@ export default function SpeechBubbleIntro({ onFinish }) {
         {[250, 200, 300, 180].map((h, i) => (
           <Image
             key={i}
+            src="/cavevines.webp"
             src="/cavevines.webp"
             alt={`Vine ${i + 1}`}
             width={50}
@@ -116,7 +122,7 @@ export default function SpeechBubbleIntro({ onFinish }) {
       {/* Top-right leaves */}
       {/* <div className="absolute top-0 right-0 z-40">
         <Image
-          src="/leaf1.svg"
+          src="/leaf1.webp"
           alt="leaf-right"
           width={150}
           height={150}
