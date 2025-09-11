@@ -7,14 +7,16 @@ export default function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([]);
   const [msg, setMsg] = useState("");
-
+  const [isLoading, setIsLoading] = useState(false);
 
   const sendMessage = async () => {
     if (!msg.trim()) return;
 
     const userMessage = { role: "user", content: msg };
-    setMessages((prev) => [...prev, userMessage]);
+    
+    setMessages([userMessage]);
     setMsg("");
+    setIsLoading(true);
 
     try {
       const res = await fetch("/api/chat", {
@@ -32,7 +34,6 @@ export default function Chatbot() {
       const data = await res.json();
       console.log("Bot response:", data);
 
-
       setMessages((prev) => [
         ...prev,
         { role: "assistant", content: data.answer || "No response" },
@@ -43,6 +44,8 @@ export default function Chatbot() {
         ...prev,
         { role: "assistant", content: "⚠️ Error: " + err.message },
       ]);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -54,57 +57,79 @@ export default function Chatbot() {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50">
+    <div className="fixed bottom-12 right-6 z-50">
       {isOpen ? (
-        <div className="w-80 h-96 bg-white shadow-lg rounded-lg flex flex-col">
-          {/* Header */}
+        <div className="w-80 h-96 lg:w-[30vw] lg:max-h-[50vh] bg-white shadow-lg rounded-lg flex flex-col text-black">
           <div className="flex items-center justify-between p-3 border-b">
             <h3 className="font-semibold flex items-center gap-2">
-              <Bot size={18} /> Chatbot
+              <Bot size={18} /> Queries ?
             </h3>
             <button onClick={() => setIsOpen(false)}>
-              <X size={18} />
+              <X size={24} />
             </button>
           </div>
 
-          {/* Messages */}
           <div className="flex-1 p-3 overflow-y-auto space-y-2 text-sm">
             {messages.map((m, i) => (
               <div
                 key={i}
-                className={`p-2 rounded-lg max-w-[75%] ${
+                className={`p-2 rounded-lg w-auto max-w-[60%] ${
                   m.role === "user"
-                    ? "bg-blue-500 text-white ml-auto"
+                    ? "bg-green-800 text-white ml-auto"
                     : "bg-gray-200 text-black"
                 }`}
               >
                 {m.content}
               </div>
             ))}
+            {isLoading && (
+              <div className="bg-gray-200 text-black p-2 rounded-lg w-auto max-w-[60%]">
+                <div className="flex items-center gap-1">
+                  <span>Thinking</span>
+                  <div className="flex gap-1">
+                    <div className="w-1 h-1 bg-gray-500 rounded-full animate-pulse"></div>
+                    <div className="w-1 h-1 bg-gray-500 rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
+                    <div className="w-1 h-1 bg-gray-500 rounded-full animate-pulse" style={{animationDelay: '0.4s'}}></div>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
 
-          {/* Input */}
-          <div className="p-3 border-t flex items-center gap-2">
-            <textarea
-              rows={1}
-              className="flex-1 border rounded-lg text-black px-3 py-2 text-sm resize-none focus:outline-none"
-              placeholder="Type a question..."
-              value={msg}
-              onChange={(e) => setMsg(e.target.value)}
-              onKeyDown={handleKeyDown}
-            />
-            <button
-              className="bg-blue-500 text-white px-3 py-2 rounded-lg"
-              onClick={sendMessage}
-            >
-              Send
-            </button>
+          <div className="p-3 border-t">
+            {msg.length > 100 && (
+              <div className="mb-2 text-xs text-red-500 bg-red-50 p-2 rounded">
+                ⚠️ Question too long! Please keep it under 100 characters. ({msg.length}/100)
+              </div>
+            )}
+            <div className="flex items-center gap-2">
+              <textarea
+                rows={1}
+                className="flex-1 border rounded-lg text-black px-3 py-2 text-sm resize-none focus:outline-none"
+                value={msg}
+                onChange={(e) => setMsg(e.target.value)}
+                onKeyDown={handleKeyDown}
+                maxLength={150}
+                // placeholder="Ask a question (max 100 chars)..."
+              />
+              <button
+                className={`px-3 py-2 rounded-lg text-white ${
+                  msg.length > 100 || isLoading
+                    ? "bg-gray-400 cursor-not-allowed" 
+                    : "bg-green-800 hover:bg-green-700"
+                }`}
+                onClick={sendMessage}
+                disabled={msg.length > 100 || isLoading}
+              >
+                Ask
+              </button>
+            </div>
           </div>
         </div>
       ) : (
         <button
           onClick={() => setIsOpen(true)}
-          className="bg-blue-500 text-white p-4 rounded-full shadow-lg"
+          className="bg-yellow-600 text-white p-4 rounded-full shadow-lg"
         >
           <Bot size={24} />
         </button>
