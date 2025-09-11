@@ -18,7 +18,7 @@ export async function POST(req) {
     }
 
     const res = await fetch(
-      "https://hrshx3o5o6--revolutionarychunking-chatbawtieee-query.modal.run/",
+     process.env.NEXT_PUBLIC_BASE_URL,
       {
         method: "POST",
         headers: {
