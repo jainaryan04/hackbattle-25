@@ -145,7 +145,7 @@ export default function Home({ onFinish }) {
           <div className="flex items-center gap-4 ml-8">
             {/* Discord Icon */}
             <a
-              href="https://discord.gg/your-link"
+              href="https://discord.gg/Qj2qyYQXBF"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-[#1e2e24] p-2 rounded-full hover:scale-110 transition"

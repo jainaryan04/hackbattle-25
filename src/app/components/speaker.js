@@ -25,10 +25,10 @@ export default function SpeakerSection() {
     <section
       id="speaker"
       ref={sectionRef}
-      className="relative w-full min-h-screen flex items-center justify-center bg-[url('/speaker.webp')] bg-cover bg-center"
+      className="relative w-full min-h-screen flex items-center justify-center bg-[url('/speaker.webp')] bg-cover bg-center px-4 md:px-8 lg:px-16"
     >
       {/* Title */}
-      <h2 className="absolute top-10 text-6xl text-[#EFE7A1] font-pixeboy text-shadow-lg text-shadow-black/80">
+      <h2 className="absolute top-6 md:top-10 text-3xl md:text-5xl lg:text-6xl text-[#EFE7A1] font-pixeboy drop-shadow-lg">
         SPEAKER
       </h2>
 
@@ -41,15 +41,16 @@ export default function SpeakerSection() {
         <Image
           src="/patch.webp"
           alt="Patch"
-          width={450}
-          height={450}
-          className="object-contain"
+          width={0}
+          height={0}
+          sizes="100vw"
+          className="object-contain w-3/4 max-w-sm md:max-w-md lg:max-w-2xl h-auto"
           draggable="false"
         />
 
         {/* Overlay Text */}
         <p
-          className={`absolute text-6xl font-pixeboy text-black transition-opacity duration-700 delay-100
+          className={`absolute text-xl md:text-3xl lg:text-5xl font-pixeboy text-black transition-opacity duration-700 delay-100
             ${animate ? "opacity-100" : "opacity-0"}
           `}
         >

@@ -72,7 +72,7 @@ const About = () => {
           />
           <Image
           loading='lazy'
-            src="/glass-front.webp"
+            src="/glass-front-2.webp"
             alt="Glass Front"
             width={500}
             height={500}
