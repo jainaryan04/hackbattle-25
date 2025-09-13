@@ -7,6 +7,7 @@ import Link from "next/link";
 
 export default function Home({ onFinish }) {
   const [loading, setLoading] = useState(true);
+  
 
   useEffect(() => {
     const assets = [

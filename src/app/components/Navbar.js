@@ -1,6 +1,31 @@
 import Image from "next/image";
+import { useState } from "react";
+import { loginWithGoogle, logout } from "./Google";
+import { auth } from "./Google";
+
 
 export default function Navbar() {
+   const [user, setUser] = useState(null);
+
+   const handleLogin = async () => {
+     try {
+       const userData = await loginWithGoogle();
+       setUser(userData);
+       console.log("User Info:", userData);
+     } catch (error) {
+       console.error("Google Sign-In Error:", error);
+     }
+   };
+
+   const handleLogout = async () => {
+     try {
+       await signOut(auth);
+       setUser(null);
+     } catch (error) {
+       console.error("Sign-Out Error:", error);
+     }
+   };
+
   return (
     <nav className="relative flex items-center justify-between top-9 px-29 py-4 bg-[#02554ACC] rounded-full shadow-lg z-20 w-fit mx-auto">
       {/* Left links */}
@@ -39,10 +64,15 @@ export default function Navbar() {
           />
         </a>
 
+
+
         {/* Login Button */}
-        {/* <button className="px-5 py-2 bg-yellow-500 text-black font-pixeboy text-xl rounded-full hover:bg-yellow-400 transition">
-          LOGIN
-        </button> */}
+        {/*  <button
+        onClick={user ? handleLogout : handleLogin}
+        className="px-5 py-2 bg-yellow-500 text-black text-xl lg:text-2xl rounded-full hover:bg-yellow-400 transition"
+      >  
+        {user ? "LOGOUT" : "LOGIN"} 
+      </button> */}
       </div>
     </nav>
   );
