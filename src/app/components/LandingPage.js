@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import MobileLanding from "./MobileLanding";
-import Navbar from "./navbar";
+import Navbar from "./Navbar";
 import Link from "next/link";
 
 export default function Home({ onFinish }) {

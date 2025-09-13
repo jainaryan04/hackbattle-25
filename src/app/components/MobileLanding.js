@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Phonenavbar from "./phonenavbar";
+import Phonenavbar from "./Phonenavbar";
 import Link from "next/link";
 
 export default function LandingPagePhone() {
