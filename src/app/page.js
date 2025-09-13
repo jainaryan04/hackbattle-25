@@ -9,6 +9,7 @@ import CustomCursor from "./components/Cursor";
 import SpeakerSection from "./components/speaker";
 import Marquee from "./components/Marquee";
 
+
 export default function Page() {
   const [speechBubbleComplete, setSpeechBubbleComplete] = useState(false);
   const [landingLoaded, setLandingLoaded] = useState(false);
