@@ -122,7 +122,7 @@ export default function Home({ onFinish }) {
         </div>
 
         {/* Navbar */}
-        <nav className="relative flex items-center justify-between top-9 px-29 py-4 bg-[#02554ACC] rounded-full shadow-lg z-20 w-fit mx-auto">
+        <nav className="relative flex items-center justify-between top-0 px-29 py-4 bg-[#02554ACC] rounded-full shadow-lg z-20 w-fit mx-auto">
           {/* Left links */}
           <div className="flex gap-8">
             {[
