@@ -6,6 +6,7 @@ import FaqItem from '../components/FaqItem';
 import CharacterDisplay from '../components/CharacterDisplay';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
+import Footer from './footer';
 
 const vt323 = VT323({
   weight: '400',
@@ -122,9 +123,11 @@ export default function FaqSection() {
                 isOpen={openIndex === index}
                 toggleItem={() => toggleItem(index)}
               />
+            
             ))}
           </div>
         </main>
+        <Footer/>
       </div>
     </section>
   );
