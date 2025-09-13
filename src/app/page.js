@@ -76,7 +76,7 @@ export default function Page() {
 
       {((isMobile && landingLoaded && speechBubbleComplete) || (!isMobile && landingLoaded)) && (
         <>
-          <div className="absolute -bottom-[5vh] md:-bottom-[10vh] w-full z-10 overflow-x-clip">
+          <div className="absolute -bottom-[10vh] md:-bottom-[10vh] w-full z-10 overflow-x-clip">
         <Marquee />
       </div>
           <About />

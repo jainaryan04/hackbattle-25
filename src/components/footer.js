@@ -21,7 +21,7 @@ const Contact = () => {
         </button>
       </div> */}
 
-      <footer className="flex flex-col lg:flex-row items-center justify-between gap-6 px-5 lg:px-[1.5vw] mt-auto font-pixeboy">
+      <footer className="flex flex-col lg:flex-row items-center justify-between gap-6 px-5 lg:px-[1.5vw] mb-2 mt-auto font-pixeboy">
         <div className="flex flex-col lg:flex-row">
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
