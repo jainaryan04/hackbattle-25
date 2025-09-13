@@ -140,9 +140,9 @@ export default function LandingPagePhone() {
 
         {/* Character and Bubble container */}
 
-        <div className="absolute top-95 left-1/3 -translate-x-1/2 flex flex-col items-center">
+        <div className="absolute top-72 left-1/3 -translate-x-1/2 flex flex-col items-center">
           {/* Bubble above Steve */}
-          <div className="relative mb-4">
+          <div className="relative mt-6">
             <div className="relative inline-block translate-x-15">
               <Image
                 loading="lazy"
