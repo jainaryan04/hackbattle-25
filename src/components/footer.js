@@ -1,29 +1,28 @@
 import React from "react";
+import Image from "next/image";
 
 const Contact = () => {
   return (
     <div
-      className="w-full flex flex-col font-serif text-white min-h-[40vh] justify-end bg-transparent"
+      className="w-full flex flex-col font-serif text-white h-[15vh] justify-end bg-transparent"
     >
-      <header className="relative w-full h-[10vh] md:h-[15vh]">
-      </header>
 
-      <div className="flex flex-col-reverse lg:flex-row items-center justify-center w-full px-5 sm:px-8 md:px-10 lg:px-20 gap-8 lg:gap-10 relative flex-grow">
+      {/* <div className="flex flex-col-reverse lg:flex-row items-center justify-center w-full px-5 sm:px-8 md:px-10 lg:px-20 gap-8 lg:gap-10 relative flex-grow">
         
         <button
-          className="hidden lg:flex items-center justify-center absolute top-1/2 right-0 
+          className="hidden lg:flex items-center justify-center absolute bottom-0 left-0 
           transform -translate-y-1/2 bg-black text-white px-5 py-5 rounded-l-2xl font-semibold 
           shadow-lg hover:bg-gray-900 hover:scale-110 hover:shadow-2xl hover:text-green-300
           transition-all duration-300 ease-out"
-          style={{ writingMode: "vertical-lr", textOrientation: "mixed" }}
+          style={{ writingMode: "vertical-rl", textOrientation: "mixed" }}
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
           Scroll to Top
         </button>
-      </div>
+      </div> */}
 
-      <footer className="flex flex-col lg:flex-row items-center justify-between gap-6 px-5 lg:px-[1.5vw] py-6 mt-auto">
-        <div className="flex flex-col lg:flex-row gap-6 lg:gap-12 items-center lg:items-start">
+      <footer className="flex flex-col lg:flex-row items-center justify-between gap-6 px-5 lg:px-[1.5vw] mt-auto font-pixeboy">
+        <div className="flex flex-col lg:flex-row">
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
@@ -36,9 +35,16 @@ const Contact = () => {
               className="block h-[7vh] rotate-180 lg:hidden"
             />
           </button>
-          <div className="flex flex-col lg:flex-row mb:gap-4 lg:gap-[2vw] items-center lg:items- text-[5vw] sm:text-sm md:text-base">
-            <p>ieeecs@vit.ac.in</p>
-            <p>+91 9380302937</p>
+          <div className="text-[5vw] left-0">
+            {/* <p>ieeecs@vit.ac.in</p>
+            <p>+91 9380302937</p> */}
+            <Image
+              src="/ieeecslogo.svg"
+              alt="IEEE CS VIT Logo"
+              width={0}
+              height={0}
+              className="w-[25vw] max-w-[150px] sm:max-w-[200px] md:max-w-[250px] lg:max-w-[200px] xl:max-w-[250px] text-white"
+              />
           </div>
         </div>
 
