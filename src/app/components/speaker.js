@@ -25,10 +25,9 @@ export default function SpeakerSection() {
     <section
       id="speaker"
       ref={sectionRef}
-      className="relative w-full min-h-screen flex items-center justify-center bg-[url('/speaker.webp')] bg-cover bg-center px-4 md:px-8 lg:px-16"
+      className="relative w-full min-h-screen flex flex-col items-center justify-center bg-[url('/speaker.webp')] bg-cover bg-center px-4 md:px-8 lg:px-16"
     >
-      {/* Title */}
-      <h2 className="absolute top-6 md:top-10 text-4xl  md:text-5xl lg:text-6xl text-[#EFE7A1] font-pixeboy drop-shadow-lg">
+      <h2 className="text-2xl md:text-[6vh] font-bold text-[#f2e5a6] [text-shadow:3px_3px_#3a1d0c] animate-glow-pulse relative z-10 my-[5vh]">
         SPEAKER
       </h2>
       <div className="absolute w-60 h-60 md:w-64 md:h-64 lg:w-80 lg:h-80 fly pointer-events-none">
@@ -53,8 +52,8 @@ export default function SpeakerSection() {
           alt="Patch"
           width={0}
           height={0}
-          sizes="150vw"
-          className="object-contain w-5/4 max-w-sm md:max-w-md lg:max-w-1xl h-auto"
+          sizes="100vw"
+          className="object-contain w-3/4 max-w-sm md:max-w-md lg:max-w-2xl h-[90vh]"
           draggable="false"
         />
 

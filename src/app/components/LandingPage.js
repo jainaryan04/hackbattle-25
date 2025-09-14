@@ -119,7 +119,6 @@ export default function Home({ onFinish }) {
             draggable="false"
           />
         </div>
-
         <Navbar />
         {/* Right vines + leaves */}
         <div className="absolute top-0 right-3 flex z-10">
