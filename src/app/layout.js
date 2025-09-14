@@ -39,7 +39,7 @@ export default function RootLayout({ children }) {
       </head>
       <body className={pressStart2P.className}>
         {children}
-       <Chatbot />
+       {/* <Chatbot /> */}
       </body>
     </html>
   );
