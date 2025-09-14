@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Phonenavbar from "./Phonenavbar";
 import Link from "next/link";
 
 export default function LandingPagePhone() {
@@ -27,9 +26,6 @@ export default function LandingPagePhone() {
           draggable={false}
         />
       </div>
-
-    
-      <Phonenavbar />
 
       {/* Page Content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">

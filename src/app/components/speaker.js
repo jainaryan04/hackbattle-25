@@ -25,7 +25,7 @@ export default function SpeakerSection() {
     <section
       id="speaker"
       ref={sectionRef}
-      className="relative w-full min-h-screen flex flex-col items-center justify-center bg-[url('/speaker.webp')] bg-cover bg-center px-4 md:px-8 lg:px-16"
+      className="relative w-full h-[70vh] md:h-[100vh] flex flex-col items-center bg-[url('/speaker.webp')] bg-cover bg-center px-4 md:px-8 lg:px-16"
     >
       <h2 className="text-2xl md:text-[6vh] font-bold text-[#f2e5a6] [text-shadow:3px_3px_#3a1d0c] animate-glow-pulse relative z-10 my-[5vh]">
         SPEAKER
@@ -43,19 +43,18 @@ export default function SpeakerSection() {
 
       {/* Scroll + Overlay Text */}
       <div
-        className={`relative flex items-center justify-center z-20 origin-top transition-all duration-700 ease-in-out mt-18
+        className={`relative flex items-center justify-center z-20 origin-top transition-all duration-700 ease-in-out mt-[10vh] md:mt-0
           ${animate ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0"}
         `}
       >
-        <Image
-          src="/patch.webp"
-          alt="Patch"
-          width={0}
-          height={0}
-          sizes="100vw"
-          className="object-contain w-3/4 max-w-sm md:max-w-md lg:max-w-2xl h-[90vh]"
-          draggable="false"
-        />
+               <Image
+  src="/patch.webp"
+  alt="Patch"
+  width={1000}
+  height={1000}
+  className="object-contain w-3/4 max-w-sm md:max-w-md lg:max-w-2xl"
+  draggable="false"
+/>
 
         {/* Overlay Text */}
         <p
