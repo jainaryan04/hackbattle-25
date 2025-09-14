@@ -33,7 +33,7 @@ export default function Home({ onFinish }) {
     const assets = [
       "/background.webp",
       "/phone-bg.webp",
-      "/video/waterfall.webm",
+      "/waterfall.gif",
       "/video/frog.webm",
       "/video/axo.webm",
       "/vine1.webp",
@@ -105,12 +105,10 @@ export default function Home({ onFinish }) {
 
       <div className="absolute top-0 left-170 w-64 h-168 hidden md:block overflow-hidden z-0 opacity-60">
         {/* Static Waterfall Background */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          src="/video/waterfall.webm"
+        <Image
+        height={0}
+        width={0}
+          src="/waterfall.gif"
           alt="Waterfall"
           className="w-full h-150 object-cover"
           draggable="false"

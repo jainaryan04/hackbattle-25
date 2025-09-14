@@ -45,7 +45,7 @@ export default function Marquee() {
           className={`marquee-row relative ${
             index === 0 ? "border-t-2" : index === 1 ? "border-2" : "border-b-2"
           } border-black`}
-          style={{ height: "5vh" }}
+          style={{ height: window.innerWidth < 640 ? "3vh" : "5vh" }}
         >
           {/* Scrolling Images */}
           <div className={`marquee-container absolute inset-0 ${index === 1 ? "reverse" : ""}`}>
