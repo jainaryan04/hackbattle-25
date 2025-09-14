@@ -226,7 +226,7 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f5a623;
+  background: transparent;
   width: 5px;
 }
 

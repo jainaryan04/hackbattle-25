@@ -180,12 +180,12 @@ export default function Home({ onFinish }) {
             </a>
 
             {/* Login Button */}
-            <button
+            {/* <button
         onClick={user ? handleLogout : handleLogin}
         className="px-5 py-2 bg-yellow-500 text-black text-xl lg:text-2xl rounded-full hover:bg-yellow-400 transition"
       >
         {user ? "LOGOUT" : "LOGIN"}
-      </button>
+      </button> */}
           </div>
         </nav>
 

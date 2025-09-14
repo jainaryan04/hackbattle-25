@@ -5,7 +5,6 @@ import About from "./components/about";
 import FaqSection from "src/components/FaqSection";
 import SpeechBubble from "src/app/components/SpeechBubble";
 import PS from "./components/ps";
-import CustomCursor from "./components/Cursor";
 import SpeakerSection from "./components/speaker";
 import Marquee from "./components/Marquee";
 
@@ -58,9 +57,7 @@ export default function Page() {
   }
 
   return (
-    <div>
-      {!isMobile && <CustomCursor />}
-      
+    <div>      
       {isMobile ? (
         <>
           {!speechBubbleComplete && (
@@ -77,7 +74,7 @@ export default function Page() {
       {((isMobile && landingLoaded && speechBubbleComplete) || (!isMobile && landingLoaded)) && (
         <>
           <div className="relative">
-  <div className="absolute inset-x-0 -bottom-[5vh] w-full z-10 overflow-x-clip">
+  <div className="absolute inset-x-0 -bottom-[5vh] md:-bottom-[10vh] w-full z-10 overflow-x-clip">
     <Marquee />
   </div>
 </div>
