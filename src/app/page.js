@@ -76,9 +76,11 @@ export default function Page() {
 
       {((isMobile && landingLoaded && speechBubbleComplete) || (!isMobile && landingLoaded)) && (
         <>
-          <div className="absolute bottom-0 md:-bottom-[10vh] w-full z-10 overflow-x-clip">
-        <Marquee />
-      </div>
+          <div className="relative">
+  <div className="absolute inset-x-0 -bottom-[5vh] w-full z-10 overflow-x-clip">
+    <Marquee />
+  </div>
+</div>
           <About />
           <PS />
           <SpeakerSection />
