@@ -27,11 +27,19 @@ export default function SpeakerSection() {
       ref={sectionRef}
       className="relative w-full min-h-screen flex flex-col items-center justify-center bg-[url('/speaker.webp')] bg-cover bg-center px-4 md:px-8 lg:px-16"
     >
-      {/* Title */}
       <h2 className="text-2xl md:text-[6vh] font-bold text-[#f2e5a6] [text-shadow:3px_3px_#3a1d0c] animate-glow-pulse relative z-10 my-[5vh]">
-      
         SPEAKER
       </h2>
+      <div className="absolute w-60 h-60 md:w-64 md:h-64 lg:w-80 lg:h-80 fly pointer-events-none">
+        <video
+          src="bat.webm"
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-contain"
+        />
+      </div>
 
       {/* Scroll + Overlay Text */}
       <div
