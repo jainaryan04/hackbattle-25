@@ -18,13 +18,11 @@ export default function LandingPagePhone() {
       />
 
       <div className="absolute top-0 left-1/2 -translate-x-1/2 flex items-center w-64 h-[100vh] overflow-hidden z-0 opacity-60">
-        <video
-          src="/video/waterfall.webm"
+        <Image
+          src="/waterfall.gif"
           alt="Waterfall"
-          autoPlay
-          loop
-          muted
-          playsInline
+          height={0}
+          width={0}
           className="w-100 h-210 object-cover"
           draggable={false}
         />

@@ -22,9 +22,9 @@ export default function FaqItem({ question, answer, headImageSrc, isOpen, toggle
           {headImageSrc && (
             <Image 
               loading='lazy'
-              src={headImageSrc} 
-              height={0}
-              width={0}
+              src={headImageSrc}
+              width={64}
+              height={64} 
               alt="Minecraft head" 
               draggable={false}
               onDragStart={(e) => e.preventDefault()}
@@ -47,4 +47,3 @@ export default function FaqItem({ question, answer, headImageSrc, isOpen, toggle
     </div>
   );
 }
-
