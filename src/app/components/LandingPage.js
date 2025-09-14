@@ -3,15 +3,37 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import MobileLanding from "./MobileLanding";
 import Link from "next/link";
+import { loginWithGoogle, logout } from "./Google";
+import { auth } from "./Google";
 
 export default function Home({ onFinish }) {
   const [loading, setLoading] = useState(true);
+  const [user, setUser] = useState(null);
+
+  const handleLogin = async () => {
+    try {
+      const userData = await loginWithGoogle();
+      setUser(userData);
+      console.log("User Info:", userData);
+    } catch (error) {
+      console.error("Google Sign-In Error:", error);
+    }
+  };
+
+  const handleLogout = async () => {
+    try {
+      await signOut(auth);
+      setUser(null);
+    } catch (error) {
+      console.error("Sign-Out Error:", error);
+    }
+  };
 
   useEffect(() => {
     const assets = [
       "/background.webp",
       "/phone-bg.webp",
-      "/video/waterfall.webm",
+      "/waterfall.gif",
       "/video/frog.webm",
       "/video/axo.webm",
       "/vine1.webp",
@@ -83,12 +105,10 @@ export default function Home({ onFinish }) {
 
       <div className="absolute top-0 left-170 w-64 h-168 hidden md:block overflow-hidden z-0 opacity-60">
         {/* Static Waterfall Background */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          src="/video/waterfall.webm"
+        <Image
+        height={0}
+        width={0}
+          src="/waterfall.gif"
           alt="Waterfall"
           className="w-full h-150 object-cover"
           draggable="false"
@@ -160,9 +180,12 @@ export default function Home({ onFinish }) {
             </a>
 
             {/* Login Button */}
-            {/* <button className="px-5 py-2 bg-yellow-500 text-black font-pixeboy text-xl rounded-full hover:bg-yellow-400 transition">
-              LOGIN
-            </button> */}
+            <button
+        onClick={user ? handleLogout : handleLogin}
+        className="px-5 py-2 bg-yellow-500 text-black text-xl lg:text-2xl rounded-full hover:bg-yellow-400 transition"
+      >
+        {user ? "LOGOUT" : "LOGIN"}
+      </button>
           </div>
         </nav>
 
