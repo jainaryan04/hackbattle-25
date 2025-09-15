@@ -30,13 +30,11 @@ export default function SpeakerSection() {
       <h2 className="text-2xl md:text-[6vh] font-bold text-[#f2e5a6] [text-shadow:3px_3px_#3a1d0c] animate-glow-pulse relative z-10 my-[5vh]">
         SPEAKER
       </h2>
-      <div className="absolute w-60 h-60 md:w-64 md:h-64 lg:w-80 lg:h-80 fly pointer-events-none">
-        <video
-          src="bat.webm"
-          autoPlay
-          loop
-          muted
-          playsInline
+      <div className="absolute w-60 h-60 md:w-64 md:h-64 lg:w-96 lg:h-96 fly pointer-events-none">
+        <Image
+          src="/minecraft-bat.gif"
+          height={0}
+          width={0}
           className="w-full h-full object-contain"
         />
       </div>
