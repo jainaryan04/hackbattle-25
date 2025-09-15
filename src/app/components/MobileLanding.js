@@ -73,12 +73,14 @@ export default function LandingPagePhone() {
 
           {/* Character at the bottom */}
           <Image
-            src="/phone-man.webp"
-            alt="character"
-            width={300}
-            height={300}
-            draggable={false}
-          />
+  src="/phone-man.webp"
+  alt="character"
+  width={300}
+  height={300}
+  className="block max-[389px]:hidden"
+  draggable={false}
+/>
+
         </div>
       </div>
     </div>
