@@ -105,65 +105,61 @@ export default function Navbar() {
           />
         )}
 
-        {menuOpen && (
-            <div className="fixed top-0 left-0 h-[100vh] w-[100vw] overflow-x-hidden overflow-y-hidden z-40 transform transition-transform duration-300">
-              {/* Borders */}
-              <div className="absolute inset-0 z-50 pointer-events-none flex justify-between">
-                <div className="h-full w-8 bg-[url('/border.webp')] bg-repeat-y bg-left bg-contain"></div>
-                <div className="h-full w-8 bg-[url('/border.webp')] bg-repeat-y bg-right bg-contain"></div>
-              </div>
+{menuOpen && (
+  <div className="fixed top-0 left-0 h-[100dvh] w-[100vw] z-40 transform transition-transform duration-300">
+    {/* Borders */}
+    <div className="absolute inset-0 z-50 pointer-events-none flex justify-between">
+      <div className="h-full w-8 bg-[url('/border.webp')] bg-repeat-y bg-left bg-contain"></div>
+      <div className="h-full w-8 bg-[url('/border.webp')] bg-repeat-y bg-right bg-contain"></div>
+    </div>
 
-              {/* Sidebar */}
-              <div className="h-full w-full bg-[url('/menu-bg.webp')] bg-cover flex flex-col p-6 relative z-40">
-                <button
-                  onClick={() => setMenuOpen(false)}
-                  className="text-5xl text-white absolute top-6 right-6 z-50"
-                >
-                  ✕
-                </button>
+    {/* Sidebar */}
+    <div className="h-full w-full bg-[url('/menu-bg.webp')] bg-cover flex flex-col p-6 relative z-40 overflow-y-auto">
+      <button
+        onClick={() => setMenuOpen(false)}
+        className="text-5xl text-white absolute top-6 right-6 z-50"
+      >
+        ✕
+      </button>
 
-                <div className="flex items-center select-none flex-col gap-6 mt-16">
-                  {[
-                    { icon: "/icon1.webp", label: "HOME", path: "/" },
-                    { icon: "/icon2.webp", label: "ABOUT", path: "/#about" },
-                    {
-                      icon: "/icon4.webp",
-                      label: "PROBLEM STATEMENTS",
-                      path: "/#ps",
-                    },
-                    { icon: "/icon4.png", label: "SPEAKER", path: "/#speaker" },
-                    { icon: "/icon3.webp", label: "FAQs", path: "/#faqs" },
-                  ].map((item, idx) => (
-                    <button
-                      key={idx}
-                      onClick={() => {
-                        router.push(item.path);
-                        setMenuOpen(false);
-                      }}
-                      className="flex items-center w-full"
-                    >
-                      <div className="w-24 h-32 bg-[url('/wood-frame.webp')] bg-cover flex items-center justify-center">
-                        <Image
-                          loading="lazy"
-                          src={item.icon}
-                          alt={item.label}
-                          width={96}
-                          height={96}
-                          className="object-contain"
-                          onDragStart={(e) => e.preventDefault()}
-                        />
-                      </div>
-
-                      <div className="flex-1 h-16 bg-[url('/wood-button.webp')] bg-cover flex items-center justify-center text-amber-100 font-pixeboy text-3xl">
-                        {item.label}
-                      </div>
-                    </button>
-                  ))}
-
-                </div>
-              </div>
+      <div className="flex items-center select-none flex-col gap-6 mt-16 pb-20">
+        {[
+          { icon: "/icon1.webp", label: "HOME", path: "/" },
+          { icon: "/icon2.webp", label: "ABOUT", path: "/#about" },
+          { icon: "/icon4.webp", label: "PROBLEM STATEMENTS", path: "/#ps" },
+          { icon: "/icon4.png", label: "SPEAKER", path: "/#speaker" },
+          { icon: "/icon3.webp", label: "FAQs", path: "/#faqs" },
+        ].map((item, idx) => (
+          <button
+            key={idx}
+            onClick={() => {
+              router.push(item.path);
+              setMenuOpen(false);
+            }}
+            className="flex items-center w-full"
+          >
+            <div className="w-24 h-32 bg-[url('/wood-frame.webp')] bg-cover flex items-center justify-center">
+              <Image
+                loading="lazy"
+                src={item.icon}
+                alt={item.label}
+                width={96}
+                height={96}
+                className="object-contain"
+                onDragStart={(e) => e.preventDefault()}
+              />
             </div>
-        )}
+
+            <div className="flex-1 h-16 bg-[url('/wood-button.webp')] bg-cover flex items-center justify-center text-amber-100 font-pixeboy text-3xl">
+              {item.label}
+            </div>
+          </button>
+        ))}
+      </div>
+    </div>
+  </div>
+)}
+
       </div>
     </>
   );
