@@ -140,10 +140,10 @@ export default function Home({ onFinish }) {
 
         {/* Hero section */}
         <section className="relative w-[50vw] z-10 flex flex-col items-center text-center mt-20">
-          <div className="z-10 font-pixeboy text-[20vh] leading-none [text-shadow:4px_4px_4px_var(--tw-shadow-color)] shadow-[#FFF58C] text-[#F3EDCB] animate-glow-pulse">
+          <div className="z-10 font-pixeboy text-[16vh] leading-none [text-shadow:4px_4px_4px_var(--tw-shadow-color)] shadow-[#FFF58C] text-[#F3EDCB] animate-glow-pulse">
             HACK
           </div>
-          <div className="z-10 font-pixeboy text-[20vh] leading-none [text-shadow:4px_4px_4px_var(--tw-shadow-color)] shadow-[#FFF58C] text-[#F3EDCB] animate-glow-pulse">
+          <div className="z-10 font-pixeboy text-[16vh] leading-none [text-shadow:4px_4px_4px_var(--tw-shadow-color)] shadow-[#FFF58C] text-[#F3EDCB] animate-glow-pulse">
             BATTLE
           </div>
           <div className="z-10 font-pixeboy text-6xl mt-4 animate-glow-pulse">
@@ -171,22 +171,20 @@ export default function Home({ onFinish }) {
           />
         </div>
         <div className="absolute bottom-58 right-3 -translate-x-1/2 z-10">
-          <video
-            src="/video/frog.webm"
-            autoPlay
-            loop
-            muted
-            playsInline
+          <Image
+          width={0}
+
+height={0}            src="/video/frog.gif"
+alt="frog"
             className="w-30 h-full"
           />
         </div>
         <div className="absolute bottom-10 right-19 -translate-x-1/2 z-10">
-          <video
-            src="/video/axo.webm"
-            autoPlay
-            loop
-            muted
-            playsInline
+          <Image
+          width={0}
+          height={0}
+            src="/video/axo.gif"
+            alt="axo"
             className="w-30 h-full"
             draggable="false"
           />

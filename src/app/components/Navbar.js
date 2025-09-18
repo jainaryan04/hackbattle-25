@@ -45,7 +45,7 @@ export default function Navbar() {
   return (
     <>
       {/* Desktop Navbar */}
-      <nav className="hidden md:flex fixed top-0 left-1/2 -translate-x-1/2 items-center justify-center gap-8 px-8 py-4 bg-[#02554ACC] rounded-full shadow-lg z-30 w-[70vw]">
+      <nav className="hidden md:flex fixed top-0 left-1/2 -translate-x-1/2 items-center justify-center gap-8 px-8 py-4 bg-[#02554ACC] rounded-full shadow-lg z-30 w-[60vw]">
         <div className="flex gap-8">
           {[
             { label: "Home", path: "/" },
@@ -57,7 +57,7 @@ export default function Navbar() {
             <a
               key={label}
               href={path}
-              className="text-xl lg:text-4xl font-bold font-pixeboy text-[#f8f5c0] hover:text-white transition"
+              className="text-xl lg:text-3xl font-bold font-pixeboy text-[#f8f5c0] hover:text-white transition"
             >
               {label}
             </a>
@@ -86,7 +86,7 @@ export default function Navbar() {
       {/* Mobile Navbar */}
       <div className="block md:hidden">
         <div className="fixed top-0 left-0 right-0 flex flex-row justify-between items-center px-6 py-4 z-30">
-          <button onClick={() => setMenuOpen(true)} className=" text-3xl">
+          <button onClick={() => setMenuOpen(true)} className=" text-3xl bg-white">
             ☰
           </button>
 

@@ -44,7 +44,7 @@ export default function MinecraftTimer() {
           textShadow: '2px 2px 0px rgba(0, 0, 0, 0.8)'
         }}
       >
-        <div className="text-4xl font-bold text-white text-center leading-none">
+        <div className="text-3xl font-bold text-white text-center leading-none">
           {String(value).padStart(2, '0')}
         </div>
         
