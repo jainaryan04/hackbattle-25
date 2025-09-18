@@ -48,7 +48,7 @@ export default function Navbar() {
       <nav className="hidden md:flex fixed top-0 left-1/2 -translate-x-1/2 items-center justify-center gap-8 px-8 py-4 bg-[#02554ACC] rounded-full shadow-lg z-30 w-[60vw]">
         <div className="flex gap-8">
           {[
-            { label: "Home", path: "/" },
+            { label: "Home", path: "#home" },
             { label: "About", path: "#about" },
             { label: "Problem Statements", path: "#ps" },
             { label: "Speaker", path: "#speaker" },
@@ -86,7 +86,7 @@ export default function Navbar() {
       {/* Mobile Navbar */}
       <div className="block md:hidden">
         <div className="fixed top-0 left-0 right-0 flex flex-row justify-between items-center px-6 py-4 z-30">
-          <button onClick={() => setMenuOpen(true)} className=" text-3xl bg-white">
+          <button onClick={() => setMenuOpen(true)} className=" text-3xl text-white">
             ☰
           </button>
 
@@ -123,38 +123,40 @@ export default function Navbar() {
       </button>
 
       <div className="flex items-center select-none flex-col gap-6 mt-16 pb-20">
-        {[
-          { icon: "/icon1.webp", label: "HOME", path: "/" },
-          { icon: "/icon2.webp", label: "ABOUT", path: "/#about" },
-          { icon: "/icon4.webp", label: "PROBLEM STATEMENTS", path: "/#ps" },
-          { icon: "/icon4.png", label: "SPEAKER", path: "/#speaker" },
-          { icon: "/icon3.webp", label: "FAQs", path: "/#faqs" },
-        ].map((item, idx) => (
-          <button
-            key={idx}
-            onClick={() => {
-              router.push(item.path);
-              setMenuOpen(false);
-            }}
-            className="flex items-center w-full"
-          >
-            <div className="w-24 h-32 bg-[url('/wood-frame.webp')] bg-cover flex items-center justify-center">
-              <Image
-                loading="lazy"
-                src={item.icon}
-                alt={item.label}
-                width={96}
-                height={96}
-                className="object-contain"
-                onDragStart={(e) => e.preventDefault()}
-              />
-            </div>
+      {[
+  { icon: "/icon1.webp", label: "HOME", path: "home" },
+  { icon: "/icon2.webp", label: "ABOUT", path: "about" },
+  { icon: "/icon4.webp", label: "PROBLEM STATEMENTS", path: "ps" },
+  { icon: "/icon4.png", label: "SPEAKER", path: "speaker" },
+  { icon: "/icon3.webp", label: "FAQs", path: "faqs" },
+].map((item, idx) => (
+  <button
+    key={idx}
+    onClick={() => {
+      const el = document.getElementById(item.path);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+      setMenuOpen(false);
+    }}
+    className="flex items-center w-full"
+  >
+    <div className="w-24 h-32 bg-[url('/wood-frame.webp')] bg-cover flex items-center justify-center">
+      <Image
+        loading="lazy"
+        src={item.icon}
+        alt={item.label}
+        width={96}
+        height={96}
+        className="object-contain"
+        onDragStart={(e) => e.preventDefault()}
+      />
+    </div>
 
-            <div className="flex-1 h-16 bg-[url('/wood-button.webp')] bg-cover flex items-center justify-center text-amber-100 font-pixeboy text-3xl">
-              {item.label}
-            </div>
-          </button>
-        ))}
+    <div className="flex-1 h-16 bg-[url('/wood-button.webp')] bg-cover flex items-center justify-center text-amber-100 font-pixeboy text-3xl">
+      {item.label}
+    </div>
+  </button>
+))}
+
       </div>
     </div>
   </div>

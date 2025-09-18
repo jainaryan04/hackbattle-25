@@ -5,7 +5,7 @@ import MinecraftTimer from "./Timer";
 
 export default function LandingPagePhone() {
   return (
-    <div className="relative h-[100dvh] w-full overflow-hidden text-white font-pixeboy select-none">
+    <div className="relative h-[100dvh] w-full overflow-hidden text-white font-pixeboy select-none" id="home">
       {/* Background */}
       <Image
         src="/landing-bg.webp"

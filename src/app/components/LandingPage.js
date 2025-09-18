@@ -48,7 +48,7 @@ export default function Home({ onFinish }) {
   const showSplash = loading || forcePlayOnce;
 
   return (
-    <div className="relative select-none h-[100dvh] overflow-hidden">
+    <div className="relative select-none h-[100dvh] overflow-hidden" id="home">
       {showSplash && (
         <div className="fixed inset-0 z-50">
           <video
