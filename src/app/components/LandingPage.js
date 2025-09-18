@@ -58,7 +58,7 @@ export default function Home({ onFinish }) {
   playsInline
   onEnded={handleVideoEnd}
   loop={loading}
-  className="absolute top-0 left-0 w-full h-full object-contain md:object-cover bg-red-500"
+  className="absolute top-0 left-0 w-full h-full object-contain md:object-cover bg-[#db1f26]"
   style={{ objectPosition: "center" }}
 />
 

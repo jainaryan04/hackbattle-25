@@ -78,14 +78,14 @@ export default function MinecraftTimer() {
               label="DAYS" 
               color="bg-orange-600 hover:bg-orange-500"
             />
-            <div className="text-amber-800 text-4xl sm:text-5xl font-bold mx-2 animate-pulse">:</div>
+            <div className="text-yellow-400 text-4xl sm:text-5xl font-bold mx-2 animate-pulse">:</div>
             
             <TimeBlock 
               value={timeLeft.hours} 
               label="HOURS" 
               color="bg-blue-600 hover:bg-blue-500"
             />
-            <div className="text-amber-800 text-4xl sm:text-5xl font-bold mx-2 animate-pulse">:</div>
+            <div className="text-yellow-400 text-4xl sm:text-5xl font-bold mx-2 animate-pulse">:</div>
             
             <TimeBlock 
               value={timeLeft.minutes} 
