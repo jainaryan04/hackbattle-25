@@ -100,12 +100,12 @@ export default function Navbar() {
             <Image src="/discord.webp" alt="Discord" height={24} width={24} />
           </a>
 
-          {/* <button
+          <button
             onClick={user ? handleLogout : handleLogin}
             className="px-5 py-2 bg-yellow-500 text-black text-xl lg:text-2xl rounded-full hover:bg-yellow-400 transition"
           >
             {user ? "LOGOUT" : "LOGIN"}
-          </button> */}
+          </button>
         </div>
       </nav>
 
@@ -116,12 +116,12 @@ export default function Navbar() {
             ☰
           </button>
 
-          {/* <button
+          <button
             onClick={user ? handleLogout : handleLogin}
             className="bg-yellow-500 text-black px-4 py-2 rounded-full text-2xl font-pixeboy"
           >
             {user ? "LOGOUT" : "LOGIN"}
-          </button> */}
+          </button>
         </div>
 
         {menuOpen && (

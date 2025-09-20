@@ -3,11 +3,14 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import MobileLanding from "./MobileLanding";
 import MinecraftTimer from "./Timer";
+import { useRouter } from "next/navigation";
 
 export default function Home({ onFinish }) {
   const [loading, setLoading] = useState(true); // tracks asset loading
   const [forcePlayOnce, setForcePlayOnce] = useState(true); // ensures video plays once
   const [user, setUser] = useState(null);
+  const [userStatus, setUserStatus] = useState(null);
+  const router=useRouter();
 
   useEffect(() => {
     const token = localStorage.getItem("accessToken");
@@ -43,6 +46,21 @@ export default function Home({ onFinish }) {
       };
     });
   }, [onFinish]);
+
+  useEffect(() => {
+    const status = localStorage.getItem("UserStatus");
+    if (status === "true" || status === "false") setUserStatus(status);
+  }, []);
+  
+  const handleRedirect = () => {
+    if (userStatus === "true") {
+      router.push("/team");
+    } else if (userStatus === "false") {
+      router.push("/dashboard");
+    }
+  };
+  
+
 
   const handleVideoEnd = () => {
     if (!loading) {
@@ -165,11 +183,14 @@ export default function Home({ onFinish }) {
             <MinecraftTimer />
           </div>
 
-          {/* <button
-            className="px-5 py-2 bg-transparent text-white text-xl lg:text-2xl hover:underline transition"
+            {user && (
+            <button
+            onClick={handleRedirect}
+            className="px-6 py-3 bg-red-600 text-white font-pixeboy text-xl rounded-md hover:bg-red-700 transition"
           >
-            {user && "GO TO DASHBOARD"}
-          </button> */}
+            {userStatus ? "Go to Team Page" : "Go to Dashboard"}
+          </button>
+          )}
         </section>
 
         {/* Characters */}

@@ -71,12 +71,12 @@ export default function TeamPage() {
           <div className="w-0 h-0 border-t-[12px] border-b-[12px] border-r-[16px] border-t-transparent border-b-transparent border-r-white ml-1"></div>
         </button>
 
-        {/* <button
+        <button
           onClick={() => router.push("/submission")}
           className="px-6 py-3 bg-pink-500/70 hover:bg-pink-500/90 transition-colors rounded-lg shadow-lg text-white font-semibold"
         >
           Submission
-        </button> */}
+        </button>
       </div>
 
       {/* Main Content */}

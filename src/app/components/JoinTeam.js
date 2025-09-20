@@ -83,6 +83,7 @@ export default function JoinTeam() {
       window.dispatchEvent(new CustomEvent("showToast", { detail: { text: "Invalid Team Code" } }));
 
     }else if(result.status==200){
+      localStorage.setItem("UserStatus", "true");
       window.dispatchEvent(new CustomEvent("showToast", { detail: { text: "Team Joined Successfullt" } }));
       router.push("/team");
     }
@@ -93,6 +94,7 @@ export default function JoinTeam() {
     if(result.status==208){
       console.log('team name already taken');
     }else if(result.status==201){
+      localStorage.setItem("UserStatus", "true");
       console.log('team created successfully');
       window.location.href="/team";
     }
