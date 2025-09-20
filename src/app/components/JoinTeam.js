@@ -81,22 +81,27 @@ export default function JoinTeam() {
     const result=await joinTeam(code);
     if(result.status==204){
       window.dispatchEvent(new CustomEvent("showToast", { detail: { text: "Invalid Team Code" } }));
-
     }else if(result.status==200){
       localStorage.setItem("UserStatus", "true");
       window.dispatchEvent(new CustomEvent("showToast", { detail: { text: "Team Joined Successfullt" } }));
       router.push("/team");
+    }else if(result.status==208){
+      window.dispatchEvent(new CustomEvent("showToast", { detail: { text: "Team has the maximum number of members allowed." } }));
+    }else if(result.status==201){
+      window.dispatchEvent(new CustomEvent("showToast", { detail: { text: "You are already in a team." } }));
     }
   };
 
   const handleCreateTeam = async(name) => {
     const result=await createTeam(name);
     if(result.status==208){
-      console.log('team name already taken');
+      window.dispatchEvent(new CustomEvent("showToast", { detail: { text: "Team name already taken" } }));
     }else if(result.status==201){
       localStorage.setItem("UserStatus", "true");
       console.log('team created successfully');
       window.location.href="/team";
+    }else if(result.status==200){
+      window.dispatchEvent(new CustomEvent("showToast", { detail: { text: "You are already in a team." } }));
     }
     console.log("Creating team with name:", name);
   };
