@@ -16,7 +16,7 @@ export default function Toast() {
       timer = setTimeout(() => {
         setVisible(false)
         setTimeout(() => setText(""), 300)
-      }, 4000)
+      }, 8000)
     }
   
     window.addEventListener("showToast", handler)

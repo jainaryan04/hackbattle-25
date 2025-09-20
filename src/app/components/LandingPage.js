@@ -60,31 +60,19 @@ export default function Home({ onFinish }) {
     }
   };
   
-
-
-  const handleVideoEnd = () => {
-    if (!loading) {
-      setForcePlayOnce(false);
-    }
-  };
-
-  const showSplash = loading || forcePlayOnce;
-
   return (
     <div className="relative select-none h-[100dvh] overflow-hidden" id="home">
-      {showSplash && (
-        <div className="fixed inset-0 z-50">
+      {loading && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black/70 z-50">
           <video
-  src="mojang.mp4"
-  autoPlay
-  muted
-  playsInline
-  onEnded={handleVideoEnd}
-  loop={loading}
-  className="absolute top-0 left-0 w-full h-full object-contain md:object-cover bg-[#db1f26]"
-  style={{ objectPosition: "center" }}
-/>
-
+            src="/loader.webm"
+            alt="Loading..."
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-32 h-32"
+          />
         </div>
       )}
 

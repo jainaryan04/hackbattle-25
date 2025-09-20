@@ -14,6 +14,7 @@ export default function TeamPage() {
       try {
         const result = await teamDetails();
         setTeam(result.data);
+        localStorage.setItem("teamDetails", JSON.stringify(result.data));
       } catch (err) {
         console.error(err);
       }
@@ -33,9 +34,19 @@ export default function TeamPage() {
   };
 
   if (!team) return (
-    <div className="min-h-screen flex items-center justify-center">
-      <p className="text-white text-xl">Loading...</p>
-    </div>
+    <div className="fixed inset-0 flex items-center justify-center bg-black/70 z-50">
+        <video
+          src="/loader.webm"
+          autoPlay
+          loop
+          muted
+          playsInline
+          alt="Loading..."
+          height={128}
+          width={128}
+          className="w-32 h-32"
+        />
+      </div>
   );
 
   const leader = team.members[0];
