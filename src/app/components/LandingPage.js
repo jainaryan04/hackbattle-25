@@ -2,12 +2,17 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import MobileLanding from "./MobileLanding";
-import Link from "next/link";
 import MinecraftTimer from "./Timer";
 
 export default function Home({ onFinish }) {
   const [loading, setLoading] = useState(true); // tracks asset loading
   const [forcePlayOnce, setForcePlayOnce] = useState(true); // ensures video plays once
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const token = localStorage.getItem("accessToken");
+    if (token) setUser(token);
+  }, []);
 
   useEffect(() => {
     const assets = [
@@ -139,24 +144,32 @@ export default function Home({ onFinish }) {
         </div>
 
         {/* Hero section */}
-        <section className="relative w-[50vw] z-10 flex flex-col items-center text-center mt-20">
+        <section className="relative w-[50vw] z-10 flex flex-col items-center text-center mt-32">
           <div className="z-10 font-pixeboy text-[16vh] leading-none [text-shadow:4px_4px_4px_var(--tw-shadow-color)] shadow-[#FFF58C] text-[#F3EDCB] animate-glow-pulse">
-            HACK
+            HACKBATTLE
           </div>
-          <div className="z-10 font-pixeboy text-[16vh] leading-none [text-shadow:4px_4px_4px_var(--tw-shadow-color)] shadow-[#FFF58C] text-[#F3EDCB] animate-glow-pulse">
+          {/* <div className="z-10 font-pixeboy text-[12vh] leading-none [text-shadow:4px_4px_4px_var(--tw-shadow-color)] shadow-[#FFF58C] text-[#F3EDCB] animate-glow-pulse">
             BATTLE
+          </div> */}
+          <div className="z-10 text-[5vh] font-pixeboy mt-8 animate-glow-pulse">
+            THE ULTIMATE 36 hour Hackathon
           </div>
-          <div className="z-10 font-pixeboy text-6xl mt-4 animate-glow-pulse">
-            THE ULTIMATE
+          <div className="z-10 text-[5vh] font-pixeboy mt-0 animate-glow-pulse">
+            starts in ...
           </div>
-          <div className="z-10 font-pixeboy text-6xl mt-2 animate-glow-pulse">
-            36 hour Hackathon
-          </div>
+          {/* <div className="z-10 font-pixeboy text-6xl mt-2 animate-glow-pulse">
+            
+          </div> */}
 
-          {/* Register button */}
           <div className="relative b mt-6">
             <MinecraftTimer />
           </div>
+
+          {/* <button
+            className="px-5 py-2 bg-transparent text-white text-xl lg:text-2xl hover:underline transition"
+          >
+            {user && "GO TO DASHBOARD"}
+          </button> */}
         </section>
 
         {/* Characters */}
